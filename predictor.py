@@ -2,17 +2,24 @@ import math
 import random
 import csv
 import os
-import re
 import statistics
 import pandas as pd
 import altair as alt
 from datetime import datetime, timedelta
-from collections import deque
+from collections import deque, Counter
 import streamlit as st
 
 # ==========================================
-# 🧮 HELPER FUNCTIONS
+# 🧮 HELPER FUNCTIONS & CONSTANTS
 # ==========================================
+
+# Points applied to a team's power rating based on their division tier
+DIVISION_TIERS = {
+    "FBS": 0.0,
+    "FCS": -14.0,
+    "D2": -28.0,
+    "D3": -42.0
+}
 
 def generate_poisson(lam):
     if lam <= 0: return 0
@@ -70,6 +77,8 @@ class SeasonPredictor:
             self._build_srs_model(completed_curr, prefix="curr_")
         
         self._blend_ratings()
+        self._auto_assign_team_divisions()
+        self._apply_tier_adjustments()
         self._calculate_basic_stats()
 
     def _load_and_dedupe_csv(self, filename):
@@ -88,6 +97,7 @@ class SeasonPredictor:
                     away = row["away"].strip()
                     hs_raw = row.get("home_score", "").strip()
                     as_raw = row.get("away_score", "").strip()
+                    div = row.get("division", "").strip().upper()
                     
                     team_a, team_b = sorted([home, away])
                     game_signature = (date, team_a, team_b)
@@ -106,13 +116,15 @@ class SeasonPredictor:
                         games.append({
                             "date": date,
                             "home": home, "away": away, 
-                            "home_score": hs, "away_score": as_
+                            "home_score": hs, "away_score": as_,
+                            "division": div
                         })
                     else:
                         games.append({
                             "date": date,
                             "home": home, "away": away, 
-                            "home_score": None, "away_score": None
+                            "home_score": None, "away_score": None,
+                            "division": div
                         })
                 except (KeyError, ValueError):
                     pass
@@ -126,13 +138,14 @@ class SeasonPredictor:
         for game in games:
             home, away = game["home"], game["away"]
             hs, as_ = game["home_score"], game["away_score"]
+            div = game.get("division", "")
             
             for team in (home, away):
                 if team not in temp_teams:
                     temp_teams[team] = {"OSRS": 0.0, "DSRS": 0.0, "game_log": []}
             
-            temp_teams[home]["game_log"].append({"opponent": away, "points_scored": hs, "points_allowed": as_})
-            temp_teams[away]["game_log"].append({"opponent": home, "points_scored": as_, "points_allowed": hs})
+            temp_teams[home]["game_log"].append({"opponent": away, "points_scored": hs, "points_allowed": as_, "division": div})
+            temp_teams[away]["game_log"].append({"opponent": home, "points_scored": as_, "points_allowed": hs, "division": div})
             total_points += (hs + as_)
             
         league_avg = total_points / (len(games) * 2) if games else 24.0
@@ -186,6 +199,31 @@ class SeasonPredictor:
             
             self.teams[team]["active_OSRS"] = ((self.prior_weight * pre_osrs) + (curr_games * curr_osrs)) / (self.prior_weight + curr_games)
             self.teams[team]["active_DSRS"] = ((self.prior_weight * pre_dsrs) + (curr_games * curr_dsrs)) / (self.prior_weight + curr_games)
+
+    def _auto_assign_team_divisions(self):
+        """Assigns the division a team played in most often to prevent 1-game bridge contamination."""
+        for team in self.teams:
+            logs = self.teams[team].get("curr_game_log", []) + self.teams[team].get("hist_game_log", [])
+            
+            div_list = [g.get("division") for g in logs if g.get("division") in DIVISION_TIERS]
+            
+            if div_list:
+                most_common_div = Counter(div_list).most_common(1)[0][0]
+                self.teams[team]["division"] = most_common_div
+            else:
+                self.teams[team]["division"] = "FBS" # Default fallback if CSV lacks a division column
+
+    def _apply_tier_adjustments(self):
+        """Applies mathematical penalties to pure SRS based on division strength."""
+        for team, data in self.teams.items():
+            div = data.get("division", "FBS")
+            penalty = DIVISION_TIERS.get(div, 0.0)
+            
+            half_penalty = penalty / 2.0
+            
+            self.teams[team]["adj_OSRS"] = data.get("active_OSRS", 0.0) + half_penalty
+            self.teams[team]["adj_DSRS"] = data.get("active_DSRS", 0.0) - half_penalty
+            self.teams[team]["adj_Power"] = self.teams[team]["adj_OSRS"] - self.teams[team]["adj_DSRS"]
 
     def _calc_stats(self, games):
         stats = {t: {"W": 0, "L": 0, "PF": 0, "PA": 0, "GP": 0} for t in self.teams}
@@ -286,10 +324,11 @@ class SeasonPredictor:
         return None 
 
     def predict_matchup(self, away_team, home_team, num_simulations=10000):
-        a_off = self.teams[away_team]["active_OSRS"] if away_team in self.teams else 0.0
-        a_def = self.teams[away_team]["active_DSRS"] if away_team in self.teams else 0.0
-        h_off = self.teams[home_team]["active_OSRS"] if home_team in self.teams else 0.0
-        h_def = self.teams[home_team]["active_DSRS"] if home_team in self.teams else 0.0
+        # We now use the adj_ ratings which already contain the Division penalty
+        a_off = self.teams[away_team].get("adj_OSRS", 0.0) if away_team in self.teams else 0.0
+        a_def = self.teams[away_team].get("adj_DSRS", 0.0) if away_team in self.teams else 0.0
+        h_off = self.teams[home_team].get("adj_OSRS", 0.0) if home_team in self.teams else 0.0
+        h_def = self.teams[home_team].get("adj_DSRS", 0.0) if home_team in self.teams else 0.0
         
         exp_pts_a = max(0.1, self.league_avg_points + a_off + h_def)
         exp_pts_h = max(0.1, self.league_avg_points + h_off + a_def)
@@ -345,8 +384,7 @@ class SeasonPredictor:
         history = []
         
         all_dates = [g["date"] for g in self.current_games if g.get("home_score") not in [None, ""] and g.get("date")]
-        if not all_dates:
-            return []
+        if not all_dates: return []
             
         start_date_str = min(all_dates)
         end_date_str = max(all_dates)
@@ -359,12 +397,12 @@ class SeasonPredictor:
         
         preseason_dt = start_dt - timedelta(days=1)
         
-        # Unified Preseason Ratings Pool
         pre_teams = []
         for t in self.teams:
             p_osrs = self.teams[t].get("preseason_OSRS", 0.0)
             p_dsrs = self.teams[t].get("preseason_DSRS", 0.0)
-            pre_teams.append((t, p_osrs - p_dsrs))
+            penalty = DIVISION_TIERS.get(self.teams[t].get("division", "FBS"), 0.0)
+            pre_teams.append((t, (p_osrs - p_dsrs) + penalty))
                 
         pre_teams.sort(key=lambda x: x[1], reverse=True)
         
@@ -374,13 +412,14 @@ class SeasonPredictor:
         
         pre_osrs = self.teams.get(team_name, {}).get("preseason_OSRS", 0.0)
         pre_dsrs_raw = self.teams.get(team_name, {}).get("preseason_DSRS", 0.0)
+        team_pen = DIVISION_TIERS.get(self.teams.get(team_name, {}).get("division", "FBS"), 0.0)
         
         history.append({
             "Date": preseason_dt, 
             "Label": f"{preseason_dt.month}/{preseason_dt.day} (Pre)", 
-            "Power": round(pre_osrs - pre_dsrs_raw, 2),
-            "Offense": round(pre_osrs, 2),
-            "Defense": round(-pre_dsrs_raw, 2),
+            "Power": round((pre_osrs - pre_dsrs_raw) + team_pen, 2),
+            "Offense": round(pre_osrs + (team_pen/2), 2),
+            "Defense": round(-(pre_dsrs_raw - (team_pen/2)), 2),
             "Rank": preseason_rank,
             "Rank_Num": rank_num if rank_num != "N/A" else None
         })
@@ -395,9 +434,9 @@ class SeasonPredictor:
         cumulative_games = []
         current_dt = start_dt
         
-        last_power = round(pre_osrs - pre_dsrs_raw, 2)
-        last_off = round(pre_osrs, 2)
-        last_def = round(-pre_dsrs_raw, 2)
+        last_power = round((pre_osrs - pre_dsrs_raw) + team_pen, 2)
+        last_off = round(pre_osrs + (team_pen/2), 2)
+        last_def = round(-(pre_dsrs_raw - (team_pen/2)), 2)
         last_rank = preseason_rank
         
         while current_dt <= end_dt:
@@ -439,7 +478,6 @@ class SeasonPredictor:
                         temp_teams[t]["OSRS"] = new_ratings[t]["OSRS"]
                         temp_teams[t]["DSRS"] = new_ratings[t]["DSRS"]
                         
-                # Unified Active Ratings Pool
                 act_teams = []
                 for t in self.teams:
                     t_pre_osrs = self.teams[t].get("preseason_OSRS", 0.0)
@@ -448,13 +486,15 @@ class SeasonPredictor:
                     t_act_osrs = ((self.prior_weight * t_pre_osrs) + (len(t_data["game_log"]) * t_data["OSRS"])) / (self.prior_weight + len(t_data["game_log"]))
                     t_act_dsrs = ((self.prior_weight * t_pre_dsrs) + (len(t_data["game_log"]) * t_data["DSRS"])) / (self.prior_weight + len(t_data["game_log"]))
                     
-                    t_power = t_act_osrs - t_act_dsrs
+                    t_pen = DIVISION_TIERS.get(self.teams.get(t, {}).get("division", "FBS"), 0.0)
+                    
+                    t_power = (t_act_osrs - t_act_dsrs) + t_pen
                     act_teams.append((t, t_power))
                     
                     if t == team_name:
                         last_power = round(t_power, 2)
-                        last_off = round(t_act_osrs, 2)
-                        last_def = round(-t_act_dsrs, 2) 
+                        last_off = round(t_act_osrs + (t_pen/2), 2)
+                        last_def = round(-(t_act_dsrs - (t_pen/2)), 2) 
                         
                 act_teams.sort(key=lambda x: x[1], reverse=True)
                 
@@ -476,7 +516,6 @@ class SeasonPredictor:
             
         return history
 
-
 # ==========================================
 # ⚡ STREAMLIT CACHING WRAPPERS 
 # ==========================================
@@ -491,14 +530,11 @@ def load_predictor():
 
 @st.cache_data
 def get_cached_prediction(_predictor, away_team, home_team, num_simulations):
-    """Caches matchup projections so all users see identical results and CPU strain drops."""
     return _predictor.predict_matchup(away_team, home_team, num_simulations=num_simulations)
 
 @st.cache_data
 def get_cached_history(_predictor, team_name):
-    """Caches the heavy 40-iteration history loops so they don't fire on every dropdown change."""
     return _predictor.get_team_rating_history(team_name)
-
 
 # ==========================================
 # 🌐 STREAMLIT WEB APP USER INTERFACE
@@ -533,8 +569,8 @@ if predictor is None:
 else:
     tab1, tab2, tab3, tab4 = st.tabs(["🎮 Matchup Simulator", "🏆 Power Rankings", "📅 Team Schedules & Hub", "📈 Season Leaderboards"])
 
-    # Global Rank Processing
-    sorted_teams = sorted(predictor.teams.items(), key=lambda x: (x[1].get("active_OSRS", 0) - x[1].get("active_DSRS", 0)), reverse=True)
+    # Global Rank Processing (Now uses Adjusted Tiered Power)
+    sorted_teams = sorted(predictor.teams.items(), key=lambda x: x[1].get("adj_Power", 0), reverse=True)
     ranked_teams_list = [t for t, _ in sorted_teams]
     total_teams = len(ranked_teams_list)
     
@@ -546,14 +582,13 @@ else:
 
     all_teams = sorted(list(predictor.teams.keys()))
     
-    # Safely find default indices for common college teams
     try:
         away_idx = all_teams.index("Michigan")
     except ValueError:
         away_idx = 0
         
     try:
-        home_idx = all_teams.index("Ohio St.")
+        home_idx = all_teams.index("Ohio State")
     except ValueError:
         home_idx = 1 if len(all_teams) > 1 else 0
 
@@ -568,11 +603,12 @@ else:
             away = st.selectbox("Away Team Select", all_teams, index=away_idx, label_visibility="collapsed")
             if away:
                 a_stats = predictor.basic_stats.get(away, {"W":0, "L":0, "PF":0, "PA":0, "GP":0})
-                a_pwr = round(predictor.teams[away].get("active_OSRS",0) - predictor.teams[away].get("active_DSRS",0), 2)
+                a_pwr = round(predictor.teams[away].get("adj_Power",0), 2)
                 a_gp = max(1, a_stats["GP"])
+                a_div = predictor.teams[away].get("division", "FBS")
                 
                 rnk = get_rank_display(away)
-                st.caption(f"🏆 **Rank:** #{rnk} | ⚡ **Power Rating:** {a_pwr}")
+                st.caption(f"🏆 **Rank:** #{rnk} | ⚡ **Power Rating:** {a_pwr} `[{a_div}]`")
                 st.caption(f"📊 **Record:** {a_stats['W']}-{a_stats['L']} | 🟢 **PPG:** {a_stats['PF']/a_gp:.1f} | 🔴 **PA/G:** {a_stats['PA']/a_gp:.1f}")
 
         with col_b:
@@ -580,11 +616,12 @@ else:
             home = st.selectbox("Home Team Select", all_teams, index=home_idx, label_visibility="collapsed")
             if home:
                 h_stats = predictor.basic_stats.get(home, {"W":0, "L":0, "PF":0, "PA":0, "GP":0})
-                h_pwr = round(predictor.teams[home].get("active_OSRS",0) - predictor.teams[home].get("active_DSRS",0), 2)
+                h_pwr = round(predictor.teams[home].get("adj_Power",0), 2)
                 h_gp = max(1, h_stats["GP"])
+                h_div = predictor.teams[home].get("division", "FBS")
                 
                 rnk_h = get_rank_display(home)
-                st.caption(f"🏆 **Rank:** #{rnk_h} | ⚡ **Power Rating:** {h_pwr}")
+                st.caption(f"🏆 **Rank:** #{rnk_h} | ⚡ **Power Rating:** {h_pwr} `[{h_div}]`")
                 st.caption(f"📊 **Record:** {h_stats['W']}-{h_stats['L']} | 🟢 **PPG:** {h_stats['PF']/h_gp:.1f} | 🔴 **PA/G:** {h_stats['PA']/h_gp:.1f}")
 
         with st.expander("⚙️ Advanced Simulation Settings"):
@@ -621,17 +658,28 @@ else:
     # TAB 2: POWER RANKINGS
     # ----------------------------------------------------
     with tab2:
-        st.subheader("Power Rankings", anchor=False)
+        col_rank_title, col_rank_filter = st.columns([2, 1])
+        with col_rank_title:
+            st.subheader("Power Rankings", anchor=False)
+        with col_rank_filter:
+            st.write("")
+            division_filter = st.selectbox("Division Filter", ["All Divisions", "FBS", "FCS", "D2", "D3"], label_visibility="collapsed")
+        
         st.write("") 
         
         rankings = []
         for t_name, t_data in predictor.teams.items():
-            o_rating = t_data.get("active_OSRS", 0.0)
-            d_rating = t_data.get("active_DSRS", 0.0)
-            net_power = o_rating - d_rating
+            t_div = t_data.get("division", "FBS")
+            if division_filter != "All Divisions" and t_div != division_filter:
+                continue
+                
+            o_rating = t_data.get("adj_OSRS", 0.0)
+            d_rating = t_data.get("adj_DSRS", 0.0)
+            net_power = t_data.get("adj_Power", 0.0)
             
             rankings.append({
                 "Team": t_name,
+                "Div": t_div,
                 "Power Rating": round(net_power, 2),
                 "Offense": round(o_rating, 2),
                 "Defense": round(-d_rating, 2),
@@ -645,7 +693,7 @@ else:
             
         st.dataframe(
             rankings, 
-            column_order=["Rank", "Team", "Power Rating", "Offense", "Defense"],
+            column_order=["Rank", "Team", "Div", "Power Rating", "Offense", "Defense"],
             width="stretch", 
             hide_index=True
         )
@@ -666,8 +714,11 @@ else:
         is_archive = (season_view == "2025 Archive")
         
         if selected_team:
+            team_div = predictor.teams[selected_team].get("division", "FBS")
+            team_pen = DIVISION_TIERS.get(team_div, 0.0)
+            
             if is_archive:
-                hist_sorted_teams = sorted(predictor.teams.items(), key=lambda x: (x[1].get("hist_OSRS", 0) - x[1].get("hist_DSRS", 0)), reverse=True)
+                hist_sorted_teams = sorted(predictor.teams.items(), key=lambda x: (x[1].get("hist_OSRS", 0) - x[1].get("hist_DSRS", 0) + DIVISION_TIERS.get(x[1].get("division", "FBS"), 0.0)), reverse=True)
                 hist_ranked_list = [t for t, _ in hist_sorted_teams]
                 
                 try:
@@ -676,7 +727,7 @@ else:
                     team_rank = "N/A"
                         
                 t_stats = predictor.teams[selected_team]
-                p_rating = round(t_stats.get("hist_OSRS", 0) - t_stats.get("hist_DSRS", 0), 2)
+                p_rating = round((t_stats.get("hist_OSRS", 0) - t_stats.get("hist_DSRS", 0)) + team_pen, 2)
                 t_basic = predictor.hist_basic_stats.get(selected_team, {"W":0, "L":0, "PF":0, "PA":0, "GP":0})
                 
                 r_win_pct = predictor.hist_ranks_win_pct
@@ -690,7 +741,7 @@ else:
             else:
                 team_rank = get_rank_display(selected_team)
                 t_stats = predictor.teams[selected_team]
-                p_rating = round(t_stats.get("active_OSRS", 0) - t_stats.get("active_DSRS", 0), 2)
+                p_rating = round(t_stats.get("adj_Power", 0), 2)
                 t_basic = predictor.basic_stats.get(selected_team, {"W":0, "L":0, "PF":0, "PA":0, "GP":0})
                 
                 r_win_pct = predictor.ranks_win_pct
@@ -711,9 +762,9 @@ else:
             papg = pa / safe_gp if gp > 0 else 0.0
             win_pct = t_basic["W"] / safe_gp if gp > 0 else 0.0
 
-            st.markdown("### 📊 Team Dashboard")
+            st.markdown(f"### 📊 Team Dashboard `[{team_div}]`")
             m1, m2, m3, m4 = st.columns(4)
-            m1.metric("Overall Rank", f"#{team_rank}")
+            m1.metric("National Rank", f"#{team_rank}")
             m2.metric("Power Rating", f"{p_rating}")
             m3.metric(f"{display_year} Record", f"{t_basic['W']}-{t_basic['L']}")
             m4.metric(f"Win % (#{r_win_pct.get(selected_team, 'N/A')})", f"{win_pct:.3f}")
@@ -885,11 +936,21 @@ else:
     # TAB 4: SEASON LEADERBOARDS & STATS 
     # ----------------------------------------------------
     with tab4:
-        st.subheader("Season Leaderboards & Statistical Aggregates", anchor=False)
+        col_lb_title, col_lb_filter = st.columns([2, 1])
+        with col_lb_title:
+            st.subheader("Season Leaderboards & Statistical Aggregates", anchor=False)
+        with col_lb_filter:
+            st.write("") 
+            division_lb_filter = st.selectbox("Division Filter", ["All Divisions", "FBS", "FCS", "D2", "D3"], key="lb_filter", label_visibility="collapsed")
+        
         st.write("") 
         
         stat_rows = []
         for t in all_teams:
+            t_div = predictor.teams.get(t, {}).get("division", "FBS")
+            if division_lb_filter != "All Divisions" and t_div != division_lb_filter:
+                continue
+                
             s = predictor.basic_stats.get(t, {"W":0, "L":0, "PF":0, "PA":0, "GP":0})
             gp = s["GP"]
             pf = s["PF"]
@@ -898,6 +959,7 @@ else:
             stat_rows.append({
                 "Rank": get_rank_display(t),
                 "Team": t,
+                "Div": t_div,
                 "GP": gp,
                 "Record": f"{s['W']}-{s['L']}",
                 "Win %": round(s['W'] / gp, 3) if gp > 0 else 0.000,
@@ -918,7 +980,7 @@ else:
         
         st.dataframe(
             stat_rows, 
-            column_order=["Rank", "Team", "Record", "Win %", "GP", "PF", "PA", "Diff", "PPG", "PA/G"],
+            column_order=["Rank", "Team", "Div", "Record", "Win %", "GP", "PF", "PA", "Diff", "PPG", "PA/G"],
             width="stretch", 
             hide_index=True
         )
