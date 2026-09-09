@@ -1,85 +1,992 @@
+import math
+import random
 import csv
-import requests
+import os
+import statistics
+import pandas as pd
+import altair as alt
+from datetime import datetime, timedelta
+from collections import deque, Counter
 import streamlit as st
+from division_parser import get_tagged_games
 
-DIV_LABELS = {
-    'fbs': 'FBS',
-    'fcs': 'FCS',
-    'ii': 'D2',
-    'iii': 'D3'
+# ==========================================
+# 🧮 HELPER FUNCTIONS & CONSTANTS
+# ==========================================
+
+# Points applied to a team's power rating based on their division tier
+DIVISION_TIERS = {
+    "FBS": 0.0,
+    "FCS": -14.0,
+    "D2": -28.0,
+    "D3": -42.0
 }
 
-@st.cache_data(ttl=86400)  # Cache API classifications for 24 hours
-def fetch_division_map(years):
-    """Pulls NCAA classifications from CFBD API securely via Streamlit secrets."""
-    api_key = st.secrets.get("CFBD_API_KEY", "")
-    division_map = {}
+def generate_poisson(lam):
+    if lam <= 0: return 0
+    L = math.exp(-lam)
+    k, p = 0, 1.0
+    while p > L:
+        k += 1
+        p *= random.random()
+    return k - 1
+
+def generate_football_score(expected_points):
+    expected_events = expected_points / 6.0
+    num_events = generate_poisson(expected_events)
+    score = 0
+    for _ in range(num_events):
+        roll = random.random()
+        if roll < 0.75: score += 7
+        elif roll < 0.95: score += 3
+        else: score += 6
+    return score
+
+def convert_to_moneyline(win_prob):
+    if win_prob <= 0.001: return "+99900"
+    if win_prob >= 0.999: return "-99900"
     
-    if not api_key:
-        st.error("CFBD_API_KEY not found in Streamlit Secrets.")
-        return division_map
+    if win_prob > 0.5:
+        ml = -1 * (win_prob / (1 - win_prob)) * 100
+        return f"{int(ml)}"
+    elif win_prob < 0.5:
+        ml = ((1 - win_prob) / win_prob) * 100
+        return f"+{int(ml)}"
+    else:
+        return "+100"
 
-    headers = {
-        "accept": "application/json",
-        "Authorization": f"Bearer {api_key}"
-    }
+# ==========================================
+# 🧮 MATHEMATICAL ENGINE & SIMULATOR
+# ==========================================
 
-    for year in years:
-        url = f"https://api.collegefootballdata.com/teams?year={year}"
-        try:
-            response = requests.get(url, headers=headers, timeout=10)
-            if response.status_code == 200:
-                data = response.json()
-                division_map[str(year)] = {}
-                for team in data:
-                    school = team.get('school')
-                    classification = team.get('classification', 'unknown').lower()
-                    clean_div = DIV_LABELS.get(classification, classification.upper())
-                    if school:
-                        division_map[str(year)][school] = clean_div
-        except Exception as e:
-            st.warning(f"Could not fetch {year} divisions from API: {e}")
+class SeasonPredictor:
+    def __init__(self, past_games, current_games=None, regression_factor=0.25, prior_weight=4):
+        self.teams = {}
+        self.league_avg_points = 24.0
+        self.regression_factor = regression_factor 
+        self.prior_weight = prior_weight
+        
+        self.historical_games = self._process_games(past_games)
+        if self.historical_games:
+            completed_hist = [g for g in self.historical_games if g.get("home_score") not in [None, ""]]
+            self._build_srs_model(completed_hist, prefix="hist_")
+            self._regress_to_preseason()
 
-    return division_map
+        self.current_games = self._process_games(current_games) if current_games else []
+        if self.current_games:
+            completed_curr = [g for g in self.current_games if g.get("home_score") not in [None, ""]]
+            self._build_srs_model(completed_curr, prefix="curr_")
+        
+        self._blend_ratings()
+        self._auto_assign_team_divisions()
+        self._apply_tier_adjustments()
+        self._calculate_basic_stats()
+
+    def _process_games(self, raw_games):
+        games = []
+        unique_games = set()
+        
+        if not raw_games:
+            return games
+            
+        for row in raw_games:
+            try:
+                date = row.get("date", "").strip()
+                home = row.get("home_team", "").strip()
+                away = row.get("away_team", "").strip()
+                hs_raw = str(row.get("home_score", "")).strip()
+                as_raw = str(row.get("away_score", "")).strip()
+                div = row.get("division", "").strip().upper()
+                
+                team_a, team_b = sorted([home, away])
+                game_signature = (date, team_a, team_b)
+                
+                if game_signature in unique_games:
+                    continue
+                unique_games.add(game_signature)
+
+                if hs_raw not in ["", "None"] and as_raw not in ["", "None"]:
+                    hs = int(float(hs_raw))
+                    as_ = int(float(as_raw))
+                    
+                    if (hs == 1 and as_ == 0) or (hs == 0 and as_ == 1):
+                        continue
+                        
+                    games.append({
+                        "date": date,
+                        "home": home, "away": away, 
+                        "home_score": hs, "away_score": as_,
+                        "division": div
+                    })
+                else:
+                    games.append({
+                        "date": date,
+                        "home": home, "away": away, 
+                        "home_score": None, "away_score": None,
+                        "division": div
+                    })
+            except (KeyError, ValueError):
+                pass
+                
+        return games
+
+    def _build_srs_model(self, games, prefix, iterations=100):
+        temp_teams = {}
+        total_points = 0
+        
+        for game in games:
+            home, away = game["home"], game["away"]
+            hs, as_ = game["home_score"], game["away_score"]
+            div = game.get("division", "")
+            
+            for team in (home, away):
+                if team not in temp_teams:
+                    temp_teams[team] = {"OSRS": 0.0, "DSRS": 0.0, "game_log": []}
+            
+            temp_teams[home]["game_log"].append({"opponent": away, "points_scored": hs, "points_allowed": as_, "division": div})
+            temp_teams[away]["game_log"].append({"opponent": home, "points_scored": as_, "points_allowed": hs, "division": div})
+            total_points += (hs + as_)
+            
+        league_avg = total_points / (len(games) * 2) if games else 24.0
+
+        for _ in range(iterations):
+            new_ratings = {}
+            for team, data in temp_teams.items():
+                sum_adj_off = league_avg
+                sum_adj_def = league_avg
+                num_games = len(data["game_log"]) + 1 
+                
+                for game in data["game_log"]:
+                    opp = game["opponent"]
+                    sum_adj_off += (game["points_scored"] - temp_teams[opp]["DSRS"])
+                    sum_adj_def += (game["points_allowed"] - temp_teams[opp]["OSRS"])
+                
+                new_ratings[team] = {
+                    "OSRS": (sum_adj_off / num_games) - league_avg,
+                    "DSRS": (sum_adj_def / num_games) - league_avg
+                }
+                
+            for team in temp_teams:
+                temp_teams[team]["OSRS"] = new_ratings[team]["OSRS"]
+                temp_teams[team]["DSRS"] = new_ratings[team]["DSRS"]
+
+        for team, data in temp_teams.items():
+            if team not in self.teams: self.teams[team] = {}
+            self.teams[team][f"{prefix}OSRS"] = data["OSRS"]
+            self.teams[team][f"{prefix}DSRS"] = data["DSRS"]
+            self.teams[team][f"{prefix}games"] = len(data["game_log"])
+            self.teams[team][f"{prefix}game_log"] = data["game_log"]
+
+        if prefix == "hist_":
+            self.league_avg_points = league_avg
+
+    def _regress_to_preseason(self):
+        for team in self.teams:
+            h_osrs = self.teams[team].get("hist_OSRS", 0.0)
+            h_dsrs = self.teams[team].get("hist_DSRS", 0.0)
+            self.teams[team]["preseason_OSRS"] = h_osrs * (1 - self.regression_factor)
+            self.teams[team]["preseason_DSRS"] = h_dsrs * (1 - self.regression_factor)
+
+    def _blend_ratings(self):
+        for team in self.teams:
+            pre_osrs = self.teams[team].get("preseason_OSRS", 0.0)
+            pre_dsrs = self.teams[team].get("preseason_DSRS", 0.0)
+            
+            curr_osrs = self.teams[team].get("curr_OSRS", pre_osrs)
+            curr_dsrs = self.teams[team].get("curr_DSRS", pre_dsrs)
+            curr_games = self.teams[team].get("curr_games", 0)
+            
+            self.teams[team]["active_OSRS"] = ((self.prior_weight * pre_osrs) + (curr_games * curr_osrs)) / (self.prior_weight + curr_games)
+            self.teams[team]["active_DSRS"] = ((self.prior_weight * pre_dsrs) + (curr_games * curr_dsrs)) / (self.prior_weight + curr_games)
+
+    def _auto_assign_team_divisions(self):
+        """Assigns the division a team played in most often to prevent 1-game bridge contamination."""
+        for team in self.teams:
+            logs = self.teams[team].get("curr_game_log", []) + self.teams[team].get("hist_game_log", [])
+            
+            div_list = [g.get("division") for g in logs if g.get("division") in DIVISION_TIERS]
+            
+            if div_list:
+                most_common_div = Counter(div_list).most_common(1)[0][0]
+                self.teams[team]["division"] = most_common_div
+            else:
+                self.teams[team]["division"] = "FBS"
+
+    def _apply_tier_adjustments(self):
+        """Applies mathematical penalties to pure SRS based on division strength."""
+        for team, data in self.teams.items():
+            div = data.get("division", "FBS")
+            penalty = DIVISION_TIERS.get(div, 0.0)
+            
+            half_penalty = penalty / 2.0
+            
+            self.teams[team]["adj_OSRS"] = data.get("active_OSRS", 0.0) + half_penalty
+            self.teams[team]["adj_DSRS"] = data.get("active_DSRS", 0.0) - half_penalty
+            self.teams[team]["adj_Power"] = self.teams[team]["adj_OSRS"] - self.teams[team]["adj_DSRS"]
+
+    def _calc_stats(self, games):
+        stats = {t: {"W": 0, "L": 0, "PF": 0, "PA": 0, "GP": 0} for t in self.teams}
+        for g in games:
+            if g.get("home_score") not in [None, ""]:
+                h, a = g["home"], g["away"]
+                hs, as_ = int(g["home_score"]), int(g["away_score"])
+                
+                if h not in stats: stats[h] = {"W": 0, "L": 0, "PF": 0, "PA": 0, "GP": 0}
+                if a not in stats: stats[a] = {"W": 0, "L": 0, "PF": 0, "PA": 0, "GP": 0}
+
+                stats[h]["GP"] += 1
+                stats[a]["GP"] += 1
+                stats[h]["PF"] += hs
+                stats[h]["PA"] += as_
+                stats[a]["PF"] += as_
+                stats[a]["PA"] += hs
+
+                if hs > as_:
+                    stats[h]["W"] += 1
+                    stats[a]["L"] += 1
+                elif as_ > hs:
+                    stats[a]["W"] += 1
+                    stats[h]["L"] += 1
+        return stats
+
+    def _calc_ranks(self, stats_dict):
+        all_teams_stats = []
+        for t, s in stats_dict.items():
+            gp = max(1, s["GP"])
+            pf = s["PF"]
+            pa = s["PA"]
+            all_teams_stats.append({
+                "team": t,
+                "win_pct": s["W"] / gp,
+                "pf": pf,
+                "pa": pa,
+                "diff": pf - pa,
+                "ppg": pf / gp,
+                "papg": pa / gp
+            })
+
+        def get_ranks(sort_key, reverse=True):
+            sorted_stats = sorted(all_teams_stats, key=lambda x: x[sort_key], reverse=reverse)
+            ranks = {}
+            for i, item in enumerate(sorted_stats):
+                ranks[item["team"]] = f"{i + 1}/{len(sorted_stats)}"
+            return ranks
+        
+        return {
+            "win_pct": get_ranks("win_pct", True),
+            "pf": get_ranks("pf", True),
+            "pa": get_ranks("pa", False),
+            "diff": get_ranks("diff", True),
+            "ppg": get_ranks("ppg", True),
+            "papg": get_ranks("papg", False)
+        }
+
+    def _calculate_basic_stats(self):
+        self.basic_stats = self._calc_stats(self.current_games)
+        self.hist_basic_stats = self._calc_stats(self.historical_games)
+        
+        curr_ranks = self._calc_ranks(self.basic_stats)
+        self.ranks_win_pct = curr_ranks["win_pct"]
+        self.ranks_pf = curr_ranks["pf"]
+        self.ranks_pa = curr_ranks["pa"]
+        self.ranks_diff = curr_ranks["diff"]
+        self.ranks_ppg = curr_ranks["ppg"]
+        self.ranks_papg = curr_ranks["papg"]
+
+        hist_ranks = self._calc_ranks(self.hist_basic_stats)
+        self.hist_ranks_win_pct = hist_ranks["win_pct"]
+        self.hist_ranks_pf = hist_ranks["pf"]
+        self.hist_ranks_pa = hist_ranks["pa"]
+        self.hist_ranks_diff = hist_ranks["diff"]
+        self.hist_ranks_ppg = hist_ranks["ppg"]
+        self.hist_ranks_papg = hist_ranks["papg"]
+
+    def _find_connection_path(self, team_a, team_b):
+        if team_a not in self.teams or team_b not in self.teams: return None
+        
+        graph = {}
+        for team in self.teams:
+            graph[team] = set()
+            for game in self.teams[team].get("hist_game_log", []): graph[team].add(game["opponent"])
+            for game in self.teams[team].get("curr_game_log", []): graph[team].add(game["opponent"])
+            
+        queue = deque([(team_a, [team_a])])
+        visited = set([team_a])
+        
+        while queue:
+            current_team, path = queue.popleft()
+            if current_team == team_b: return path 
+            for neighbor in graph.get(current_team, []):
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    queue.append((neighbor, path + [neighbor]))
+        return None 
+
+    def predict_matchup(self, away_team, home_team, num_simulations=10000):
+        a_off = self.teams[away_team].get("adj_OSRS", 0.0) if away_team in self.teams else 0.0
+        a_def = self.teams[away_team].get("adj_DSRS", 0.0) if away_team in self.teams else 0.0
+        h_off = self.teams[home_team].get("adj_OSRS", 0.0) if home_team in self.teams else 0.0
+        h_def = self.teams[home_team].get("adj_DSRS", 0.0) if home_team in self.teams else 0.0
+        
+        exp_pts_a = max(0.1, self.league_avg_points + a_off + h_def)
+        exp_pts_h = max(0.1, self.league_avg_points + h_off + a_def)
+        
+        a_wins, h_wins, a_total_pts, h_total_pts = 0, 0, 0, 0
+        all_home_margins, all_totals = [], []
+        
+        for _ in range(num_simulations):
+            score_a = generate_football_score(exp_pts_a)
+            score_h = generate_football_score(exp_pts_h)
+            
+            if score_a == score_h:
+                if random.random() > 0.5: score_a += 7
+                else: score_h += 7
+            
+            all_home_margins.append(score_h - score_a)
+            all_totals.append(score_h + score_a)
+            
+            if score_a > score_h: a_wins += 1
+            else: h_wins += 1
+            
+            a_total_pts += score_a
+            h_total_pts += score_h
+                
+        prob_a = a_wins / num_simulations
+        prob_h = h_wins / num_simulations
+        median_home_margin = statistics.median(all_home_margins)
+        median_total = statistics.median(all_totals)
+        
+        if median_home_margin > 0:
+            spread_val = -median_home_margin
+            spread_str = f"{home_team} -{median_home_margin:g}"
+        elif median_home_margin < 0:
+            spread_val = abs(median_home_margin)
+            spread_str = f"{away_team} -{abs(median_home_margin):g}"
+        else:
+            spread_val = 0
+            spread_str = "PK"
+            
+        path = self._find_connection_path(away_team, home_team)
+
+        return {
+            "away_team": away_team, "home_team": home_team,
+            "prob_a": prob_a, "prob_h": prob_h,
+            "spread_str": spread_str, "spread_val": spread_val,
+            "median_total": median_total,
+            "avg_score_a": round(a_total_pts / num_simulations),
+            "avg_score_h": round(h_total_pts / num_simulations),
+            "path": path
+        }
+        
+    def get_team_rating_history(self, team_name):
+        history = []
+        
+        all_dates = [g["date"] for g in self.current_games if g.get("home_score") not in [None, ""] and g.get("date")]
+        if not all_dates: return []
+            
+        start_date_str = min(all_dates)
+        end_date_str = max(all_dates)
+        
+        start_dt = datetime.strptime(start_date_str, "%Y-%m-%d")
+        last_game_dt = datetime.strptime(end_date_str, "%Y-%m-%d")
+        
+        current_real_dt = datetime.now()
+        end_dt = max(last_game_dt, current_real_dt) if current_real_dt.year == last_game_dt.year else last_game_dt
+        
+        preseason_dt = start_dt - timedelta(days=1)
+        
+        pre_teams = []
+        for t in self.teams:
+            p_osrs = self.teams[t].get("preseason_OSRS", 0.0)
+            p_dsrs = self.teams[t].get("preseason_DSRS", 0.0)
+            penalty = DIVISION_TIERS.get(self.teams[t].get("division", "FBS"), 0.0)
+            pre_teams.append((t, (p_osrs - p_dsrs) + penalty))
+                
+        pre_teams.sort(key=lambda x: x[1], reverse=True)
+        
+        total_pool = len(pre_teams)
+        rank_num = next((i + 1 for i, v in enumerate(pre_teams) if v[0] == team_name), "N/A")
+        preseason_rank = f"{rank_num}/{total_pool}" if rank_num != "N/A" else "N/A"
+        
+        pre_osrs = self.teams.get(team_name, {}).get("preseason_OSRS", 0.0)
+        pre_dsrs_raw = self.teams.get(team_name, {}).get("preseason_DSRS", 0.0)
+        team_pen = DIVISION_TIERS.get(self.teams.get(team_name, {}).get("division", "FBS"), 0.0)
+        
+        history.append({
+            "Date": preseason_dt, 
+            "Label": f"{preseason_dt.month}/{preseason_dt.day} (Pre)", 
+            "Power": round((pre_osrs - pre_dsrs_raw) + team_pen, 2),
+            "Offense": round(pre_osrs + (team_pen/2), 2),
+            "Defense": round(-(pre_dsrs_raw - (team_pen/2)), 2),
+            "Rank": preseason_rank,
+            "Rank_Num": rank_num if rank_num != "N/A" else None
+        })
+        
+        games_by_date = {}
+        for g in self.current_games:
+            if g.get("home_score") not in [None, ""]:
+                d = g["date"]
+                if d not in games_by_date: games_by_date[d] = []
+                games_by_date[d].append(g)
+                
+        cumulative_games = []
+        current_dt = start_dt
+        
+        last_power = round((pre_osrs - pre_dsrs_raw) + team_pen, 2)
+        last_off = round(pre_osrs + (team_pen/2), 2)
+        last_def = round(-(pre_dsrs_raw - (team_pen/2)), 2)
+        last_rank = preseason_rank
+        
+        while current_dt <= end_dt:
+            date_str = current_dt.strftime("%Y-%m-%d")
+            display_label = f"{current_dt.month}/{current_dt.day}"
+            
+            if date_str in games_by_date:
+                cumulative_games.extend(games_by_date[date_str])
+                
+                temp_teams = {}
+                total_points = 0
+                for g in cumulative_games:
+                    home, away = g["home"], g["away"]
+                    hs, as_ = g["home_score"], g["away_score"]
+                    for t in (home, away):
+                        if t not in temp_teams:
+                            temp_teams[t] = {"OSRS": 0.0, "DSRS": 0.0, "game_log": []}
+                    temp_teams[home]["game_log"].append({"opponent": away, "points_scored": hs, "points_allowed": as_})
+                    temp_teams[away]["game_log"].append({"opponent": home, "points_scored": as_, "points_allowed": hs})
+                    total_points += (hs + as_)
+                    
+                league_avg = total_points / (len(cumulative_games) * 2) if cumulative_games else 24.0
+                
+                for _ in range(40): 
+                    new_ratings = {}
+                    for t, data in temp_teams.items():
+                        sum_adj_off = league_avg
+                        sum_adj_def = league_avg
+                        num_games = len(data["game_log"]) + 1 
+                        for game in data["game_log"]:
+                            opp = game["opponent"]
+                            sum_adj_off += (game["points_scored"] - temp_teams.get(opp, {"DSRS":0})["DSRS"])
+                            sum_adj_def += (game["points_allowed"] - temp_teams.get(opp, {"OSRS":0})["OSRS"])
+                        new_ratings[t] = {
+                            "OSRS": (sum_adj_off / num_games) - league_avg,
+                            "DSRS": (sum_adj_def / num_games) - league_avg
+                        }
+                    for t in temp_teams:
+                        temp_teams[t]["OSRS"] = new_ratings[t]["OSRS"]
+                        temp_teams[t]["DSRS"] = new_ratings[t]["DSRS"]
+                        
+                act_teams = []
+                for t in self.teams:
+                    t_pre_osrs = self.teams[t].get("preseason_OSRS", 0.0)
+                    t_pre_dsrs = self.teams[t].get("preseason_DSRS", 0.0)
+                    t_data = temp_teams.get(t, {"OSRS": 0.0, "DSRS": 0.0, "game_log": []})
+                    t_act_osrs = ((self.prior_weight * t_pre_osrs) + (len(t_data["game_log"]) * t_data["OSRS"])) / (self.prior_weight + len(t_data["game_log"]))
+                    t_act_dsrs = ((self.prior_weight * t_pre_dsrs) + (len(t_data["game_log"]) * t_data["DSRS"])) / (self.prior_weight + len(t_data["game_log"]))
+                    
+                    t_pen = DIVISION_TIERS.get(self.teams.get(t, {}).get("division", "FBS"), 0.0)
+                    
+                    t_power = (t_act_osrs - t_act_dsrs) + t_pen
+                    act_teams.append((t, t_power))
+                    
+                    if t == team_name:
+                        last_power = round(t_power, 2)
+                        last_off = round(t_act_osrs + (t_pen/2), 2)
+                        last_def = round(-(t_act_dsrs - (t_pen/2)), 2) 
+                        
+                act_teams.sort(key=lambda x: x[1], reverse=True)
+                
+                total_pool = len(act_teams)
+                rank_num = next((i + 1 for i, v in enumerate(act_teams) if v[0] == team_name), "N/A")
+                last_rank = f"{rank_num}/{total_pool}" if rank_num != "N/A" else "N/A"
+                
+            history.append({
+                "Date": current_dt,
+                "Label": display_label,
+                "Power": last_power,
+                "Offense": last_off,
+                "Defense": last_def,
+                "Rank": last_rank,
+                "Rank_Num": rank_num if rank_num != "N/A" else None
+            })
+            
+            current_dt += timedelta(days=1)
+            
+        return history
+
+# ==========================================
+# ⚡ STREAMLIT CACHING WRAPPERS 
+# ==========================================
+
+@st.cache_resource
+def load_predictor():
+    try:
+        all_games = get_tagged_games()
+    except Exception as e:
+        st.error(f"Error loading games from API parser: {e}")
+        return None
+        
+    if not all_games:
+        return None
+        
+    # Isolate seasons dynamically from the API mapped dictionaries
+    past_games = [g for g in all_games if str(g.get("season")) == "2025"]
+    curr_games = [g for g in all_games if str(g.get("season")) == "2026"]
+    
+    return SeasonPredictor(past_games, curr_games, regression_factor=0.25, prior_weight=4)
 
 @st.cache_data
-def get_tagged_games():
-    """Reads CSV files and dynamically assigns year-accurate divisions in-memory."""
-    years = ["2025", "2026"]
-    division_map = fetch_division_map(years)
-    all_games = []
+def get_cached_prediction(_predictor, away_team, home_team, num_simulations):
+    return _predictor.predict_matchup(away_team, home_team, num_simulations=num_simulations)
 
-    for year in years:
-        file_path = f"games_{year}.csv"
+@st.cache_data
+def get_cached_history(_predictor, team_name):
+    return _predictor.get_team_rating_history(team_name)
+
+# ==========================================
+# 🌐 STREAMLIT WEB APP USER INTERFACE
+# ==========================================
+
+st.set_page_config(page_title="College Football Predictor", page_icon="🏈", layout="wide")
+
+st.markdown("""
+    <style>
+    div[data-testid="stMetricValue"] > div {
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        line-height: 1.2 !important;
+        font-size: 1.75rem !important;
+    }
+    
+    .stMarkdown a.header-anchor,
+    .stMarkdown a.anchor,
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+        display: none !important;
+        pointer-events: none !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+predictor = load_predictor()
+
+st.title("🏈 College Football Predictor Engine", anchor=False)
+
+if predictor is None:
+    st.error("⚠️ No game data found! Please upload `games_2025.csv` or `games_2026.csv` to your GitHub repository.")
+else:
+    tab1, tab2, tab3, tab4 = st.tabs(["🎮 Matchup Simulator", "🏆 Power Rankings", "📅 Team Schedules & Hub", "📈 Season Leaderboards"])
+
+    sorted_teams = sorted(predictor.teams.items(), key=lambda x: x[1].get("adj_Power", 0), reverse=True)
+    ranked_teams_list = [t for t, _ in sorted_teams]
+    total_teams = len(ranked_teams_list)
+    
+    def get_rank_display(t_name):
         try:
-            with open(file_path, 'r', encoding='utf-8') as f:
-                reader = csv.reader(f)
-                header = next(reader)
-                
-                # Identify index positions
-                date_idx = 0
-                home_idx = 1
-                
-                for row in reader:
-                    if not row:
-                        continue
-                    home_team = row[home_idx]
-                    
-                    # Dynamically look up team division for that year
-                    div = division_map.get(year, {}).get(home_team, "UNKNOWN")
-                    
-                    # Attach division status
-                    row_data = {
-                        "date": row[0],
-                        "home_team": row[1],
-                        "away_team": row[2],
-                        "home_score": row[3] if len(row) > 3 else None,
-                        "away_score": row[4] if len(row) > 4 else None,
-                        "division": div,
-                        "season": year
-                    }
-                    all_games.append(row_data)
-        except FileNotFoundError:
-            continue
+            return f"{ranked_teams_list.index(t_name) + 1}/{total_teams}"
+        except ValueError:
+            return "N/A"
 
-    return all_games
+    all_teams = sorted(list(predictor.teams.keys()))
+    
+    try:
+        away_idx = all_teams.index("Michigan")
+    except ValueError:
+        away_idx = 0
+        
+    try:
+        home_idx = all_teams.index("Michigan St.")
+    except ValueError:
+        home_idx = 1 if len(all_teams) > 1 else 0
+
+    # ----------------------------------------------------
+    # TAB 1: MATCHUP SIMULATOR
+    # ----------------------------------------------------
+    with tab1:
+        col_a, col_b = st.columns(2)
+        
+        with col_a:
+            st.markdown("### ✈️ Away Team")
+            away = st.selectbox("Away Team Select", all_teams, index=away_idx, label_visibility="collapsed")
+            if away:
+                a_stats = predictor.basic_stats.get(away, {"W":0, "L":0, "PF":0, "PA":0, "GP":0})
+                a_pwr = round(predictor.teams[away].get("adj_Power",0), 2)
+                a_gp = max(1, a_stats["GP"])
+                a_div = predictor.teams[away].get("division", "FBS")
+                
+                rnk = get_rank_display(away)
+                st.caption(f"🏆 **Rank:** #{rnk} | ⚡ **Power Rating:** {a_pwr} `[{a_div}]`")
+                st.caption(f"📊 **Record:** {a_stats['W']}-{a_stats['L']} | 🟢 **PPG:** {a_stats['PF']/a_gp:.1f} | 🔴 **PA/G:** {a_stats['PA']/a_gp:.1f}")
+
+        with col_b:
+            st.markdown("### 🏠 Home Team")
+            home = st.selectbox("Home Team Select", all_teams, index=home_idx, label_visibility="collapsed")
+            if home:
+                h_stats = predictor.basic_stats.get(home, {"W":0, "L":0, "PF":0, "PA":0, "GP":0})
+                h_pwr = round(predictor.teams[home].get("adj_Power",0), 2)
+                h_gp = max(1, h_stats["GP"])
+                h_div = predictor.teams[home].get("division", "FBS")
+                
+                rnk_h = get_rank_display(home)
+                st.caption(f"🏆 **Rank:** #{rnk_h} | ⚡ **Power Rating:** {h_pwr} `[{h_div}]`")
+                st.caption(f"📊 **Record:** {h_stats['W']}-{h_stats['L']} | 🟢 **PPG:** {h_stats['PF']/h_gp:.1f} | 🔴 **PA/G:** {h_stats['PA']/h_gp:.1f}")
+
+        with st.expander("⚙️ Advanced Simulation Settings"):
+            sims = st.select_slider("Monte Carlo Iterations", options=[1, 10, 100, 1000, 5000, 10000, 50000, 100000], value=10000)
+
+        st.write("") 
+        if st.button("🚀 Run Vegas Simulation", use_container_width=True, type="primary"):
+            if away == home:
+                st.warning("Please select two different teams.")
+            else:
+                if sims >= 10000:
+                    res = get_cached_prediction(predictor, away, home, sims)
+                    st.caption("🔒 *Displaying stable, cached projection for high-iteration run.*")
+                else:
+                    res = predictor.predict_matchup(away, home, num_simulations=sims)
+                    st.caption("🎲 *Live simulation complete. Expect variance at lower iteration counts!*")
+                
+                if res["path"]:
+                    hops = len(res["path"]) - 1
+                    st.info(f"**Network Path Found ({hops} hop{'s' if hops > 1 else ''}):** " + " ➔ ".join(res["path"]))
+
+                st.markdown("---")
+                
+                st.markdown("<h3 style='text-align: center; color: #a1a1aa;'>📊 Projected Final Score</h3>", unsafe_allow_html=True)
+                st.markdown(f"<h1 style='text-align: center; margin-bottom: 30px;'>{away} {res['avg_score_a']} — {res['avg_score_h']} {home}</h1>", unsafe_allow_html=True)
+                
+                m1, m2, m3, m4 = st.columns([1, 1.5, 1, 1])
+                m1.metric(f"{away} Win Prob", f"{res['prob_a']*100:.1f}%", convert_to_moneyline(res['prob_a']))
+                m2.metric("True Spread", res["spread_str"])
+                m3.metric("Over / Under", f"{res['median_total']:g} pts")
+                m4.metric(f"{home} Win Prob", f"{res['prob_h']*100:.1f}%", convert_to_moneyline(res['prob_h']))
+
+    # ----------------------------------------------------
+    # TAB 2: POWER RANKINGS
+    # ----------------------------------------------------
+    with tab2:
+        col_rank_title, col_rank_filter = st.columns([2, 1])
+        with col_rank_title:
+            st.subheader("Power Rankings", anchor=False)
+        with col_rank_filter:
+            st.write("")
+            division_filter = st.selectbox("Division Filter", ["All Divisions", "FBS", "FCS", "D2", "D3"], label_visibility="collapsed")
+        
+        st.write("") 
+        
+        rankings = []
+        for t_name, t_data in predictor.teams.items():
+            t_div = t_data.get("division", "FBS")
+            if division_filter != "All Divisions" and t_div != division_filter:
+                continue
+                
+            o_rating = t_data.get("adj_OSRS", 0.0)
+            d_rating = t_data.get("adj_DSRS", 0.0)
+            net_power = t_data.get("adj_Power", 0.0)
+            
+            rankings.append({
+                "Team": t_name,
+                "Div": t_div,
+                "Power Rating": round(net_power, 2),
+                "Offense": round(o_rating, 2),
+                "Defense": round(-d_rating, 2),
+            })
+            
+        rankings.sort(key=lambda x: x["Power Rating"], reverse=True)
+        total_tbl = len(rankings)
+        
+        for idx, r in enumerate(rankings):
+            r["Rank"] = f"{idx + 1}/{total_tbl}"
+            
+        st.dataframe(
+            rankings, 
+            column_order=["Rank", "Team", "Div", "Power Rating", "Offense", "Defense"],
+            width="stretch", 
+            hide_index=True
+        )
+
+    # ----------------------------------------------------
+    # TAB 3: TEAM SCHEDULES & HUB
+    # ----------------------------------------------------
+    with tab3:
+        st.subheader("Team Schedule & Live Projections", anchor=False)
+        
+        col_hub_team, col_hub_season = st.columns([2, 1])
+        with col_hub_team:
+            selected_team = st.selectbox("Select Team Hub:", all_teams, index=away_idx, key="hub_team_select")
+        with col_hub_season:
+            st.write("") 
+            season_view = st.radio("Season View", ["2026 Current", "2025 Archive"], horizontal=True, label_visibility="collapsed")
+            
+        is_archive = (season_view == "2025 Archive")
+        
+        if selected_team:
+            team_div = predictor.teams[selected_team].get("division", "FBS")
+            team_pen = DIVISION_TIERS.get(team_div, 0.0)
+            
+            if is_archive:
+                hist_sorted_teams = sorted(predictor.teams.items(), key=lambda x: (x[1].get("hist_OSRS", 0) - x[1].get("hist_DSRS", 0) + DIVISION_TIERS.get(x[1].get("division", "FBS"), 0.0)), reverse=True)
+                hist_ranked_list = [t for t, _ in hist_sorted_teams]
+                
+                try:
+                    team_rank = f"{hist_ranked_list.index(selected_team) + 1}/{len(hist_ranked_list)}"
+                except ValueError:
+                    team_rank = "N/A"
+                        
+                t_stats = predictor.teams[selected_team]
+                p_rating = round((t_stats.get("hist_OSRS", 0) - t_stats.get("hist_DSRS", 0)) + team_pen, 2)
+                t_basic = predictor.hist_basic_stats.get(selected_team, {"W":0, "L":0, "PF":0, "PA":0, "GP":0})
+                
+                r_win_pct = predictor.hist_ranks_win_pct
+                r_ppg = predictor.hist_ranks_ppg
+                r_papg = predictor.hist_ranks_papg
+                r_pf = predictor.hist_ranks_pf
+                r_diff = predictor.hist_ranks_diff
+                
+                target_games = predictor.historical_games
+                display_year = "2025"
+            else:
+                team_rank = get_rank_display(selected_team)
+                t_stats = predictor.teams[selected_team]
+                p_rating = round(t_stats.get("adj_Power", 0), 2)
+                t_basic = predictor.basic_stats.get(selected_team, {"W":0, "L":0, "PF":0, "PA":0, "GP":0})
+                
+                r_win_pct = predictor.ranks_win_pct
+                r_ppg = predictor.ranks_ppg
+                r_papg = predictor.ranks_papg
+                r_pf = predictor.ranks_pf
+                r_diff = predictor.ranks_diff
+                
+                target_games = predictor.current_games
+                display_year = "2026"
+
+            gp = t_basic["GP"]
+            safe_gp = max(1, gp)
+            pf = t_basic["PF"]
+            pa = t_basic["PA"]
+            diff = pf - pa
+            ppg = pf / safe_gp if gp > 0 else 0.0
+            papg = pa / safe_gp if gp > 0 else 0.0
+            win_pct = t_basic["W"] / safe_gp if gp > 0 else 0.0
+
+            st.markdown(f"### 📊 Team Dashboard `[{team_div}]`")
+            m1, m2, m3, m4 = st.columns(4)
+            m1.metric("National Rank", f"#{team_rank}")
+            m2.metric("Power Rating", f"{p_rating}")
+            m3.metric(f"{display_year} Record", f"{t_basic['W']}-{t_basic['L']}")
+            m4.metric(f"Win % (#{r_win_pct.get(selected_team, 'N/A')})", f"{win_pct:.3f}")
+            
+            st.write("") 
+            
+            m5, m6, m7, m8 = st.columns(4)
+            m5.metric(f"Points Per Game (#{r_ppg.get(selected_team, 'N/A')})", f"{ppg:.1f}")
+            m6.metric(f"Pts Against / Gm (#{r_papg.get(selected_team, 'N/A')})", f"{papg:.1f}")
+            m7.metric(f"Total Points For (#{r_pf.get(selected_team, 'N/A')})", f"{pf}")
+            m8.metric(f"Point Diff (#{r_diff.get(selected_team, 'N/A')})", f"{'+' if diff > 0 else ''}{diff}")
+            
+            st.markdown("---")
+            
+            completed_schedule = []
+            upcoming_schedule = []
+            
+            for g in target_games:
+                if g["home"] == selected_team or g["away"] == selected_team:
+                    is_home = (g["home"] == selected_team)
+                    opp = g["away"] if is_home else g["home"]
+                    location_prefix = "vs" if is_home else "@"
+                    
+                    if g.get("home_score") not in [None, ""]:
+                        team_score = int(g["home_score"]) if is_home else int(g["away_score"])
+                        opp_score = int(g["away_score"]) if is_home else int(g["home_score"])
+                        mov = team_score - opp_score
+                        result = "W" if mov > 0 else "L"
+                        
+                        completed_schedule.append({
+                            "Date": g.get("date", "-"),
+                            "Opponent": f"{location_prefix} {opp}",
+                            "Score": f"{team_score}-{opp_score}",
+                            "MOV": f"+{mov}" if mov > 0 else str(mov),
+                            "Result": result
+                        })
+                    else:
+                        upcoming_schedule.append({
+                            "Date": g.get("date", "-"),
+                            "is_home": is_home,
+                            "opp": opp,
+                            "location_prefix": location_prefix
+                        })
+
+            if not is_archive:
+                history_data = get_cached_history(predictor, selected_team)
+                if len(history_data) > 1:
+                    st.markdown("### 📈 Season Progression")
+                    
+                    df_hist = pd.DataFrame(history_data)
+                    col_chart1, col_chart2 = st.columns(2)
+                    
+                    with col_chart1:
+                        st.markdown("**Team Ratings over Time**")
+                        
+                        hover = alt.selection_point(
+                            fields=['Date'],
+                            nearest=True,
+                            on='mouseover',
+                            empty=False
+                        )
+                        
+                        base_ratings = alt.Chart(df_hist).encode(
+                            x=alt.X('Date:T', axis=alt.Axis(format='%m/%d', labelAngle=0, title=None))
+                        )
+                        
+                        lines_ratings = base_ratings.transform_fold(
+                            ['Power', 'Offense', 'Defense'],
+                            as_=['Metric', 'Rating']
+                        ).mark_line().encode(
+                            y=alt.Y('Rating:Q', title=None),
+                            color=alt.Color('Metric:N', legend=alt.Legend(orient="bottom", title=None))
+                        )
+                        
+                        selectors_ratings = base_ratings.mark_rule(opacity=0, size=30).encode(
+                            tooltip=[
+                                alt.Tooltip('Label:N', title='Date'),
+                                alt.Tooltip('Power:Q', title='Power'),
+                                alt.Tooltip('Offense:Q', title='Offense'),
+                                alt.Tooltip('Defense:Q', title='Defense')
+                            ]
+                        ).add_params(hover)
+                        
+                        rules_ratings = base_ratings.mark_rule(color='gray', strokeDash=[3, 3]).encode(
+                            opacity=alt.condition(hover, alt.value(0.5), alt.value(0))
+                        )
+                        
+                        points_ratings = lines_ratings.mark_point(size=70, filled=True).encode(
+                            opacity=alt.condition(hover, alt.value(1), alt.value(0))
+                        )
+                        
+                        st.altair_chart((lines_ratings + rules_ratings + selectors_ratings + points_ratings), use_container_width=True)
+                        
+                    with col_chart2:
+                        st.markdown("**Rank (Lower is Better)**")
+                        
+                        base_rank = alt.Chart(df_hist).encode(
+                            x=alt.X('Date:T', axis=alt.Axis(format='%m/%d', labelAngle=0, title=None))
+                        )
+                        
+                        line_rank = base_rank.mark_line(color='#66b3ff').encode(
+                            y=alt.Y('Rank_Num:Q', title=None, scale=alt.Scale(reverse=True))
+                        )
+                        
+                        selectors_rank = base_rank.mark_rule(opacity=0, size=30).encode(
+                            tooltip=[
+                                alt.Tooltip('Label:N', title='Date'),
+                                alt.Tooltip('Rank:N', title='Rank')
+                            ]
+                        ).add_params(hover)
+                        
+                        rules_rank = base_rank.mark_rule(color='gray', strokeDash=[3, 3]).encode(
+                            opacity=alt.condition(hover, alt.value(0.5), alt.value(0))
+                        )
+                        
+                        points_rank = line_rank.mark_point(size=70, filled=True, color='#66b3ff').encode(
+                            opacity=alt.condition(hover, alt.value(1), alt.value(0))
+                        )
+                        
+                        st.altair_chart((line_rank + rules_rank + selectors_rank + points_rank), use_container_width=True)
+                    
+                    desired_columns = ['Label', 'Power', 'Offense', 'Defense', 'Rank']
+                    available_columns = [col for col in desired_columns if col in df_hist.columns]
+                    df_table = df_hist[available_columns].copy()
+
+                    if 'Label' in df_table.columns:
+                        df_table = df_table.rename(columns={'Label': 'Date'})
+        
+                    st.dataframe(df_table, width="stretch", hide_index=True)
+                
+                st.markdown("---")
+            
+            st.markdown(f"### 📜 {display_year} Season Schedule")
+            if completed_schedule:
+                st.dataframe(completed_schedule, width="stretch", hide_index=True)
+            else:
+                st.info(f"No completed games recorded yet for the {display_year} season.")
+                
+            st.markdown("---")
+            
+            if not is_archive:
+                st.markdown("### 🔮 Upcoming Game Projections")
+                if upcoming_schedule:
+                    for match in upcoming_schedule:
+                        away_t = selected_team if not match["is_home"] else match["opp"]
+                        home_t = match["opp"] if not match["is_home"] else selected_team
+                        
+                        proj = get_cached_prediction(predictor, away_t, home_t, 2000)
+                        
+                        win_p = proj["prob_h"] if match["is_home"] else proj["prob_a"]
+                        proj_team_pts = proj["avg_score_h"] if match["is_home"] else proj["avg_score_a"]
+                        proj_opp_pts = proj["avg_score_a"] if match["is_home"] else proj["avg_score_h"]
+                        
+                        with st.container():
+                            st.markdown(f"#### **{match['Date']}** {match['location_prefix']} **{match['opp']}**")
+                            
+                            col1, col2, col3, col4 = st.columns([1, 2.5, 1, 1])
+                            col1.metric("Win Prob", f"{win_p*100:.1f}%")
+                            col2.metric("Spread", proj["spread_str"])
+                            col3.metric("Over/Under", f"{proj['median_total']:g}")
+                            col4.metric("Proj Score", f"{proj_team_pts}-{proj_opp_pts}")
+                            st.divider()
+                else:
+                    st.info("No upcoming unplayed games found in the schedule.")
+            else:
+                st.info("ℹ️ Season Progression and Future Projections are hidden while viewing archived seasons.")
+
+    # ----------------------------------------------------
+    # TAB 4: SEASON LEADERBOARDS & STATS 
+    # ----------------------------------------------------
+    with tab4:
+        col_lb_title, col_lb_filter = st.columns([2, 1])
+        with col_lb_title:
+            st.subheader("Season Leaderboards & Statistical Aggregates", anchor=False)
+        with col_lb_filter:
+            st.write("") 
+            division_lb_filter = st.selectbox("Division Filter", ["All Divisions", "FBS", "FCS", "D2", "D3"], key="lb_filter", label_visibility="collapsed")
+        
+        st.write("") 
+        
+        stat_rows = []
+        for t in all_teams:
+            t_div = predictor.teams.get(t, {}).get("division", "FBS")
+            if division_lb_filter != "All Divisions" and t_div != division_lb_filter:
+                continue
+                
+            s = predictor.basic_stats.get(t, {"W":0, "L":0, "PF":0, "PA":0, "GP":0})
+            gp = s["GP"]
+            pf = s["PF"]
+            pa = s["PA"]
+            
+            stat_rows.append({
+                "Rank": get_rank_display(t),
+                "Team": t,
+                "Div": t_div,
+                "GP": gp,
+                "Record": f"{s['W']}-{s['L']}",
+                "Win %": round(s['W'] / gp, 3) if gp > 0 else 0.000,
+                "PF": pf,
+                "PA": pa,
+                "Diff": pf - pa,
+                "PPG": round(pf / gp, 1) if gp > 0 else 0.0,
+                "PA/G": round(pa / gp, 1) if gp > 0 else 0.0
+            })
+            
+        def safe_rank_sort(rank_str):
+            try:
+                return int(rank_str.split('/')[0])
+            except:
+                return 9999
+                
+        stat_rows.sort(key=lambda x: safe_rank_sort(x["Rank"]))
+        
+        st.dataframe(
+            stat_rows, 
+            column_order=["Rank", "Team", "Div", "Record", "Win %", "GP", "PF", "PA", "Diff", "PPG", "PA/G"],
+            width="stretch", 
+            hide_index=True
+        )
