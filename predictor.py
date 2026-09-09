@@ -588,7 +588,7 @@ else:
         away_idx = 0
         
     try:
-        home_idx = all_teams.index("Ohio State")
+        home_idx = all_teams.index("Michigan St.")
     except ValueError:
         home_idx = 1 if len(all_teams) > 1 else 0
 
