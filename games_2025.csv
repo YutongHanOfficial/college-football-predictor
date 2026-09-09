@@ -1,40 +1,40 @@
 date,home,away,home_score,away_score,division
-2025-08-23,Kansas St.,Iowa St.,21,24
-2025-08-23,UNLV,Idaho St.,38,31
-2025-08-23,Kansas,Fresno St.,31,7
-2025-08-23,Western Ky.,Sam Houston,41,24
-2025-08-23,Hawaii,Stanford,23,20
-2025-08-28,South Fla.,Boise St.,34,7
-2025-08-28,Rutgers,Ohio,34,31
-2025-08-28,Bowling Green,Lafayette,26,7
-2025-08-28,UCF,Jacksonville St.,17,10
-2025-08-28,Delaware,Delaware St.,35,17
-2025-08-28,ULM,Saint Francis,29,0
-2025-08-28,NC State,East Carolina,24,17
-2025-08-28,Akron,Wyoming,0,10
-2025-08-28,Duke,Elon,45,17
-2025-08-28,Missouri,Central Ark.,61,6
-2025-08-28,Oklahoma St.,UT Martin,27,7
-2025-08-28,Houston,SFA,27,0
-2025-08-28,Minnesota,Buffalo,23,10
-2025-08-28,UAB,Alabama St.,52,42
-2025-08-28,Wisconsin,Miami (OH),17,0
-2025-08-28,Cincinnati,Nebraska,17,20
-2025-08-28,San Diego St.,Stony Brook,42,0
-2025-08-29,Illinois,Western Ill.,52,3
-2025-08-29,Wake Forest,Kennesaw St.,10,9
-2025-08-29,Charlotte,App State,11,34
-2025-08-29,Michigan St.,Western Mich.,23,6
-2025-08-29,FIU,Bethune-Cookman,42,9
-2025-08-29,Kansas,Wagner,46,7
-2025-08-29,Baylor,Auburn,24,38
-2025-08-29,Colorado,Georgia Tech,20,27
-2025-08-29,Sam Houston,UNLV,21,38
-2025-08-29,San Jose St.,Central Mich.,14,16
-2025-08-30,Ohio St.,Texas,14,7
-2025-08-30,Penn St.,Nevada,46,11
-2025-08-30,Clemson,LSU,10,17
-2025-08-30,Georgia,Marshall,45,7
+2025-08-23,Kansas St.,Iowa St.,21,24,FBS
+2025-08-23,UNLV,Idaho St.,38,31,FBS
+2025-08-23,Kansas,Fresno St.,31,7,FBS
+2025-08-23,Western Ky.,Sam Houston,41,24,FBS
+2025-08-23,Hawaii,Stanford,23,20,FBS
+2025-08-28,South Fla.,Boise St.,34,7,FBS
+2025-08-28,Rutgers,Ohio,34,31,FBS
+2025-08-28,Bowling Green,Lafayette,26,7,FBS
+2025-08-28,UCF,Jacksonville St.,17,10,FBS
+2025-08-28,Delaware,Delaware St.,35,17,FBS
+2025-08-28,ULM,Saint Francis,29,0,FBS
+2025-08-28,NC State,East Carolina,24,17,FBS
+2025-08-28,Akron,Wyoming,0,10,FBS
+2025-08-28,Duke,Elon,45,17,FBS
+2025-08-28,Missouri,Central Ark.,61,6,FBS
+2025-08-28,Oklahoma St.,UT Martin,27,7,FBS
+2025-08-28,Houston,SFA,27,0,FBS
+2025-08-28,Minnesota,Buffalo,23,10,FBS
+2025-08-28,UAB,Alabama St.,52,42,FBS
+2025-08-28,Wisconsin,Miami (OH),17,0,FBS
+2025-08-28,Cincinnati,Nebraska,17,20,FBS
+2025-08-28,San Diego St.,Stony Brook,42,0,FBS
+2025-08-29,Illinois,Western Ill.,52,3,FBS
+2025-08-29,Wake Forest,Kennesaw St.,10,9,FBS
+2025-08-29,Charlotte,App State,11,34,FBS
+2025-08-29,Michigan St.,Western Mich.,23,6,FBS
+2025-08-29,FIU,Bethune-Cookman,42,9,FBS
+2025-08-29,Kansas,Wagner,46,7,FBS
+2025-08-29,Baylor,Auburn,24,38,FBS
+2025-08-29,Colorado,Georgia Tech,20,27,FBS
+2025-08-29,Sam Houston,UNLV,21,38,FBS
+2025-08-29,San Jose St.,Central Mich.,14,16,FBS
+2025-08-30,Ohio St.,Texas,14,7,FBS
+2025-08-30,Penn St.,Nevada,46,11,FBS
+2025-08-30,Clemson,LSU,10,17,FBS
+2025-08-30,Georgia,Marshall,45,7,FBS
 2025-08-30,Oregon,Montana St.,59,13
 2025-08-30,Florida St.,Alabama,31,17
 2025-08-30,Arizona St.,Northern Ariz.,38,19
