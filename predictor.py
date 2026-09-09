@@ -200,17 +200,24 @@ class SeasonPredictor:
             self.teams[team]["active_DSRS"] = ((self.prior_weight * pre_dsrs) + (curr_games * curr_dsrs)) / (self.prior_weight + curr_games)
 
     def _auto_assign_team_divisions(self):
-        """Assigns the division a team played in most often to prevent 1-game bridge contamination."""
+        """Assigns the division based on the most recent season to handle FBS/FCS transitions cleanly."""
         for team in self.teams:
-            logs = self.teams[team].get("curr_game_log", []) + self.teams[team].get("hist_game_log", [])
+            # 1. Check the current season logs first
+            curr_logs = self.teams[team].get("curr_game_log", [])
+            curr_divs = [g.get("division") for g in curr_logs if g.get("division") in DIVISION_TIERS]
             
-            div_list = [g.get("division") for g in logs if g.get("division") in DIVISION_TIERS]
-            
-            if div_list:
-                most_common_div = Counter(div_list).most_common(1)[0][0]
-                self.teams[team]["division"] = most_common_div
+            if curr_divs:
+                # If they have games this year, use this year's dominant division
+                self.teams[team]["division"] = Counter(curr_divs).most_common(1)[0][0]
             else:
-                self.teams[team]["division"] = "FBS"
+                # 2. Fallback to historical data if they haven't played in the current season yet
+                hist_logs = self.teams[team].get("hist_game_log", [])
+                hist_divs = [g.get("division") for g in hist_logs if g.get("division") in DIVISION_TIERS]
+                
+                if hist_divs:
+                    self.teams[team]["division"] = Counter(hist_divs).most_common(1)[0][0]
+                else:
+                    self.teams[team]["division"] = "FBS" # Default fail-safe
 
     def _apply_tier_adjustments(self):
         """Applies mathematical penalties to pure SRS based on division strength."""
