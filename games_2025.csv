@@ -956,3 +956,889 @@ date,home,away,home_score,away_score
 2026-01-08,Ole Miss,Miami (FL),27,31
 2026-01-09,Indiana,Oregon,56,22
 2026-01-19,Indiana,Miami (FL),27,21
+2025-08-23,Nicholls,UIW,20,6
+2025-08-23,UNLV,Idaho St.,38,31
+2025-08-23,Portland St.,Tarleton St.,0,42
+2025-08-23,Southern U.,N.C. Central,14,31
+2025-08-28,Indiana St.,McKendree,41,24
+2025-08-28,Bowling Green,Lafayette,26,7
+2025-08-28,Youngstown St.,Mercyhurst,24,15
+2025-08-28,Eastern Ill.,Dayton,24,14
+2025-08-28,St. Thomas (MN),Lindenwood,35,13
+2025-08-28,Norfolk St.,Towson,7,27
+2025-08-28,Delaware,Delaware St.,35,17
+2025-08-28,Houston Christian,Ark. Baptist,69,0
+2025-08-28,Drake,Upper Iowa,41,7
+2025-08-28,Duke,Elon,45,17
+2025-08-28,Missouri,Central Ark.,61,6
+2025-08-28,Samford,West Ga.,3,34
+2025-08-28,Oklahoma St.,UT Martin,27,7
+2025-08-28,Northwestern St.,Alcorn,20,10
+2025-08-28,Houston,SFA,27,0
+2025-08-28,UAB,Alabama St.,52,42
+2025-08-28,San Diego St.,Stony Brook,42,0
+2025-08-29,Rhode Island,Campbell,31,20
+2025-08-29,West Florida,Lenoir-Rhyne,48,21
+2025-08-29,Colgate,Monmouth,39,42
+2025-08-29,Marist,New Haven,31,14
+2025-08-29,FIU,Bethune-Cookman,42,9
+2025-08-29,Kansas,Wagner,46,7
+2025-08-29,Illinois,Western Ill.,52,3
+2025-08-30,Lehigh,Richmond,21,14
+2025-08-30,Navy,VMI,52,7
+2025-08-30,Pittsburgh,Duquesne,61,9
+2025-08-30,Kent St.,Merrimack,21,17
+2025-08-30,The Citadel,North Dakota St.,0,38
+2025-08-30,Davidson,Georgetown,14,51
+2025-08-30,Tennessee Tech,Cumberland (TN),65,0
+2025-08-30,UConn,Central Conn. St.,59,13
+2025-08-30,West Virginia,Robert Morris,45,3
+2025-08-30,UNI,Butler,38,14
+2025-08-30,Valparaiso,Virginia-Lynchburg,67,10
+2025-08-30,Furman,William & Mary,23,21
+2025-08-30,Boston College,Fordham,66,10
+2025-08-30,Sacred Heart,Stonehill,12,7
+2025-08-30,Louisville,Eastern Ky.,51,17
+2025-08-30,Jackson St.,Hampton,28,14
+2025-08-30,Northern Colo.,Chadron St.,17,3
+2025-08-30,Iowa St.,South Dakota,55,7
+2025-08-30,NIU,Holy Cross,19,17
+2025-08-30,Air Force,Bucknell,49,13
+2025-08-30,Florida A&M,Howard,9,10
+2025-08-30,Oregon,Montana St.,59,13
+2025-08-30,Liberty,Maine,28,7
+2025-08-30,Arkansas,Alabama A&M,52,7
+2025-08-30,Tennessee St.,N.C. A&T,24,21
+2025-08-30,Memphis,Chattanooga,45,10
+2025-08-30,Mississippi Val.,Southern U.,29,34
+2025-08-30,ETSU,Murray St.,45,17
+2025-08-30,James Madison,Weber St.,45,10
+2025-08-30,Stetson,Webber Int'l,21,31
+2025-08-30,Iowa,UAlbany,34,7
+2025-08-30,Western Caro.,Gardner-Webb,45,52
+2025-08-30,Mercer,Presbyterian,10,15
+2025-08-30,South Carolina St.,Wofford,16,15
+2025-08-30,N.C. Central,New Hampshire,10,27
+2025-08-30,Oklahoma,Illinois St.,35,3
+2025-08-30,Morehead St.,Allen,38,31
+2025-08-30,McNeese,La. Christian,54,9
+2025-08-30,Florida,LIU,55,0
+2025-08-30,South Dakota St.,Sacramento St.,20,3
+2025-08-30,Western Ky.,North Ala.,55,6
+2025-08-30,Southern Ill.,Thomas More,49,3
+2025-08-30,Troy,Nicholls,38,20
+2025-08-30,South Alabama,Morgan St.,38,21
+2025-08-30,Vanderbilt,Charleston So.,45,3
+2025-08-30,Arkansas St.,Southeast Mo. St.,42,24
+2025-08-30,Middle Tenn.,Austin Peay,14,34
+2025-08-30,Kansas St.,North Dakota,38,35
+2025-08-30,Texas Tech,Ark.-Pine Bluff,67,7
+2025-08-30,Louisiana Tech,Southeastern La.,24,0
+2025-08-30,Tulsa,Abilene Christian,35,7
+2025-08-30,Grambling,Langston,55,7
+2025-08-30,Texas Southern,Prairie View,21,22
+2025-08-30,North Texas,Lamar University,51,0
+2025-08-30,San Diego,Cal Poly,17,41
+2025-08-30,UTRGV,Sul Ross St.,66,0
+2025-08-30,Southern Utah,Idaho St.,46,24
+2025-08-30,BYU,Portland St.,69,0
+2025-08-30,New Mexico St.,Bryant,19,3
+2025-08-30,SMU,East Texas A&M,42,13
+2025-08-30,UIW,Eastern Wash.,31,21
+2025-08-30,Washington St.,Idaho,13,10
+2025-08-30,Arizona St.,Northern Ariz.,38,19
+2025-08-30,Utah Tech,UC Davis,24,31
+2025-09-05,Northwestern,Western Ill.,42,7
+2025-09-05,Boise St.,Eastern Wash.,51,14
+2025-09-06,Mercyhurst,New Haven,48,14
+2025-09-06,Minnesota,Northwestern St.,66,0
+2025-09-06,Lehigh,Sacred Heart,28,10
+2025-09-06,Dayton,Thomas More,38,0
+2025-09-06,Florida St.,East Texas A&M,77,3
+2025-09-06,Duquesne,Lincoln (PA),55,14
+2025-09-06,Central Conn. St.,American Int'l,34,7
+2025-09-06,Tennessee Tech,Chattanooga,45,17
+2025-09-06,Butler,Truman St.,37,27
+2025-09-06,Merrimack,Saint Anselm,31,6
+2025-09-06,Stonehill,Lafayette,26,42
+2025-09-06,Indiana St.,Eastern Ill.,38,14
+2025-09-06,Georgetown,Wagner,31,20
+2025-09-06,Marist,Bucknell,23,34
+2025-09-06,Ky. Wesleyan,West Florida,7,28
+2025-09-06,Delaware St.,UAlbany,37,32
+2025-09-06,VMI,Ferrum,42,7
+2025-09-06,Temple,Howard,55,7
+2025-09-06,Furman,Presbyterian,38,39
+2025-09-06,Wake Forest,Western Caro.,42,10
+2025-09-06,Youngstown St.,Robert Morris,56,17
+2025-09-06,Georgia,Austin Peay,28,6
+2025-09-06,Tennessee St.,North Dakota St.,3,59
+2025-09-06,New Mexico,Idaho St.,32,22
+2025-09-06,App State,Lindenwood,20,13
+2025-09-06,Samford,The Citadel,13,40
+2025-09-06,Georgia Tech,Gardner-Webb,59,12
+2025-09-06,Massachusetts,Bryant,26,27
+2025-09-06,Ohio St.,Grambling,70,0
+2025-09-06,Tennessee,ETSU,72,17
+2025-09-06,Wyoming,UNI,31,7
+2025-09-06,Idaho,St. Thomas (MN),37,30
+2025-09-06,Northern Ariz.,Utah Tech,38,31
+2025-09-06,Southern Miss.,Jackson St.,38,20
+2025-09-06,Fordham,Monmouth,28,49
+2025-09-06,Villanova,Colgate,24,17
+2025-09-06,Hampton,Elizabeth City St.,27,20
+2025-09-06,Stetson,Warner,59,13
+2025-09-06,Stony Brook,Rhode Island,17,31
+2025-09-06,Eastern Ky.,Houston Christian,20,10
+2025-09-06,New Hampshire,Holy Cross,19,16
+2025-09-06,Norfolk St.,Virginia St.,34,31
+2025-09-06,Elon,Davidson,55,7
+2025-09-06,Wofford,Richmond,10,14
+2025-09-06,Utah,Cal Poly,63,9
+2025-09-06,William & Mary,Maine,28,27
+2025-09-06,Old Dominion,N.C. Central,54,6
+2025-09-06,Fla. Atlantic,Florida A&M,56,14
+2025-09-06,California,Texas Southern,35,3
+2025-09-06,East Carolina,Campbell,56,3
+2025-09-06,Valparaiso,Adrian,7,10
+2025-09-06,UCF,N.C. A&T,68,7
+2025-09-06,Eastern Mich.,LIU,23,28
+2025-09-06,Illinois St.,Morehead St.,41,13
+2025-09-06,Southeast Mo. St.,North Ala.,30,21
+2025-09-06,Murray St.,Southeastern La.,24,45
+2025-09-06,Nicholls,West Ga.,10,34
+2025-09-06,Miami (FL),Bethune-Cookman,45,3
+2025-09-06,Alabama A&M,Alcorn,41,31
+2025-09-06,Morgan St.,Towson,22,27
+2025-09-06,Southern U.,Alabama St.,7,30
+2025-09-06,Lamar University,South Dakota,20,13
+2025-09-06,Central Ark.,Ark.-Pine Bluff,41,17
+2025-09-06,Prairie View,UTRGV,21,27
+2025-09-06,Tarleton St.,Mississippi Val.,59,3
+2025-09-06,North Dakota,Portland St.,50,20
+2025-09-06,Colorado St.,Northern Colo.,21,17
+2025-09-06,South Carolina,South Carolina St.,38,10
+2025-09-06,Purdue,Southern Ill.,34,17
+2025-09-06,Coastal Carolina,Charleston So.,13,0
+2025-09-06,Montana St.,South Dakota St.,24,30
+2025-09-06,Abilene Christian,SFA,28,20
+2025-09-06,Montana,Central Wash.,42,17
+2025-09-06,Louisiana,McNeese,34,10
+2025-09-06,San Diego,Southern Utah,30,27
+2025-09-06,UTEP,UT Martin,42,17
+2025-09-06,Arizona,Weber St.,48,3
+2025-09-06,Washington,UC Davis,70,10
+2025-09-12,Indiana,Indiana St.,73,0
+2025-09-12,Syracuse,Colgate,66,24
+2025-09-13,Baylor,Samford,42,7
+2025-09-13,Maryland,Towson,44,17
+2025-09-13,LIU,Sacred Heart,21,24
+2025-09-13,Duquesne,Lehigh,21,35
+2025-09-13,Virginia,William & Mary,55,16
+2025-09-13,Central Conn. St.,Saint Francis,31,7
+2025-09-13,Nebraska,Houston Christian,59,7
+2025-09-13,Delaware St.,Bowie St.,36,14
+2025-09-13,Morehouse,Howard,10,38
+2025-09-13,Northern Mich.,St. Thomas (MN),7,20
+2025-09-13,Tennessee Tech,Davidson,72,14
+2025-09-13,Wagner,Marist,10,21
+2025-09-13,Georgetown,Lafayette,37,42
+2025-09-13,Hanover,Butler,7,16
+2025-09-13,Holy Cross,Rhode Island,7,9
+2025-09-13,Ball St.,New Hampshire,34,29
+2025-09-13,Western Caro.,Elon,31,37
+2025-09-13,Jackson St.,Tuskegee,30,0
+2025-09-13,Montana St.,San Diego,41,7
+2025-09-13,South Dakota,Northern Colo.,24,17
+2025-09-13,Eastern Ill.,Illinois St.,30,42
+2025-09-13,Montana,North Dakota,24,23
+2025-09-13,Toledo,Morgan St.,60,0
+2025-09-13,North Carolina,Richmond,41,6
+2025-09-13,Campbell,Furman,24,28
+2025-09-13,Michigan St.,Youngstown St.,41,24
+2025-09-13,Cincinnati,Northwestern St.,70,0
+2025-09-13,North Dakota St.,Southeast Mo. St.,41,14
+2025-09-13,Rutgers,Norfolk St.,60,10
+2025-09-13,Bucknell,VMI,35,28
+2025-09-13,Penn St.,Villanova,52,6
+2025-09-13,UTSA,UIW,48,20
+2025-09-13,Stony Brook,Fordham,41,18
+2025-09-13,Charleston So.,Lindenwood,28,35
+2025-09-13,Idaho,Utah Tech,20,6
+2025-09-13,Tennessee St.,Alabama A&M,21,23
+2025-09-13,UNI,Eastern Wash.,17,14
+2025-09-13,Alabama St.,Miles,37,9
+2025-09-13,Mississippi St.,Alcorn,63,0
+2025-09-13,West Ga.,ETSU,35,31
+2025-09-13,South Carolina St.,Bethune-Cookman,55,41
+2025-09-13,Maine,Stonehill,10,13
+2025-09-13,Chattanooga,Stetson,63,0
+2025-09-13,Bryant,Bentley,42,6
+2025-09-13,Marshall,Eastern Ky.,38,7
+2025-09-13,N.C. Central,Fayetteville St.,49,19
+2025-09-13,Grambling,Kentucky St.,37,31
+2025-09-13,Robert Morris,West Liberty,28,14
+2025-09-13,Kennesaw St.,Merrimack,27,13
+2025-09-13,Charlotte,Monmouth,42,35
+2025-09-13,Mercer,Wofford,22,21
+2025-09-13,Presbyterian,Erskine,42,14
+2025-09-13,Texas Southern,Lamar University,7,31
+2025-09-13,Gardner-Webb,The Citadel,23,13
+2025-09-13,Ark.-Pine Bluff,Lincoln (CA),34,8
+2025-09-13,Central Ark.,Tarleton St.,10,56
+2025-09-13,Florida A&M,Albany St. (GA),33,25
+2025-09-13,West Florida,Shorter,42,20
+2025-09-13,North Ala.,Northeastern St.,49,21
+2025-09-13,Rice,Prairie View,38,17
+2025-09-13,Georgia St.,Murray St.,37,21
+2025-09-13,UAlbany,New Haven,17,24
+2025-09-13,UT Martin,Southern Ill.,10,37
+2025-09-13,Western Ill.,Valparaiso,51,30
+2025-09-13,Austin Peay,Morehead St.,56,7
+2025-09-13,Southeastern La.,Mississippi Val.,56,3
+2025-09-13,McNeese,Weber St.,41,42
+2025-09-13,South Dakota St.,Drake,37,21
+2025-09-13,N.C. A&T,Hampton,33,30
+2025-09-13,UTRGV,Langston,80,0
+2025-09-13,Cal Poly,Western Ore.,56,7
+2025-09-13,SFA,Sul Ross St.,63,0
+2025-09-13,TCU,Abilene Christian,42,21
+2025-09-13,Southern Utah,Northern Ariz.,49,52
+2025-09-13,Sacramento St.,Mercyhurst,49,28
+2025-09-13,Fresno St.,Southern U.,56,7
+2025-09-14,Hawaii,Portland St.,23,3
+2025-09-19,Lafayette,Columbia,38,14
+2025-09-20,Princeton,San Diego,35,42
+2025-09-20,Virginia Tech,Wofford,38,6
+2025-09-20,Brown,Georgetown,46,0
+2025-09-20,South Fla.,South Carolina St.,63,14
+2025-09-20,Morgan St.,Central St. (OH),27,0
+2025-09-20,Yale,Holy Cross,28,10
+2025-09-20,Dartmouth,New Hampshire,27,20
+2025-09-20,Colgate,Fordham,44,21
+2025-09-20,Stonehill,Penn,21,24
+2025-09-20,Monmouth,Villanova,51,33
+2025-09-20,New Haven,Saginaw Valley,35,28
+2025-09-20,Illinois St.,North Ala.,38,36
+2025-09-20,Saint Francis,Delaware St.,10,39
+2025-09-20,Presbyterian,Bluefield Univ.,76,3
+2025-09-20,Central Mich.,Wagner,49,10
+2025-09-20,Stetson,Harvard,7,59
+2025-09-20,Robert Morris,Dayton,14,17
+2025-09-20,South Dakota,Drake,42,21
+2025-09-20,Richmond,VMI,38,14
+2025-09-20,The Citadel,Mercer,0,38
+2025-09-20,Montana St.,Mercyhurst,17,0
+2025-09-20,Bethune-Cookman,Edward Waters,35,9
+2025-09-20,Montana,Indiana St.,63,20
+2025-09-20,Ohio,Gardner-Webb,52,35
+2025-09-20,Norfolk St.,Sacred Heart,28,31
+2025-09-20,Howard,Hampton,34,7
+2025-09-20,William & Mary,Charleston So.,34,7
+2025-09-20,North Dakota,Valparaiso,58,7
+2025-09-20,N.C. A&T,N.C. Central,20,62
+2025-09-20,San Jose St.,Idaho,31,28
+2025-09-20,Northern Ariz.,UIW,31,23
+2025-09-20,Western Caro.,Samford,50,35
+2025-09-20,ETSU,Elon,26,16
+2025-09-20,Bucknell,Lehigh,24,41
+2025-09-20,Rhode Island,LIU,28,7
+2025-09-20,Merrimack,Central Conn. St.,16,14
+2025-09-20,Morehead St.,Ky. Christian,45,28
+2025-09-20,Campbell,Bryant,50,48
+2025-09-20,Idaho St.,Lincoln (CA),90,0
+2025-09-20,Towson,Youngstown St.,28,31
+2025-09-20,Akron,Duquesne,51,7
+2025-09-20,West Ga.,Eastern Ky.,33,12
+2025-09-20,Jacksonville St.,Murray St.,45,10
+2025-09-20,Lindenwood,Stony Brook,30,27
+2025-09-20,Prairie View,Northwestern St.,27,24
+2025-09-20,Grambling,East Texas A&M,31,28
+2025-09-20,Davidson,Greensboro,48,0
+2025-09-20,Missouri St.,UT Martin,42,10
+2025-09-20,Ga. Southern,Maine,45,17
+2025-09-20,Alabama A&M,Lane,49,7
+2025-09-20,Tarleton St.,Chattanooga,52,24
+2025-09-20,UAlbany,Cornell,13,10
+2025-09-20,Southeast Mo. St.,Southern Ill.,31,59
+2025-09-20,Eastern Wash.,Western Ill.,52,31
+2025-09-20,Houston Christian,Northern Colo.,23,26
+2025-09-20,North Greenville,West Florida,17,25
+2025-09-20,LSU,Southeastern La.,56,10
+2025-09-20,Utah Tech,UNI,20,9
+2025-09-20,Texas St.,Nicholls,35,3
+2025-09-20,Utah St.,McNeese,48,7
+2025-09-20,SFA,Cal Poly,35,17
+2025-09-20,Abilene Christian,Austin Peay,45,31
+2025-09-20,UTRGV,Texas Wesleyan,61,13
+2025-09-20,Weber St.,Butler,38,24
+2025-09-20,Sacramento St.,Central Ark.,45,16
+2025-09-20,UC Davis,Southern Utah,50,34
+2025-09-27,Duquesne,New Haven,44,18
+2025-09-27,Sacred Heart,Delaware St.,35,31
+2025-09-27,Yale,Cornell,41,24
+2025-09-27,Wagner,Norfolk St.,18,13
+2025-09-27,Lehigh,Penn,44,30
+2025-09-27,Columbia,Georgetown,19,10
+2025-09-27,Central Conn. St.,Dartmouth,28,35
+2025-09-27,Dayton,Stetson,48,14
+2025-09-27,Presbyterian,Morehead St.,41,0
+2025-09-27,Bryant,Towson,24,26
+2025-09-27,New Hampshire,UAlbany,24,6
+2025-09-27,Fordham,Holy Cross,26,21
+2025-09-27,Stonehill,LIU,10,3
+2025-09-27,Butler,Marist,31,28
+2025-09-27,North Dakota St.,South Dakota,51,13
+2025-09-27,Austin Peay,Utah Tech,42,10
+2025-09-27,Elon,Hampton,41,20
+2025-09-27,Richmond,Howard,13,12
+2025-09-27,Bethune-Cookman,Alabama A&M,41,34
+2025-09-27,Northern Colo.,Idaho St.,18,26
+2025-09-27,Morgan St.,Miles,24,17
+2025-09-27,South Dakota St.,Mercyhurst,51,7
+2025-09-27,Florida A&M,Alabama St.,14,42
+2025-09-27,Stony Brook,Merrimack,35,10
+2025-09-27,Villanova,William & Mary,31,24
+2025-09-27,Maine,N.C. A&T,37,30
+2025-09-27,Samford,Furman,13,31
+2025-09-27,Campbell,Western Caro.,35,42
+2025-09-27,Lafayette,Princeton,28,38
+2025-09-27,Miami (OH),Lindenwood,38,0
+2025-09-27,Western Ill.,Eastern Ill.,23,31
+2025-09-27,Montana St.,Eastern Wash.,57,3
+2025-09-27,San Diego,St. Thomas (MN),30,27
+2025-09-27,Tennessee St.,Tennessee Tech,8,35
+2025-09-27,Mississippi Val.,Texas Southern,20,23
+2025-09-27,Portland St.,Northern Ariz.,17,31
+2025-09-27,ETSU,Mercer,34,38
+2025-09-27,Bucknell,Saint Francis,30,23
+2025-09-27,Charleston So.,South Carolina St.,31,24
+2025-09-27,Eastern Ky.,Nicholls,27,7
+2025-09-27,Chattanooga,The Citadel,10,28
+2025-09-27,Harvard,Brown,41,7
+2025-09-27,Western Mich.,Rhode Island,47,14
+2025-09-27,UT Martin,Southeast Mo. St.,34,10
+2025-09-27,East Texas A&M,N.C. Central,42,50
+2025-09-27,Southern U.,Jackson St.,13,38
+2025-09-27,Lamar University,Central Ark.,35,32
+2025-09-27,UIW,Abilene Christian,38,7
+2025-09-27,Southeastern La.,UTRGV,45,31
+2025-09-27,Prairie View,Grambling,28,13
+2025-09-27,Ark.-Pine Bluff,Alcorn,24,20
+2025-09-27,SFA,McNeese,34,17
+2025-09-27,Southern Utah,West Ga.,24,27
+2025-09-27,Sacramento St.,Cal Poly,24,32
+2025-09-27,UC Davis,Weber St.,34,12
+2025-09-27,Montana,Idaho,41,30
+2025-10-03,Brown,Rhode Island,28,21
+2025-10-03,Princeton,Columbia,17,10
+2025-10-04,New Haven,Pace,28,14
+2025-10-04,Marist,San Diego,19,14
+2025-10-04,Central Conn. St.,Sacred Heart,42,35
+2025-10-04,Bucknell,Richmond,33,28
+2025-10-04,Lehigh,Yale,31,13
+2025-10-04,Lafayette,Fordham,24,10
+2025-10-04,Stetson,Davidson,35,32
+2025-10-04,Duquesne,Stonehill,34,14
+2025-10-04,Tennessee Tech,Western Ill.,66,20
+2025-10-04,Morehead St.,Dayton,28,35
+2025-10-04,Georgetown,Morgan St.,27,24
+2025-10-04,Monmouth,Delaware St.,49,38
+2025-10-04,Penn,Dartmouth,36,24
+2025-10-04,Mercyhurst,LIU,22,13
+2025-10-04,Drake,Valparaiso,41,0
+2025-10-04,Merrimack,Robert Morris,24,7
+2025-10-04,New Hampshire,Villanova,7,37
+2025-10-04,Wofford,Western Caro.,21,23
+2025-10-04,Gardner-Webb,Charleston So.,30,27
+2025-10-04,South Carolina St.,Savannah St.,49,6
+2025-10-04,VMI,Chattanooga,14,21
+2025-10-04,Bryant,Maine,14,34
+2025-10-04,Furman,ETSU,31,22
+2025-10-04,Cornell,Colgate,21,41
+2025-10-04,NC State,Campbell,56,10
+2025-10-04,Northeastern St.,West Florida,24,31
+2025-10-04,St. Thomas (MN),Butler,14,21
+2025-10-04,Holy Cross,Harvard,24,59
+2025-10-04,Lindenwood,UT Martin,30,14
+2025-10-04,South Dakota,Murray St.,49,24
+2025-10-04,Abilene Christian,North Ala.,52,23
+2025-10-04,Alabama St.,Bethune-Cookman,52,35
+2025-10-04,Eastern Ill.,Tennessee St.,31,7
+2025-10-04,William & Mary,N.C. A&T,38,34
+2025-10-04,UAlbany,Stony Brook,12,47
+2025-10-04,Lamar University,Nicholls,24,17
+2025-10-04,Hampton,Norfolk St.,41,34
+2025-10-04,Mercer,Samford,45,21
+2025-10-04,Austin Peay,West Ga.,44,30
+2025-10-04,Towson,Elon,3,17
+2025-10-04,Alcorn,Prairie View,12,13
+2025-10-04,Northern Ariz.,Montana St.,10,34
+2025-10-04,UNI,North Dakota,7,35
+2025-10-04,Alabama A&M,Jackson St.,24,57
+2025-10-04,Central Ark.,Utah Tech,23,17
+2025-10-04,Youngstown St.,South Dakota St.,30,35
+2025-10-04,Tarleton St.,Southern Utah,52,42
+2025-10-04,Northwestern St.,East Texas A&M,10,40
+2025-10-04,UIW,SFA,17,31
+2025-10-04,Southern Ill.,Indiana St.,55,27
+2025-10-04,Eastern Wash.,Portland St.,35,27
+2025-10-04,Texas Southern,Ark.-Pine Bluff,51,7
+2025-10-04,McNeese,Southeastern La.,0,38
+2025-10-04,Illinois St.,North Dakota St.,16,33
+2025-10-04,Cal Poly,UC Davis,27,34
+2025-10-04,Idaho St.,Montana,38,42
+2025-10-04,UTRGV,Houston Christian,27,7
+2025-10-10,Penn,Marist,28,9
+2025-10-10,Harvard,Cornell,34,10
+2025-10-10,Bryant,Brown,19,29
+2025-10-11,Columbia,Lehigh,7,31
+2025-10-11,Wagner,Mercyhurst,7,19
+2025-10-11,Lafayette,Bucknell,62,24
+2025-10-11,New Haven,WestConn,69,0
+2025-10-11,Morgan St.,Virginia-Lynchburg,44,6
+2025-10-11,Colgate,Richmond,19,24
+2025-10-11,Princeton,Mercer,14,38
+2025-10-11,Stetson,Morehead St.,21,14
+2025-10-11,Indiana St.,South Dakota,14,19
+2025-10-11,Delaware St.,Southern Conn. St.,70,23
+2025-10-11,Rhode Island,New Hampshire,38,27
+2025-10-11,Merrimack,Maine,13,20
+2025-10-11,Butler,Presbyterian,25,31
+2025-10-11,Duquesne,Saint Francis,52,7
+2025-10-11,Sacred Heart,Howard,32,14
+2025-10-11,N.C. A&T,South Carolina St.,16,22
+2025-10-11,Davidson,St. Thomas (MN),13,57
+2025-10-11,Wofford,Norfolk St.,31,14
+2025-10-11,Dartmouth,Yale,17,16
+2025-10-11,Valparaiso,Dayton,10,41
+2025-10-11,Elon,Villanova,21,29
+2025-10-11,Hampton,Campbell,21,38
+2025-10-11,Robert Morris,Central Conn. St.,12,24
+2025-10-11,The Citadel,Valdosta St.,38,14
+2025-10-11,West Ga.,Abilene Christian,13,30
+2025-10-11,Towson,Monmouth,31,42
+2025-10-11,Western Caro.,Furman,52,7
+2025-10-11,Montana St.,Idaho St.,48,14
+2025-10-11,Florida A&M,N.C. Central,7,45
+2025-10-11,Alcorn,Lincoln (CA),42,0
+2025-10-11,South Dakota St.,UNI,31,3
+2025-10-11,UT Martin,Western Ill.,32,31
+2025-10-11,Alabama A&M,Mississippi Val.,45,25
+2025-10-11,Eastern Ill.,Gardner-Webb,10,21
+2025-10-11,Jackson St.,Alabama St.,38,34
+2025-10-11,North Dakota St.,Southern Ill.,45,17
+2025-10-11,ETSU,VMI,45,10
+2025-10-11,North Dakota,Youngstown St.,35,17
+2025-10-11,Montana,Cal Poly,28,9
+2025-10-11,Southeast Mo. St.,Tennessee St.,28,12
+2025-10-11,North Ala.,Central Ark.,21,49
+2025-10-11,Charleston So.,Tennessee Tech,13,27
+2025-10-11,Bethune-Cookman,Southern U.,45,14
+2025-10-11,Idaho,Northern Colo.,33,49
+2025-10-11,San Diego,Drake,16,19
+2025-10-11,West Florida,Chowan,40,10
+2025-10-11,Eastern Ky.,Austin Peay,34,20
+2025-10-11,UC Davis,Northern Ariz.,45,24
+2025-10-11,Grambling,Texas Southern,20,21
+2025-10-11,East Texas A&M,Lamar University,23,33
+2025-10-11,Murray St.,Illinois St.,32,46
+2025-10-11,Houston Christian,Northwestern St.,20,17
+2025-10-11,Weber St.,Sacramento St.,27,55
+2025-10-11,Utah Tech,Tarleton St.,23,41
+2025-10-18,LIU,Robert Morris,17,7
+2025-10-18,Yale,Stonehill,47,7
+2025-10-18,Harvard,Merrimack,31,7
+2025-10-18,Wofford,Furman,31,13
+2025-10-18,Dayton,Butler,17,23
+2025-10-18,Brown,Princeton,21,40
+2025-10-18,Illinois St.,Youngstown St.,35,40
+2025-10-18,Villanova,Hampton,56,14
+2025-10-18,Monmouth,Stony Brook,49,21
+2025-10-18,Georgetown,Colgate,21,17
+2025-10-18,Fordham,Dartmouth,13,30
+2025-10-18,Drake,Davidson,45,0
+2025-10-18,Indiana St.,North Dakota St.,7,38
+2025-10-18,Presbyterian,Stetson,42,7
+2025-10-18,Cornell,Bucknell,30,20
+2025-10-18,Southern Ill.,North Dakota,19,38
+2025-10-18,Gardner-Webb,UT Martin,7,37
+2025-10-18,Chattanooga,ETSU,42,38
+2025-10-18,VMI,Samford,22,24
+2025-10-18,Columbia,Penn,21,35
+2025-10-18,Morehead St.,Marist,23,21
+2025-10-18,Richmond,Holy Cross,22,28
+2025-10-18,UNI,South Dakota,14,17
+2025-10-18,Lindenwood,Tennessee Tech,28,52
+2025-10-18,Murray St.,South Dakota St.,14,35
+2025-10-18,The Citadel,Western Caro.,38,45
+2025-10-18,St. Thomas (MN),Valparaiso,55,17
+2025-10-18,Ark.-Pine Bluff,Grambling,16,20
+2025-10-18,Montana,Sacred Heart,43,21
+2025-10-18,Southeast Mo. St.,Eastern Ill.,42,13
+2025-10-18,Texas Southern,Virginia-Lynchburg,61,10
+2025-10-18,Mississippi Val.,Lincoln (CA),49,0
+2025-10-18,William & Mary,Elon,26,21
+2025-10-18,UAlbany,Rhode Island,17,58
+2025-10-18,Campbell,New Hampshire,10,24
+2025-10-18,Tennessee St.,Howard,24,7
+2025-10-18,Western Ill.,Charleston So.,24,29
+2025-10-18,Lamar University,UTRGV,23,21
+2025-10-18,Florida A&M,Alcorn,33,28
+2025-10-18,Southeastern La.,Northwestern St.,49,0
+2025-10-18,Southern U.,Prairie View,3,24
+2025-10-18,Wagner,Central Conn. St.,17,24
+2025-10-18,Portland St.,Weber St.,27,43
+2025-10-18,UIW,East Texas A&M,45,52
+2025-10-18,West Ala.,West Florida,16,23
+2025-10-18,SFA,Nicholls,34,7
+2025-10-18,Tarleton St.,West Ga.,45,10
+2025-10-18,McNeese,Houston Christian,27,0
+2025-10-18,Eastern Wash.,Idaho,21,14
+2025-10-18,North Ala.,Eastern Ky.,35,14
+2025-10-18,Mercyhurst,Duquesne,0,37
+2025-10-18,Sacramento St.,Northern Colo.,40,35
+2025-10-18,Southern Utah,Abilene Christian,31,24
+2025-10-18,Oregon St.,Lafayette,45,13
+2025-10-24,Dartmouth,Columbia,49,3
+2025-10-24,Sacramento St.,Montana,35,49
+2025-10-25,Dayton,Presbyterian,35,19
+2025-10-25,LIU,New Haven,38,16
+2025-10-25,Wagner,Duquesne,24,13
+2025-10-25,Davidson,San Diego,28,40
+2025-10-25,Marist,Drake,17,31
+2025-10-25,Mercyhurst,Stonehill,15,22
+2025-10-25,Yale,Penn,35,13
+2025-10-25,Bucknell,Georgetown,24,31
+2025-10-25,Princeton,Harvard,14,35
+2025-10-25,Rhode Island,Bryant,38,17
+2025-10-25,Tennessee Tech,Southeast Mo. St.,42,23
+2025-10-25,New Hampshire,William & Mary,34,24
+2025-10-25,N.C. A&T,Campbell,28,24
+2025-10-25,Stetson,St. Thomas (MN),10,52
+2025-10-25,Fordham,Lehigh,6,27
+2025-10-25,Holy Cross,Colgate,28,29
+2025-10-25,N.C. Central,Delaware St.,26,35
+2025-10-25,Maine,Elon,35,14
+2025-10-25,Cornell,Brown,30,24
+2025-10-25,Valparaiso,Morehead St.,13,17
+2025-10-25,Charleston So.,Eastern Ill.,17,16
+2025-10-25,Hampton,Monmouth,10,28
+2025-10-25,Furman,The Citadel,24,14
+2025-10-25,West Ga.,Central Ark.,18,17
+2025-10-25,South Dakota,Illinois St.,13,21
+2025-10-25,Norfolk St.,South Carolina St.,20,51
+2025-10-25,Youngstown St.,Murray St.,51,17
+2025-10-25,Tennessee St.,Western Ill.,16,17
+2025-10-25,West Florida,West Virginia St.,55,6
+2025-10-25,Saint Francis,Robert Morris,14,24
+2025-10-25,Houston Christian,Southeastern La.,14,38
+2025-10-25,Prairie View,Lincoln (CA),38,0
+2025-10-25,Mercer,VMI,62,0
+2025-10-25,Alcorn,Mississippi Val.,32,10
+2025-10-25,Weber St.,Eastern Wash.,20,23
+2025-10-25,Northern Colo.,UC Davis,16,27
+2025-10-25,Lindenwood,Gardner-Webb,20,48
+2025-10-25,Northwestern St.,Lamar University,14,41
+2025-10-25,Eastern Ky.,Tarleton St.,7,31
+2025-10-25,Bethune-Cookman,Ark.-Pine Bluff,31,14
+2025-10-25,Southern Ill.,UNI,31,17
+2025-10-25,Stony Brook,Towson,27,19
+2025-10-25,Alabama A&M,Alabama St.,13,56
+2025-10-25,Villanova,UAlbany,29,16
+2025-10-25,Samford,Chattanooga,13,49
+2025-10-25,Howard,Morgan St.,33,27
+2025-10-25,ETSU,Wofford,14,10
+2025-10-25,Nicholls,McNeese,31,7
+2025-10-25,North Dakota,Indiana St.,46,17
+2025-10-25,Idaho,Portland St.,45,6
+2025-10-25,Austin Peay,North Ala.,56,28
+2025-10-25,Southern U.,Florida A&M,35,43
+2025-10-25,Idaho St.,Northern Ariz.,18,31
+2025-10-25,East Texas A&M,SFA,21,31
+2025-10-25,Utah Tech,Southern Utah,7,28
+2025-10-25,Cal Poly,Montana St.,17,34
+2025-10-25,Jackson St.,Grambling,24,26
+2025-10-25,UTRGV,UIW,56,28
+2025-10-25,South Dakota St.,North Dakota St.,7,38
+2025-10-30,Delaware St.,Norfolk St.,27,20
+2025-10-31,Penn,Brown,28,21
+2025-10-31,Northern Ariz.,Idaho,32,35
+2025-11-01,Central Conn. St.,LIU,10,7
+2025-11-01,N.C. A&T,Towson,9,62
+2025-11-01,Sacred Heart,New Haven,35,20
+2025-11-01,Lehigh,Georgetown,41,0
+2025-11-01,Yale,Columbia,24,10
+2025-11-01,Saint Francis,Wagner,20,23
+2025-11-01,Stonehill,Robert Morris,17,20
+2025-11-01,Cornell,Princeton,20,17
+2025-11-01,Bryant,Monmouth,7,35
+2025-11-01,Tennessee Tech,Gardner-Webb,27,21
+2025-11-01,Morehead St.,Davidson,28,24
+2025-11-01,Butler,Drake,19,24
+2025-11-01,Presbyterian,Valparaiso,43,14
+2025-11-01,Colgate,Merrimack,23,20
+2025-11-01,Holy Cross,Lafayette,13,21
+2025-11-01,Maine,Stony Brook,28,21
+2025-11-01,Wofford,Samford,26,16
+2025-11-01,Furman,Mercer,28,52
+2025-11-01,St. Thomas (MN),Marist,45,0
+2025-11-01,Southeast Mo. St.,Charleston So.,17,23
+2025-11-01,South Dakota,North Dakota,26,21
+2025-11-01,The Citadel,VMI,35,24
+2025-11-01,South Carolina St.,Morgan St.,36,30
+2025-11-01,Richmond,Fordham,17,14
+2025-11-01,Northern Colo.,Montana St.,7,55
+2025-11-01,Weber St.,Montana,17,38
+2025-11-01,South Dakota St.,Indiana St.,12,24
+2025-11-01,Harvard,Dartmouth,31,10
+2025-11-01,UIW,Lamar University,24,17
+2025-11-01,Bethune-Cookman,Mississippi Val.,42,34
+2025-11-01,Grambling,Alabama A&M,13,10
+2025-11-01,Eastern Ill.,UT Martin,20,27
+2025-11-01,Ark.-Pine Bluff,Southern U.,40,21
+2025-11-01,Illinois St.,UNI,31,16
+2025-11-01,Prairie View,Alabama St.,28,31
+2025-11-01,Texas Southern,Alcorn,14,33
+2025-11-01,Howard,N.C. Central,14,35
+2025-11-01,William & Mary,UAlbany,37,7
+2025-11-01,North Dakota St.,Youngstown St.,38,30
+2025-11-01,San Diego,Dayton,31,13
+2025-11-01,Delta St.,West Florida,38,51
+2025-11-01,Nicholls,Houston Christian,31,7
+2025-11-01,Abilene Christian,Tarleton St.,31,28
+2025-11-01,Eastern Wash.,Sacramento St.,13,35
+2025-11-01,Utah Tech,North Ala.,34,33
+2025-11-01,Chattanooga,Western Caro.,28,35
+2025-11-01,UC Davis,Idaho St.,36,38
+2025-11-01,Tennessee St.,Lindenwood,13,35
+2025-11-01,Cal Poly,Portland St.,35,40
+2025-11-01,Murray St.,Southern Ill.,7,27
+2025-11-01,Central Ark.,Eastern Ky.,13,34
+2025-11-01,SFA,UTRGV,41,17
+2025-11-01,Florida A&M,Jackson St.,16,41
+2025-11-01,Southeastern La.,East Texas A&M,59,14
+2025-11-01,McNeese,Northwestern St.,50,3
+2025-11-01,Southern Utah,Austin Peay,33,17
+2025-11-07,Morgan St.,Delaware St.,12,14
+2025-11-07,Columbia,Harvard,14,31
+2025-11-08,Saint Francis,Mercyhurst,15,16
+2025-11-08,Sacred Heart,Virginia-Lynchburg,56,10
+2025-11-08,Robert Morris,Wagner,20,24
+2025-11-08,Monmouth,New Hampshire,13,34
+2025-11-08,Lehigh,Holy Cross,38,3
+2025-11-08,LIU,Duquesne,29,11
+2025-11-08,Central Conn. St.,Stonehill,40,10
+2025-11-08,Stony Brook,N.C. A&T,38,12
+2025-11-08,Chattanooga,Furman,45,28
+2025-11-08,Brown,Yale,22,34
+2025-11-08,Lafayette,Colgate,59,42
+2025-11-08,Marist,Stetson,41,13
+2025-11-08,Ole Miss,The Citadel,49,0
+2025-11-08,Dartmouth,Princeton,20,17
+2025-11-08,Fordham,Bucknell,19,37
+2025-11-08,Indiana St.,Illinois St.,20,52
+2025-11-08,UAlbany,Bryant,24,27
+2025-11-08,Georgetown,Richmond,24,31
+2025-11-08,Hampton,Maine,7,35
+2025-11-08,Davidson,Presbyterian,14,13
+2025-11-08,Valparaiso,San Diego,27,43
+2025-11-08,Penn,Cornell,17,39
+2025-11-08,Towson,Villanova,10,28
+2025-11-08,Eastern Ill.,Tennessee Tech,9,21
+2025-11-08,Drake,St. Thomas (MN),13,20
+2025-11-08,Morehead St.,Butler,31,30
+2025-11-08,VMI,Wofford,10,52
+2025-11-08,South Carolina St.,Howard,42,12
+2025-11-08,Gardner-Webb,Southeast Mo. St.,27,24
+2025-11-08,Youngstown St.,Southern Ill.,48,38
+2025-11-08,Campbell,William & Mary,27,30
+2025-11-08,Elon,Rhode Island,20,34
+2025-11-08,UT Martin,Tennessee St.,26,7
+2025-11-08,N.C. Central,Norfolk St.,31,28
+2025-11-08,North Dakota,North Dakota St.,10,15
+2025-11-08,Northwestern St.,UIW,3,38
+2025-11-08,Western Ill.,Lindenwood,24,21
+2025-11-08,UNI,Murray St.,31,14
+2025-11-08,Western Caro.,Mercer,47,49
+2025-11-08,Alabama St.,Texas Southern,42,24
+2025-11-08,Montana St.,Weber St.,66,14
+2025-11-08,Ark.-Pine Bluff,Florida A&M,28,31
+2025-11-08,Abilene Christian,Utah Tech,31,10
+2025-11-08,Houston Christian,SFA,3,50
+2025-11-08,Grambling,Bethune-Cookman,31,23
+2025-11-08,Alabama A&M,Prairie View,5,48
+2025-11-08,Montana,Eastern Wash.,29,24
+2025-11-08,Eastern Ky.,Southern Utah,17,27
+2025-11-08,Mississippi Val.,Jackson St.,3,42
+2025-11-08,New Haven,Merrimack,41,31
+2025-11-08,Samford,ETSU,14,38
+2025-11-08,South Dakota,South Dakota St.,24,17
+2025-11-08,Austin Peay,Central Ark.,41,38
+2025-11-08,Alcorn,Southern U.,35,17
+2025-11-08,North Ala.,West Ga.,17,24
+2025-11-08,Lamar University,Southeastern La.,14,12
+2025-11-08,Portland St.,Sacramento St.,24,52
+2025-11-08,East Texas A&M,McNeese,20,35
+2025-11-08,Idaho St.,Cal Poly,27,17
+2025-11-08,UTRGV,Nicholls,28,21
+2025-11-08,Northern Ariz.,Northern Colo.,49,10
+2025-11-08,Idaho,UC Davis,14,28
+2025-11-14,N.C. Central,South Carolina St.,27,34
+2025-11-15,Youngstown St.,Indiana St.,48,29
+2025-11-15,N.C. A&T,Monmouth,19,63
+2025-11-15,Dayton,Drake,6,14
+2025-11-15,Saint Francis,LIU,3,10
+2025-11-15,Norfolk St.,Morgan St.,28,35
+2025-11-15,Bryant,New Hampshire,14,42
+2025-11-15,Columbia,Brown,29,32
+2025-11-15,Bucknell,Holy Cross,20,37
+2025-11-15,Western Caro.,ETSU,35,52
+2025-11-15,Harvard,Penn,45,43
+2025-11-15,Princeton,Yale,10,13
+2025-11-15,Sacred Heart,Merrimack,42,37
+2025-11-15,Mercyhurst,Robert Morris,27,13
+2025-11-15,Marist,Davidson,37,10
+2025-11-15,Duquesne,Central Conn. St.,38,33
+2025-11-15,Murray St.,North Dakota,17,35
+2025-11-15,UAlbany,Towson,19,36
+2025-11-15,Furman,VMI,32,14
+2025-11-15,Georgetown,Fordham,14,0
+2025-11-15,Colgate,Lehigh,7,27
+2025-11-15,Dartmouth,Cornell,24,14
+2025-11-15,Wagner,Stonehill,20,14
+2025-11-15,Hampton,William & Mary,14,55
+2025-11-15,Valparaiso,Stetson,32,31
+2025-11-15,Villanova,Stony Brook,30,27
+2025-11-15,Maine,Rhode Island,13,45
+2025-11-15,Southern Ill.,South Dakota,51,53
+2025-11-15,Jackson St.,Bethune-Cookman,28,13
+2025-11-15,UT Martin,Charleston So.,17,14
+2025-11-15,Delaware St.,Howard,26,13
+2025-11-15,Kentucky,Tennessee Tech,42,10
+2025-11-15,Western Ill.,Southeast Mo. St.,17,22
+2025-11-15,Austin Peay,Samford,30,16
+2025-11-15,West Ga.,Utah Tech,23,0
+2025-11-15,Richmond,Lafayette,28,35
+2025-11-15,Campbell,Elon,24,31
+2025-11-15,St. Thomas (MN),Presbyterian,9,23
+2025-11-15,The Citadel,Wofford,14,16
+2025-11-15,Tennessee St.,Gardner-Webb,14,30
+2025-11-15,West Florida,Valdosta St.,44,47
+2025-11-15,UIW,Southeastern La.,7,10
+2025-11-15,Prairie View,Ark.-Pine Bluff,56,9
+2025-11-15,Alabama A&M,Florida A&M,23,26
+2025-11-15,Lindenwood,Eastern Ill.,42,12
+2025-11-15,Southern U.,Texas Southern,30,35
+2025-11-15,Eastern Ky.,Abilene Christian,10,17
+2025-11-15,Mercer,Chattanooga,63,17
+2025-11-15,South Dakota St.,Illinois St.,21,35
+2025-11-15,Alcorn,Grambling,27,16
+2025-11-15,North Dakota St.,UNI,48,16
+2025-11-15,Eastern Wash.,Northern Colo.,27,7
+2025-11-15,Northern Ariz.,Cal Poly,35,27
+2025-11-15,San Diego,Butler,29,7
+2025-11-15,Nicholls,Northwestern St.,26,21
+2025-11-15,Mississippi Val.,Alabama St.,3,41
+2025-11-15,Portland St.,Montana,17,63
+2025-11-15,East Texas A&M,Houston Christian,37,32
+2025-11-15,Idaho St.,Weber St.,31,3
+2025-11-15,SFA,Lamar University,26,15
+2025-11-15,McNeese,UTRGV,13,28
+2025-11-15,Tarleton St.,North Ala.,61,0
+2025-11-15,Southern Utah,Central Ark.,28,21
+2025-11-15,Sacramento St.,Idaho,23,20
+2025-11-15,Montana St.,UC Davis,38,17
+2025-11-20,Southeastern La.,Nicholls,38,26
+2025-11-20,Northwestern St.,SFA,14,62
+2025-11-22,West Florida,North Greenville,43,19
+2025-11-22,Texas A&M,Samford,48,0
+2025-11-22,Merrimack,Fordham,27,26
+2025-11-22,Yale,Harvard,45,28
+2025-11-22,Monmouth,UAlbany,24,31
+2025-11-22,Stony Brook,Bryant,35,28
+2025-11-22,Brown,Dartmouth,35,28
+2025-11-22,LIU,Wagner,24,17
+2025-11-22,VMI,Western Caro.,6,48
+2025-11-22,Central Conn. St.,Mercyhurst,35,28
+2025-11-22,Lafayette,Lehigh,32,42
+2025-11-22,Drake,Morehead St.,17,10
+2025-11-22,Stonehill,Saint Francis,20,10
+2025-11-22,Morgan St.,N.C. Central,14,33
+2025-11-22,Stetson,San Diego,8,42
+2025-11-22,Colgate,Bucknell,38,19
+2025-11-22,Cornell,Columbia,12,29
+2025-11-22,Indiana St.,Murray St.,17,31
+2025-11-22,Rhode Island,Hampton,38,10
+2025-11-22,Presbyterian,Marist,29,25
+2025-11-22,Illinois St.,Southern Ill.,7,37
+2025-11-22,Villanova,Sacred Heart,34,10
+2025-11-22,Tennessee Tech,UT Martin,20,17
+2025-11-22,Davidson,Dayton,14,42
+2025-11-22,Butler,Valparaiso,27,20
+2025-11-22,Delaware St.,South Carolina St.,17,28
+2025-11-22,Towson,Campbell,35,31
+2025-11-22,ETSU,The Citadel,28,26
+2025-11-22,William & Mary,Richmond,21,28
+2025-11-22,Alabama St.,Ark.-Pine Bluff,44,13
+2025-11-22,Penn,Princeton,17,6
+2025-11-22,New Hampshire,Maine,33,27
+2025-11-22,Gardner-Webb,Western Ill.,24,29
+2025-11-22,Wofford,Chattanooga,35,13
+2025-11-22,Robert Morris,Duquesne,17,20
+2025-11-22,North Dakota,South Dakota St.,31,34
+2025-11-22,Alabama,Eastern Ill.,56,0
+2025-11-22,Montana,Montana St.,28,31
+2025-11-22,North Ala.,Southern Utah,34,36
+2025-11-22,Auburn,Mercer,62,17
+2025-11-22,UNI,Youngstown St.,32,35
+2025-11-22,Southeast Mo. St.,Lindenwood,13,30
+2025-11-22,Charleston So.,Tennessee St.,7,6
+2025-11-22,Elon,N.C. A&T,55,17
+2025-11-22,Northern Colo.,Portland St.,24,13
+2025-11-22,Weber St.,Northern Ariz.,48,28
+2025-11-22,Texas Southern,Alabama A&M,24,7
+2025-11-22,Houston Christian,UIW,10,31
+2025-11-22,Prairie View,Mississippi Val.,59,6
+2025-11-22,Florida A&M,Bethune-Cookman,34,38
+2025-11-22,Jackson St.,Alcorn,27,21
+2025-11-22,North Dakota St.,St. Thomas (MN),62,7
+2025-11-22,Howard,Norfolk St.,44,15
+2025-11-22,Utah Tech,Eastern Ky.,10,33
+2025-11-22,UC Davis,Sacramento St.,31,27
+2025-11-22,Idaho,Idaho St.,16,37
+2025-11-22,Holy Cross,Georgetown,42,7
+2025-11-22,Lamar University,McNeese,19,21
+2025-11-22,Clemson,Furman,45,10
+2025-11-22,Cal Poly,Eastern Wash.,43,34
+2025-11-22,Tarleton St.,Austin Peay,45,44
+2025-11-22,Central Ark.,Abilene Christian,28,49
+2025-11-22,UTRGV,East Texas A&M,33,14
+2025-11-27,Alabama St.,Tuskegee,58,21
+2025-11-29,Rhode Island,Central Conn. St.,27,19
+2025-11-29,Villanova,Harvard,52,7
+2025-11-29,Youngstown St.,Yale,42,43
+2025-11-29,Southeastern La.,Illinois St.,3,21
+2025-11-29,Tennessee Tech,North Dakota,6,31
+2025-11-29,Abilene Christian,Lamar University,38,20
+2025-11-29,South Dakota,Drake,38,17
+2025-11-29,South Dakota St.,New Hampshire,41,3
+2025-11-29,West Florida,Newberry,17,24
+2025-11-29,Grambling,Southern U.,27,28
+2025-11-29,Mississippi Val.,Florida A&M,35,31
+2025-12-06,Lehigh,Villanova,7,14
+2025-12-06,Mercer,South Dakota,0,47
+2025-12-06,North Dakota St.,Illinois St.,28,29
+2025-12-06,Tarleton St.,North Dakota,31,13
+2025-12-06,Montana St.,Yale,21,13
+2025-12-06,SFA,Abilene Christian,41,34
+2025-12-06,Montana,South Dakota St.,50,29
+2025-12-06,UC Davis,Rhode Island,47,26
+2025-12-06,Jackson St.,Prairie View,21,23
+2025-12-12,Montana St.,SFA,44,28
+2025-12-13,Tarleton St.,Villanova,21,26
+2025-12-13,Montana,South Dakota,52,22
+2025-12-13,UC Davis,Illinois St.,31,42
+2025-12-13,Prairie View,South Carolina St.,38,40
+2025-12-20,Montana St.,Montana,48,23
+2025-12-20,Villanova,Illinois St.,14,30
