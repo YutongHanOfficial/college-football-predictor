@@ -1842,3 +1842,929 @@ date,home,away,home_score,away_score
 2025-12-13,Prairie View,South Carolina St.,38,40
 2025-12-20,Montana St.,Montana,48,23
 2025-12-20,Villanova,Illinois St.,14,30
+2025-08-28,Central Wash.,Colorado Mesa,41,14
+2025-08-28,Saginaw Valley,Northeastern St.,21,28
+2025-08-28,Indiana St.,McKendree,41,24
+2025-08-28,Northern Mich.,MSU Moorhead,37,44
+2025-08-28,Clarion,Wheeling,34,0
+2025-08-28,Marian (IN),UIndy,21,45
+2025-08-28,Michigan Tech,Bemidji St.,37,17
+2025-08-28,Barton,Virginia St.,7,35
+2025-08-28,East Stroudsburg,Edinboro,14,29
+2025-08-28,Seton Hill,Fairmont St.,21,24
+2025-08-28,Charleston (WV),Livingstone,39,10
+2025-08-28,Wayne St. (NE),Neb.-Kearney,21,28
+2025-08-28,Walsh,West Liberty,38,10
+2025-08-28,Delta St.,Central Mo.,31,23
+2025-08-28,Minnesota St.,Northwest Mo. St.,38,14
+2025-08-28,Ferris St.,Pittsburg St.,34,17
+2025-08-28,Mary,Midland,28,22
+2025-08-28,Quincy,Concordia-St. Paul,38,7
+2025-08-28,Drake,Upper Iowa,41,7
+2025-08-28,Emporia St.,Minot St.,27,7
+2025-08-28,Western Colo.,West Tex. A&M,45,28
+2025-08-28,Eastern N.M.,N.M. Highlands,28,34
+2025-08-28,CSU Pueblo,South Dakota Mines,43,0
+2025-08-28,Fort Hays St.,Angelo St.,7,28
+2025-08-28,Winona St.,Minn. Duluth,7,35
+2025-08-28,Black Hills St.,Sioux Falls,21,27
+2025-08-29,West Florida,Lenoir-Rhyne,48,21
+2025-08-30,Carson-Newman,West Virginia St.,41,10
+2025-08-30,Shorter,Anderson (SC),7,34
+2025-08-30,Gannon,Davenport,12,21
+2025-08-30,Shaw,Albany St. (GA),7,51
+2025-08-30,Kentucky St.,Central St. (OH),34,24
+2025-08-30,UT Permian Basin,Central Okla.,34,14
+2025-08-30,Glenville St.,Emory & Henry,17,45
+2025-08-30,Post,West Va. Wesleyan,51,14
+2025-08-30,Grand Valley St.,Lincoln (PA),45,9
+2025-08-30,Valdosta St.,Clark Atlanta,31,28
+2025-08-30,Washburn,Truman St.,20,17
+2025-08-30,Augustana (SD),Missouri Western,30,26
+2025-08-30,Fort Lewis,William Jewell,14,34
+2025-08-30,Northern Colo.,Chadron St.,17,3
+2025-08-30,Johnson C. Smith,Morehouse,45,9
+2025-08-30,Benedict,Fayetteville St.,10,0
+2025-08-30,Pace,Saint Anselm,10,34
+2025-08-30,West Ala.,Fort Valley St.,27,17
+2025-08-30,Wingate,UNC Pembroke,30,21
+2025-08-30,Catawba,Ferrum,45,13
+2025-08-30,Savannah St.,Edward Waters,14,41
+2025-08-30,Morehead St.,Allen,38,31
+2025-08-30,UVA Wise,Concord,29,37
+2025-08-30,Frostburg St.,Shepherd,41,27
+2025-08-30,Chowan,Elizabeth City St.,28,14
+2025-08-30,Southern Ill.,Thomas More,49,3
+2025-08-30,Bluefield St.,Tusculum,23,49
+2025-08-30,Missouri S&T,Central Methodist,51,10
+2025-08-30,Lincoln (MO),Lincoln (CA),55,6
+2025-08-30,Mo. Southern St.,Midwestern St.,33,19
+2025-08-30,Western N.M.,Adams St.,35,21
+2025-08-30,UTRGV,Sul Ross St.,66,0
+2025-08-31,Miles,Virginia Union,3,45
+2025-08-31,Tuskegee,Winston-Salem,20,17
+2025-09-04,California (PA),Charleston (WV),23,19
+2025-09-04,Wayne St. (MI),Tiffin,7,34
+2025-09-04,West Va. Wesleyan,Clarion,20,48
+2025-09-04,Henderson St.,Southern Nazarene,48,13
+2025-09-04,Northwestern Okla.,Harding,7,49
+2025-09-04,Southern Ark.,Okla. Baptist,49,14
+2025-09-04,Millersville,Frostburg St.,34,42
+2025-09-04,Kutztown,Assumption,51,14
+2025-09-04,Indiana (PA),Ashland,9,13
+2025-09-04,Southwestern Okla.,Arkansas Tech,10,32
+2025-09-04,Southeastern Okla.,Ark.-Monticello,44,13
+2025-09-04,East Stroudsburg,Pace,31,12
+2025-09-04,Fairmont St.,Bloomsburg,41,40
+2025-09-04,South Dakota Mines,Michigan Tech,9,45
+2025-09-04,CSU Pueblo,Fort Hays St.,35,36
+2025-09-04,East Central,Ouachita Baptist,24,22
+2025-09-04,West Tex. A&M,Colo. Sch. of Mines,31,33
+2025-09-05,Franklin Pierce,Slippery Rock,13,24
+2025-09-06,Chowan,West Ala.,28,38
+2025-09-06,Dayton,Thomas More,38,0
+2025-09-06,West Virginia St.,Barton,28,14
+2025-09-06,Findlay,UIndy,38,35
+2025-09-06,Johnson C. Smith,Valdosta St.,28,16
+2025-09-06,Duquesne,Lincoln (PA),55,14
+2025-09-06,Central Conn. St.,American Int'l,34,7
+2025-09-06,Bentley,West Chester,13,30
+2025-09-06,Ky. Wesleyan,West Florida,7,28
+2025-09-06,Shippensburg,Bowie St.,7,23
+2025-09-06,Emory & Henry,Catawba,35,7
+2025-09-06,Anderson (SC),Erskine,35,7
+2025-09-06,West Liberty,Seton Hill,21,42
+2025-09-06,Butler,Truman St.,37,27
+2025-09-06,Bluefield St.,Concord,38,31
+2025-09-06,McKendree,Hillsdale,17,22
+2025-09-06,Merrimack,Saint Anselm,31,6
+2025-09-06,VMI,Ferrum,42,7
+2025-09-06,Kentucky St.,Albany St. (GA),21,49
+2025-09-06,Augustana (SD),Jamestown,37,7
+2025-09-06,Roosevelt,Quincy,23,21
+2025-09-06,Lake Erie,Ferris St.,6,63
+2025-09-06,Winona St.,Bemidji St.,21,17
+2025-09-06,Washburn,Northwest Mo. St.,7,34
+2025-09-06,Saginaw Valley,Gannon,49,28
+2025-09-06,Minnesota St.,Minot St.,34,16
+2025-09-06,Lane,Lincoln (MO),15,27
+2025-09-06,Clark Atlanta,Fla. Memorial,17,12
+2025-09-06,Edward Waters,Miles,46,14
+2025-09-06,Western Ore.,Southern Ore.,27,7
+2025-09-06,UVA Wise,Newberry,24,31
+2025-09-06,Hampton,Elizabeth City St.,27,20
+2025-09-06,Norfolk St.,Virginia St.,34,31
+2025-09-06,Allen,Livingstone,17,28
+2025-09-06,Lock Haven,Glenville St.,16,13
+2025-09-06,Wheeling,Walsh,15,31
+2025-09-06,Tusculum,Lenoir-Rhyne,7,28
+2025-09-06,Savannah St.,Shorter,13,0
+2025-09-06,Southwest Minn. St.,MSU Moorhead,3,51
+2025-09-06,UNC Pembroke,Fayetteville St.,31,24
+2025-09-06,Mars Hill,Winston-Salem,25,28
+2025-09-06,Tuskegee,Central St. (OH),34,0
+2025-09-06,Delta St.,North Greenville,41,9
+2025-09-06,Sioux Falls,Northern St.,42,28
+2025-09-06,Angelo St.,Emporia St.,41,20
+2025-09-06,Grand Valley St.,Black Hills St.,48,36
+2025-09-06,Wayne St. (NE),Mary,42,7
+2025-09-06,Southwest Baptist,Mo. Southern St.,31,38
+2025-09-06,Northeastern St.,Missouri S&T,24,27
+2025-09-06,Concordia-St. Paul,Minn. Duluth,7,61
+2025-09-06,Midwestern St.,Western Colo.,13,38
+2025-09-06,Adams St.,UT Permian Basin,7,41
+2025-09-06,Montana,Central Wash.,42,17
+2025-09-06,N.M. Highlands,Western N.M.,69,55
+2025-09-06,Neb.-Kearney,Chadron St.,41,21
+2025-09-06,Tex. A&M-Kingsville,Lincoln (CA),60,12
+2025-09-06,Colorado Mesa,Eastern N.M.,28,7
+2025-09-06,Central Okla.,Pittsburg St.,27,24
+2025-09-06,Arizona Christian,Fort Lewis,10,58
+2025-09-06,Northwood,Northern Mich.,23,18
+2025-09-11,West Va. Wesleyan,Ohio Dominican,0,31
+2025-09-11,Central Mo.,CSU Pueblo,24,29
+2025-09-11,Clark Atlanta,Fort Valley St.,26,21
+2025-09-11,Arkansas Tech,Northwestern Okla.,44,0
+2025-09-11,Harding,Southwestern Okla.,55,0
+2025-09-13,California (PA),West Chester,26,24
+2025-09-13,Findlay,Wayne St. (MI),7,3
+2025-09-13,Millersville,Glenville St.,28,44
+2025-09-13,Seton Hill,Bloomsburg,31,28
+2025-09-13,Ferrum,Shaw,14,6
+2025-09-13,Central St. (OH),Benedict,0,10
+2025-09-13,Elizabeth City St.,Johnson C. Smith,17,21
+2025-09-13,Morehouse,Howard,10,38
+2025-09-13,Clarion,Shippensburg,31,24
+2025-09-13,Post,Southern Conn. St.,39,30
+2025-09-13,Gannon,East Stroudsburg,22,69
+2025-09-13,MSU Moorhead,Winona St.,45,21
+2025-09-13,Truman St.,Davenport,28,27
+2025-09-13,UNC Pembroke,Delta St.,25,21
+2025-09-13,Edinboro,Kutztown,0,34
+2025-09-13,Hillsdale,Michigan Tech,21,34
+2025-09-13,Northern Mich.,St. Thomas (MN),7,20
+2025-09-13,Delaware St.,Bowie St.,36,14
+2025-09-13,Chowan,Valdosta St.,3,56
+2025-09-13,American Int'l,Assumption,21,39
+2025-09-13,Mars Hill,Carson-Newman,31,24
+2025-09-13,Anderson (SC),Tusculum,30,0
+2025-09-13,Colo. Sch. of Mines,Washburn,41,27
+2025-09-13,Jamestown,Southwest Minn. St.,7,12
+2025-09-13,UIndy,Ashland,33,26
+2025-09-13,Roosevelt,Southwest Baptist,34,40
+2025-09-13,Bemidji St.,Sioux Falls,23,56
+2025-09-13,West Ala.,Charleston (WV),28,24
+2025-09-13,Northwest Mo. St.,Tex. A&M-Kingsville,49,20
+2025-09-13,Southern Nazarene,Southern Ark.,18,26
+2025-09-13,Mary,Augustana (SD),20,21
+2025-09-13,Jackson St.,Tuskegee,30,0
+2025-09-13,Minot St.,Concordia-St. Paul,21,27
+2025-09-13,Upper Iowa,South Dakota Mines,58,14
+2025-09-13,Lake Erie,Wheeling,31,35
+2025-09-13,Indiana (PA),Lock Haven,42,10
+2025-09-13,Edward Waters,Virginia Union,41,38
+2025-09-13,Alabama St.,Miles,37,9
+2025-09-13,Pittsburg St.,Grand Valley St.,17,14
+2025-09-13,Minn. Duluth,Minnesota St.,17,14
+2025-09-13,Bryant,Bentley,42,6
+2025-09-13,N.C. Central,Fayetteville St.,49,19
+2025-09-13,Saginaw Valley,Northwood,14,38
+2025-09-13,Winston-Salem,Lincoln (PA),51,14
+2025-09-13,Allen,Lane,29,21
+2025-09-13,Grambling,Kentucky St.,37,31
+2025-09-13,Ferris St.,Tiffin,41,34
+2025-09-13,Catawba,UVA Wise,44,34
+2025-09-13,Franklin Pierce,Pace,30,6
+2025-09-13,Lenoir-Rhyne,Emory & Henry,31,28
+2025-09-13,Robert Morris,West Liberty,28,14
+2025-09-13,Slippery Rock,Shepherd,35,28
+2025-09-13,Newberry,Point U.,49,0
+2025-09-13,Missouri Western,Missouri S&T,27,10
+2025-09-13,Ark.-Monticello,East Central,13,38
+2025-09-13,Northern St.,Wayne St. (NE),26,7
+2025-09-13,North Greenville,Barton,41,28
+2025-09-13,North Ala.,Northeastern St.,49,21
+2025-09-13,Florida A&M,Albany St. (GA),33,25
+2025-09-13,William Jewell,Ky. Wesleyan,48,21
+2025-09-13,West Florida,Shorter,42,20
+2025-09-13,Presbyterian,Erskine,42,14
+2025-09-13,SFA,Sul Ross St.,63,0
+2025-09-13,Ouachita Baptist,Southeastern Okla.,41,21
+2025-09-13,Fort Hays St.,Neb.-Kearney,26,7
+2025-09-13,Okla. Baptist,Henderson St.,14,28
+2025-09-13,Chadron St.,Black Hills St.,31,28
+2025-09-13,Cal Poly,Western Ore.,56,7
+2025-09-13,Western N.M.,West Tex. A&M,27,58
+2025-09-13,Eastern N.M.,Angelo St.,20,31
+2025-09-13,Wingate,Bluefield St.,72,7
+2025-09-18,Benedict,Tuskegee,45,24
+2025-09-19,Assumption,Saint Anselm,30,8
+2025-09-20,Shorter,Virginia-Lynchburg,57,20
+2025-09-20,Northwood,Thomas More,10,6
+2025-09-20,Morgan St.,Central St. (OH),27,0
+2025-09-20,Ohio Dominican,Tiffin,20,14
+2025-09-20,California (PA),Lock Haven,42,6
+2025-09-20,Pace,Post,19,27
+2025-09-20,Kutztown,Gannon,46,7
+2025-09-20,Mars Hill,Anderson (SC),21,14
+2025-09-20,Southern Conn. St.,American Int'l,10,3
+2025-09-20,MSU Moorhead,Wayne St. (NE),17,27
+2025-09-20,New Haven,Saginaw Valley,35,28
+2025-09-20,Frostburg St.,West Liberty,21,7
+2025-09-20,Fairmont St.,Wheeling,28,35
+2025-09-20,Northern Mich.,Davenport,16,35
+2025-09-20,Elizabeth City St.,Fayetteville St.,8,51
+2025-09-20,Morehouse,Kentucky St.,17,35
+2025-09-20,Wis.-La Crosse,Wayne St. (MI),31,22
+2025-09-20,Winston-Salem,Virginia St.,33,34
+2025-09-20,Ashland,Hillsdale,26,9
+2025-09-20,Ky. Wesleyan,Walsh,7,31
+2025-09-20,Carson-Newman,Lenoir-Rhyne,24,7
+2025-09-20,Virginia Union,Johnson C. Smith,28,10
+2025-09-20,Lincoln (PA),Shaw,21,36
+2025-09-20,Clarion,Shepherd,51,38
+2025-09-20,Neb.-Kearney,Emporia St.,34,20
+2025-09-20,West Va. Wesleyan,West Virginia St.,16,45
+2025-09-20,Charleston (WV),Concord,38,24
+2025-09-20,Southwest Minn. St.,Mary,9,40
+2025-09-20,Jamestown,Minnesota St.,7,36
+2025-09-20,Colo. Sch. of Mines,Chadron St.,28,34
+2025-09-20,West Chester,Seton Hill,34,16
+2025-09-20,Indiana (PA),Millersville,70,24
+2025-09-20,Bloomsburg,Edinboro,34,18
+2025-09-20,Wis.-Oshkosh,Roosevelt,38,21
+2025-09-20,Tusculum,Emory & Henry,13,34
+2025-09-20,Bemidji St.,Augustana (SD),14,42
+2025-09-20,Lake Erie,Findlay,3,33
+2025-09-20,Fort Lewis,Black Hills St.,19,25
+2025-09-20,Winona St.,Minot St.,35,25
+2025-09-20,Sioux Falls,Minn. Duluth,17,34
+2025-09-20,Fort Valley St.,Delta St.,16,21
+2025-09-20,Bethune-Cookman,Edward Waters,35,9
+2025-09-20,Ferris St.,Rio Grande,76,0
+2025-09-20,N.M. Highlands,South Dakota Mines,48,42
+2025-09-20,Bentley,Franklin Pierce,21,35
+2025-09-20,Miles,Savannah St.,19,45
+2025-09-20,Northern St.,Concordia-St. Paul,31,10
+2025-09-20,Colorado Mesa,CSU Pueblo,24,31
+2025-09-20,Livingstone,Bowie St.,17,16
+2025-09-20,Michigan Tech,Upper Iowa,14,21
+2025-09-20,Brevard,Erskine,38,34
+2025-09-20,Western Ore.,Sul Ross St.,66,3
+2025-09-20,Pittsburg St.,Fort Hays St.,31,16
+2025-09-20,Mo. Southern St.,Northwest Mo. St.,14,21
+2025-09-20,Slippery Rock,Shippensburg,42,0
+2025-09-20,UVA Wise,Wingate,7,28
+2025-09-20,UNC Pembroke,Ferrum,41,14
+2025-09-20,Allen,Clark Atlanta,49,38
+2025-09-20,UIndy,McKendree,47,19
+2025-09-20,Alabama A&M,Lane,49,7
+2025-09-20,Angelo St.,Western N.M.,56,27
+2025-09-20,Newberry,Catawba,10,21
+2025-09-20,Southern Ark.,Harding,12,31
+2025-09-20,North Greenville,West Florida,17,25
+2025-09-20,Missouri S&T,Truman St.,20,49
+2025-09-20,Midwestern St.,Eastern N.M.,31,56
+2025-09-20,East Central,Southern Nazarene,13,17
+2025-09-20,West Ala.,Barton,52,14
+2025-09-20,William Jewell,Southwest Baptist,19,29
+2025-09-20,Southeastern Okla.,Southwestern Okla.,14,35
+2025-09-20,Ark.-Monticello,Henderson St.,18,48
+2025-09-20,Missouri Western,Central Mo.,26,34
+2025-09-20,Lincoln (MO),Quincy,21,24
+2025-09-20,Adams St.,Western Colo.,6,45
+2025-09-20,Tex. A&M-Kingsville,UT Permian Basin,30,43
+2025-09-20,Okla. Baptist,Northwestern Okla.,16,8
+2025-09-20,Ouachita Baptist,Arkansas Tech,23,28
+2025-09-20,Central Okla.,Washburn,34,28
+2025-09-20,Central Wash.,West Tex. A&M,52,6
+2025-09-27,Northwood,Ashland,13,21
+2025-09-27,Shepherd,Kutztown,10,49
+2025-09-27,Seton Hill,Indiana (PA),13,40
+2025-09-27,Millersville,West Chester,7,38
+2025-09-27,Edinboro,Clarion,21,20
+2025-09-27,American Int'l,Bentley,34,41
+2025-09-27,Shorter,Chowan,29,30
+2025-09-27,North Greenville,West Ala.,44,52
+2025-09-27,Johnson C. Smith,Bluefield St.,69,13
+2025-09-27,Bowie St.,Winston-Salem,21,28
+2025-09-27,Emory & Henry,Anderson (SC),42,13
+2025-09-27,Concord,West Liberty,44,21
+2025-09-27,Franklin Pierce,Assumption,26,28
+2025-09-27,Shippensburg,Bloomsburg,10,7
+2025-09-27,Mars Hill,Mary Hardin-Baylor,21,7
+2025-09-27,Albany St. (GA),Allen,57,14
+2025-09-27,Central St. (OH),Lane,42,13
+2025-09-27,Shaw,Virginia Union,7,59
+2025-09-27,Concordia-St. Paul,Jamestown,22,33
+2025-09-27,Wayne St. (MI),Quincy,14,31
+2025-09-27,Fayetteville St.,Virginia St.,34,14
+2025-09-27,Minn. Duluth,MSU Moorhead,28,14
+2025-09-27,Glenville St.,Charleston (WV),28,31
+2025-09-27,Lock Haven,East Stroudsburg,21,24
+2025-09-27,Saint Anselm,Pace,31,29
+2025-09-27,West Virginia St.,Fairmont St.,60,39
+2025-09-27,Wayne St. (NE),Southwest Minn. St.,51,6
+2025-09-27,Washburn,Neb.-Kearney,24,31
+2025-09-27,Upper Iowa,Lincoln (MO),31,10
+2025-09-27,UVA Wise,Tusculum,35,21
+2025-09-27,Central Mo.,Mo. Southern St.,62,10
+2025-09-27,Emporia St.,Pittsburg St.,29,42
+2025-09-27,Hillsdale,Ky. Wesleyan,44,0
+2025-09-27,Augustana (SD),Winona St.,34,26
+2025-09-27,Minot St.,Bemidji St.,28,21
+2025-09-27,Northwest Mo. St.,Central Okla.,38,16
+2025-09-27,Truman St.,UIndy,20,30
+2025-09-27,Clark Atlanta,Benedict,24,59
+2025-09-27,Western Colo.,N.M. Highlands,30,3
+2025-09-27,Black Hills St.,Colo. Sch. of Mines,27,36
+2025-09-27,Tuskegee,Fort Valley St.,20,27
+2025-09-27,Morgan St.,Miles,24,17
+2025-09-27,Mary,Northern St.,14,53
+2025-09-27,Minnesota St.,Sioux Falls,38,12
+2025-09-27,Chadron St.,Colorado Mesa,34,27
+2025-09-27,Livingstone,Lincoln (PA),31,7
+2025-09-27,Walsh,Ohio Dominican,14,7
+2025-09-27,Valdosta St.,UNC Pembroke,0,31
+2025-09-27,Catawba,Southern Conn. St.,63,23
+2025-09-27,McKendree,William Jewell,40,24
+2025-09-27,Lake Erie,Tiffin,14,27
+2025-09-27,CSU Pueblo,Adams St.,55,7
+2025-09-27,Southern Nazarene,Southeastern Okla.,21,27
+2025-09-27,South Dakota Mines,Fort Lewis,22,21
+2025-09-27,Lenoir-Rhyne,Newberry,17,20
+2025-09-27,Slippery Rock,California (PA),38,45
+2025-09-27,Edward Waters,Morehouse,27,24
+2025-09-27,Wingate,Carson-Newman,14,21
+2025-09-27,Savannah St.,Kentucky St.,20,37
+2025-09-27,West Va. Wesleyan,Frostburg St.,9,55
+2025-09-27,Southwest Baptist,Missouri S&T,40,42
+2025-09-27,UT Permian Basin,Midwestern St.,37,15
+2025-09-27,Delta St.,Erskine,52,0
+2025-09-27,Northwestern Okla.,East Central,20,41
+2025-09-27,Arkansas Tech,Ark.-Monticello,24,31
+2025-09-27,Findlay,Thomas More,37,7
+2025-09-27,West Tex. A&M,Western Ore.,35,7
+2025-09-27,Southwestern Okla.,Okla. Baptist,38,24
+2025-09-27,Henderson St.,Southern Ark.,21,24
+2025-09-27,Western N.M.,Central Wash.,31,91
+2025-09-27,Fort Hays St.,Missouri Western,31,23
+2025-09-27,Harding,Ouachita Baptist,24,7
+2025-09-27,Sul Ross St.,Tex. A&M-Kingsville,3,52
+2025-10-04,New Haven,Pace,28,14
+2025-10-04,Ohio Dominican,Northwood,3,28
+2025-10-04,California (PA),Seton Hill,7,16
+2025-10-04,Gannon,Slippery Rock,38,35
+2025-10-04,Kutztown,Shippensburg,49,0
+2025-10-04,Wayne St. (MI),Michigan Tech,24,48
+2025-10-04,Chowan,North Greenville,16,31
+2025-10-04,Post,Saint Anselm,23,30
+2025-10-04,Bowie St.,Fayetteville St.,10,38
+2025-10-04,Walsh,Findlay,10,31
+2025-10-04,Lincoln (MO),Southwest Baptist,21,50
+2025-10-04,Fort Valley St.,Central St. (OH),14,18
+2025-10-04,Franklin Pierce,American Int'l,30,20
+2025-10-04,Bluefield St.,Shaw,35,33
+2025-10-04,Concordia-St. Paul,Minnesota St.,19,47
+2025-10-04,Ouachita Baptist,Okla. Baptist,35,13
+2025-10-04,Emory & Henry,Carson-Newman,19,13
+2025-10-04,West Liberty,West Virginia St.,47,41
+2025-10-04,Frostburg St.,Concord,33,7
+2025-10-04,Ferrum,Shorter,28,25
+2025-10-04,Minn. Duluth,Southwest Minn. St.,63,28
+2025-10-04,MSU Moorhead,Minot St.,40,37
+2025-10-04,Elizabeth City St.,Livingstone,39,27
+2025-10-04,Winston-Salem,Virginia Union,34,44
+2025-10-04,Glenville St.,Fairmont St.,36,24
+2025-10-04,Erskine,UNC Pembroke,7,44
+2025-10-04,South Carolina St.,Savannah St.,49,6
+2025-10-04,Virginia St.,Johnson C. Smith,20,31
+2025-10-04,Bloomsburg,Lock Haven,17,38
+2025-10-04,Millersville,Shepherd,23,38
+2025-10-04,Anderson (SC),UVA Wise,50,7
+2025-10-04,Southern Conn. St.,Bentley,21,34
+2025-10-04,Indiana (PA),Edinboro,35,12
+2025-10-04,West Chester,East Stroudsburg,14,45
+2025-10-04,Mo. Southern St.,Fort Hays St.,21,28
+2025-10-04,Colo. Sch. of Mines,Colorado Mesa,24,28
+2025-10-04,Jamestown,Mary,22,44
+2025-10-04,Saginaw Valley,Northern Mich.,47,25
+2025-10-04,Benedict,Allen,38,28
+2025-10-04,Adams St.,Chadron St.,2,45
+2025-10-04,Roosevelt,Ferris St.,0,66
+2025-10-04,Missouri S&T,Upper Iowa,26,36
+2025-10-04,Northeastern St.,West Florida,24,31
+2025-10-04,Winona St.,Wayne St. (NE),21,14
+2025-10-04,Barton,Delta St.,0,45
+2025-10-04,Fort Lewis,Western Colo.,10,49
+2025-10-04,Bemidji St.,Northern St.,24,21
+2025-10-04,Sioux Falls,Augustana (SD),28,29
+2025-10-04,N.M. Highlands,CSU Pueblo,13,59
+2025-10-04,Ark.-Monticello,Southern Nazarene,23,9
+2025-10-04,Northwestern Okla.,Southern Ark.,16,42
+2025-10-04,Lane,Albany St. (GA),6,47
+2025-10-04,Southwestern Okla.,Henderson St.,32,35
+2025-10-04,Miles,Kentucky St.,17,38
+2025-10-04,Harding,East Central,65,0
+2025-10-04,Pittsburg St.,Neb.-Kearney,23,6
+2025-10-04,Wheeling,West Va. Wesleyan,40,14
+2025-10-04,Grand Valley St.,Davenport,37,14
+2025-10-04,Quincy,McKendree,21,24
+2025-10-04,Tiffin,Hillsdale,28,21
+2025-10-04,Valdosta St.,Lenoir-Rhyne,25,32
+2025-10-04,Western Ore.,Western N.M.,41,20
+2025-10-04,Ky. Wesleyan,Ashland,0,55
+2025-10-04,UIndy,William Jewell,63,17
+2025-10-04,Catawba,Mars Hill,42,28
+2025-10-04,Angelo St.,UT Permian Basin,14,28
+2025-10-04,Morehouse,Tuskegee,27,20
+2025-10-04,Midwestern St.,Tex. A&M-Kingsville,31,24
+2025-10-04,Missouri Western,Emporia St.,14,50
+2025-10-04,Arkansas Tech,Southeastern Okla.,14,10
+2025-10-04,Newberry,Wingate,43,42
+2025-10-04,Thomas More,Lake Erie,15,21
+2025-10-04,West Tex. A&M,Sul Ross St.,56,7
+2025-10-04,Central Okla.,Central Mo.,34,35
+2025-10-04,Black Hills St.,South Dakota Mines,13,27
+2025-10-04,Central Wash.,Eastern N.M.,58,7
+2025-10-09,Southeastern Okla.,Harding,7,35
+2025-10-11,Seton Hill,Slippery Rock,7,49
+2025-10-11,Shepherd,West Chester,28,24
+2025-10-11,Assumption,Pace,24,7
+2025-10-11,Truman St.,Upper Iowa,48,21
+2025-10-11,Northwood,Lake Erie,52,7
+2025-10-11,Bluefield St.,Lincoln (PA),30,27
+2025-10-11,Gannon,Clarion,46,48
+2025-10-11,Bowie St.,Virginia St.,21,28
+2025-10-11,Delaware St.,Southern Conn. St.,70,23
+2025-10-11,Ferris St.,Wayne St. (MI),59,0
+2025-10-11,Albany St. (GA),Clark Atlanta,32,7
+2025-10-11,Shippensburg,Millersville,41,28
+2025-10-11,Frostburg St.,Glenville St.,13,19
+2025-10-11,Ky. Wesleyan,Ohio Dominican,3,21
+2025-10-11,Elizabeth City St.,Virginia Union,18,37
+2025-10-11,Central St. (OH),Morehouse,26,31
+2025-10-11,Shaw,Winston-Salem,20,13
+2025-10-11,Lincoln (MO),Northeastern St.,3,52
+2025-10-11,Ferrum,Barton,20,34
+2025-10-11,Fairmont St.,West Va. Wesleyan,45,10
+2025-10-11,Tiffin,Walsh,54,7
+2025-10-11,Ashland,Thomas More,38,14
+2025-10-11,Erskine,North Greenville,0,30
+2025-10-11,Fayetteville St.,Livingstone,38,14
+2025-10-11,Southwest Baptist,McKendree,24,26
+2025-10-11,South Dakota Mines,Colo. Sch. of Mines,14,24
+2025-10-11,Concord,West Virginia St.,21,28
+2025-10-11,Edinboro,California (PA),35,29
+2025-10-11,Tusculum,Newberry,28,35
+2025-10-11,Bentley,Post,59,0
+2025-10-11,Benedict,Fort Valley St.,14,7
+2025-10-11,Findlay,Hillsdale,16,14
+2025-10-11,Central Mo.,Northwest Mo. St.,32,49
+2025-10-11,Wayne St. (NE),Bemidji St.,21,26
+2025-10-11,Emporia St.,Mo. Southern St.,31,24
+2025-10-11,Wheeling,Charleston (WV),13,20
+2025-10-11,Davenport,Michigan Tech,14,16
+2025-10-11,The Citadel,Valdosta St.,38,14
+2025-10-11,Augustana (SD),Concordia-St. Paul,50,10
+2025-10-11,Minnesota St.,Winona St.,47,21
+2025-10-11,Henderson St.,Northwestern Okla.,59,0
+2025-10-11,Kentucky St.,Edward Waters,42,14
+2025-10-11,Mars Hill,Emory & Henry,23,48
+2025-10-11,Southern Nazarene,Ouachita Baptist,7,28
+2025-10-11,Neb.-Kearney,Missouri Western,27,7
+2025-10-11,Saginaw Valley,Roosevelt,55,10
+2025-10-11,Mary,MSU Moorhead,35,38
+2025-10-11,Chadron St.,N.M. Highlands,37,20
+2025-10-11,Lenoir-Rhyne,Anderson (SC),28,35
+2025-10-11,Minot St.,Jamestown,35,28
+2025-10-11,Okla. Baptist,Ark.-Monticello,17,14
+2025-10-11,Pittsburg St.,Washburn,34,10
+2025-10-11,UNC Pembroke,Shorter,52,21
+2025-10-11,East Central,Arkansas Tech,37,21
+2025-10-11,Lane,Miles,13,23
+2025-10-11,Western Colo.,Black Hills St.,56,17
+2025-10-11,Southern Ark.,Southwestern Okla.,14,12
+2025-10-11,CSU Pueblo,Fort Lewis,49,13
+2025-10-11,William Jewell,Quincy,33,34
+2025-10-11,Missouri S&T,UIndy,13,56
+2025-10-11,Eastern N.M.,Western Ore.,18,21
+2025-10-11,West Florida,Chowan,40,10
+2025-10-11,Allen,Savannah St.,20,23
+2025-10-11,Saint Anselm,Franklin Pierce,21,0
+2025-10-11,Wingate,Catawba,41,28
+2025-10-11,Southwest Minn. St.,Sioux Falls,14,35
+2025-10-11,East Stroudsburg,Bloomsburg,38,35
+2025-10-11,Lock Haven,Kutztown,7,34
+2025-10-11,Northern Mich.,Grand Valley St.,7,35
+2025-10-11,Northern St.,Minn. Duluth,34,31
+2025-10-11,UT Permian Basin,Central Wash.,14,27
+2025-10-11,Fort Hays St.,Central Okla.,14,21
+2025-10-11,Colorado Mesa,Adams St.,54,17
+2025-10-11,Tex. A&M-Kingsville,Angelo St.,24,19
+2025-10-11,Sul Ross St.,Midwestern St.,23,69
+2025-10-16,Southern Nazarene,Southwestern Okla.,6,31
+2025-10-17,Franklin Pierce,Kentucky St.,14,17
+2025-10-18,Thomas More,Tiffin,10,45
+2025-10-18,Findlay,Ky. Wesleyan,28,0
+2025-10-18,Michigan Tech,Ferris St.,10,38
+2025-10-18,Ohio Dominican,Ashland,14,31
+2025-10-18,West Virginia St.,Wheeling,20,24
+2025-10-18,Edinboro,Fairmont St.,30,35
+2025-10-18,Post,Assumption,27,63
+2025-10-18,Emory & Henry,Wingate,20,27
+2025-10-18,Pace,Southern Conn. St.,34,35
+2025-10-18,Albany St. (GA),Tuskegee,7,3
+2025-10-18,Wayne St. (MI),Davenport,14,49
+2025-10-18,West Va. Wesleyan,West Liberty,11,35
+2025-10-18,Morehouse,Lane,31,7
+2025-10-18,Charleston (WV),Frostburg St.,30,32
+2025-10-18,Shaw,Johnson C. Smith,0,52
+2025-10-18,Lock Haven,West Chester,28,21
+2025-10-18,Virginia Union,Lincoln (PA),66,21
+2025-10-18,Winston-Salem,Livingstone,42,10
+2025-10-18,Hillsdale,Northwood,19,48
+2025-10-18,Bluefield St.,Bowie St.,37,42
+2025-10-18,Slippery Rock,Indiana (PA),30,27
+2025-10-18,Lake Erie,Walsh,13,20
+2025-10-18,Saint Anselm,American Int'l,27,14
+2025-10-18,Anderson (SC),Carson-Newman,6,28
+2025-10-18,Glenville St.,Concord,42,30
+2025-10-18,Seton Hill,Gannon,28,14
+2025-10-18,Mo. Southern St.,Neb.-Kearney,24,16
+2025-10-18,Central St. (OH),Ky. Christian,27,35
+2025-10-18,Grand Valley St.,Saginaw Valley,19,20
+2025-10-18,Upper Iowa,Southwest Baptist,39,2
+2025-10-18,North Greenville,UNC Pembroke,20,7
+2025-10-18,South Dakota Mines,Western Colo.,13,34
+2025-10-18,Bloomsburg,Shepherd,13,37
+2025-10-18,Henderson St.,Harding,10,35
+2025-10-18,UIndy,Lincoln (MO),62,7
+2025-10-18,Colo. Sch. of Mines,Adams St.,72,14
+2025-10-18,Roosevelt,Northern Mich.,21,42
+2025-10-18,Fort Lewis,Chadron St.,0,41
+2025-10-18,Delta St.,Ferrum,51,10
+2025-10-18,Virginia St.,Elizabeth City St.,24,20
+2025-10-18,Truman St.,Quincy,44,21
+2025-10-18,Northwest Mo. St.,Fort Hays St.,52,3
+2025-10-18,Arkansas Tech,Southern Ark.,7,42
+2025-10-18,Fort Valley St.,Savannah St.,7,0
+2025-10-18,Black Hills St.,CSU Pueblo,14,40
+2025-10-18,Ark.-Monticello,Ouachita Baptist,10,45
+2025-10-18,N.M. Highlands,Colorado Mesa,28,22
+2025-10-18,California (PA),Clarion,31,28
+2025-10-18,Washburn,Central Mo.,37,17
+2025-10-18,Miles,Clark Atlanta,27,20
+2025-10-18,Kutztown,Millersville,43,14
+2025-10-18,Lenoir-Rhyne,UVA Wise,23,10
+2025-10-18,William Jewell,Northeastern St.,7,35
+2025-10-18,Newberry,Mars Hill,38,24
+2025-10-18,East Central,Okla. Baptist,37,31
+2025-10-18,Shorter,Erskine,19,23
+2025-10-18,Barton,Chowan,28,21
+2025-10-18,Edward Waters,Benedict,27,31
+2025-10-18,Western Ore.,UT Permian Basin,31,28
+2025-10-18,Southeastern Okla.,Northwestern Okla.,56,14
+2025-10-18,Northern St.,Southwest Minn. St.,55,23
+2025-10-18,East Stroudsburg,Shippensburg,24,7
+2025-10-18,Angelo St.,Midwestern St.,48,24
+2025-10-18,Missouri Western,Pittsburg St.,20,44
+2025-10-18,West Ala.,West Florida,16,23
+2025-10-18,West Tex. A&M,Eastern N.M.,43,14
+2025-10-18,Central Okla.,Emporia St.,56,22
+2025-10-18,Western N.M.,Sul Ross St.,45,42
+2025-10-18,Central Wash.,Tex. A&M-Kingsville,24,21
+2025-10-19,McKendree,Missouri S&T,10,29
+2025-10-25,Shepherd,East Stroudsburg,26,23
+2025-10-25,Gannon,Edinboro,20,41
+2025-10-25,Northern Mich.,Michigan Tech,17,56
+2025-10-25,Findlay,Ohio Dominican,27,20
+2025-10-25,Walsh,Thomas More,41,20
+2025-10-25,Bentley,Pace,42,13
+2025-10-25,West Chester,Kutztown,7,41
+2025-10-25,Davenport,Roosevelt,75,23
+2025-10-25,Millersville,Bloomsburg,21,37
+2025-10-25,Assumption,American Int'l,35,14
+2025-10-25,Minn. Duluth,Mary,54,32
+2025-10-25,Ky. Wesleyan,Northwood,14,49
+2025-10-25,Clark Atlanta,Edward Waters,41,55
+2025-10-25,Central St. (OH),Miles,24,28
+2025-10-25,Shaw,Fayetteville St.,13,31
+2025-10-25,Post,Franklin Pierce,17,28
+2025-10-25,Southern Conn. St.,Saint Anselm,37,13
+2025-10-25,Shippensburg,Lock Haven,21,35
+2025-10-25,Lincoln (PA),Elizabeth City St.,14,62
+2025-10-25,Wheeling,Frostburg St.,13,31
+2025-10-25,West Liberty,Glenville St.,28,32
+2025-10-25,Johnson C. Smith,Winston-Salem,52,27
+2025-10-25,Virginia Union,Bowie St.,24,7
+2025-10-25,Fairmont St.,Charleston (WV),35,45
+2025-10-25,Ferrum,Erskine,35,33
+2025-10-25,Mars Hill,Lenoir-Rhyne,0,45
+2025-10-25,Tiffin,Ashland,27,30
+2025-10-25,Ferris St.,Grand Valley St.,38,31
+2025-10-25,Southwest Baptist,Truman St.,16,27
+2025-10-25,Concord,West Va. Wesleyan,31,21
+2025-10-25,William Jewell,Upper Iowa,10,28
+2025-10-25,McKendree,Lincoln (MO),54,48
+2025-10-25,Barton,Shorter,7,33
+2025-10-25,Southwest Minn. St.,Augustana (SD),29,57
+2025-10-25,Indiana (PA),California (PA),38,30
+2025-10-25,Clarion,Seton Hill,23,17
+2025-10-25,Benedict,Albany St. (GA),3,31
+2025-10-25,Washburn,Fort Hays St.,10,13
+2025-10-25,Livingstone,Virginia-Lynchburg,44,22
+2025-10-25,Wayne St. (NE),Minnesota St.,35,20
+2025-10-25,Quincy,Missouri S&T,31,30
+2025-10-25,Virginia St.,Bluefield St.,51,34
+2025-10-25,Bemidji St.,Jamestown,47,25
+2025-10-25,Minot St.,Sioux Falls,17,24
+2025-10-25,Saginaw Valley,Wayne St. (MI),28,7
+2025-10-25,Ouachita Baptist,Southern Ark.,42,14
+2025-10-25,Anderson (SC),Wingate,3,30
+2025-10-25,Central Mo.,Emporia St.,27,31
+2025-10-25,Hillsdale,Lake Erie,35,10
+2025-10-25,Valdosta St.,North Greenville,35,24
+2025-10-25,Carson-Newman,UVA Wise,35,14
+2025-10-25,West Florida,West Virginia St.,55,6
+2025-10-25,Mo. Southern St.,Missouri Western,12,19
+2025-10-25,Southwestern Okla.,East Central,38,14
+2025-10-25,Savannah St.,Morehouse,24,16
+2025-10-25,Lane,Fort Valley St.,19,23
+2025-10-25,West Ala.,Delta St.,38,41
+2025-10-25,Western Colo.,Colo. Sch. of Mines,40,17
+2025-10-25,Harding,Ark.-Monticello,55,0
+2025-10-25,Northwest Mo. St.,Neb.-Kearney,14,0
+2025-10-25,Tuskegee,Allen,13,28
+2025-10-25,Winona St.,Concordia-St. Paul,24,14
+2025-10-25,Colorado Mesa,Fort Lewis,24,14
+2025-10-25,Newberry,Emory & Henry,36,34
+2025-10-25,Northwestern Okla.,Southern Nazarene,33,22
+2025-10-25,Arkansas Tech,Henderson St.,17,6
+2025-10-25,Eastern N.M.,Western N.M.,59,35
+2025-10-25,Chowan,UNC Pembroke,10,42
+2025-10-25,Catawba,Tusculum,38,3
+2025-10-25,Northern St.,MSU Moorhead,49,48
+2025-10-25,Okla. Baptist,Southeastern Okla.,10,14
+2025-10-25,UT Permian Basin,West Tex. A&M,22,6
+2025-10-25,Tex. A&M-Kingsville,Western Ore.,27,34
+2025-10-25,Midwestern St.,Central Wash.,13,56
+2025-10-25,Sul Ross St.,Angelo St.,0,62
+2025-10-25,Adams St.,N.M. Highlands,10,49
+2025-10-25,Central Okla.,Northeastern St.,21,28
+2025-11-01,Kutztown,East Stroudsburg,49,6
+2025-11-01,Shepherd,Shippensburg,48,7
+2025-11-01,Saint Anselm,Bentley,14,28
+2025-11-01,Davenport,Saginaw Valley,31,17
+2025-11-01,Wheeling,Concord,26,21
+2025-11-01,Northwood,Findlay,16,31
+2025-11-01,Ohio Dominican,Lake Erie,30,14
+2025-11-01,North Greenville,Ferrum,27,0
+2025-11-01,Thomas More,Hillsdale,10,24
+2025-11-01,Upper Iowa,McKendree,57,7
+2025-11-01,Millersville,Lock Haven,7,42
+2025-11-01,West Chester,Bloomsburg,46,44
+2025-11-01,Assumption,Southern Conn. St.,38,7
+2025-11-01,Seton Hill,Edinboro,6,22
+2025-11-01,Slippery Rock,Clarion,42,23
+2025-11-01,Minnesota St.,Southwest Minn. St.,48,7
+2025-11-01,American Int'l,Post,19,10
+2025-11-01,Valdosta St.,West Ala.,45,35
+2025-11-01,California (PA),Frostburg St.,31,26
+2025-11-01,Concordia-St. Paul,Wayne St. (NE),0,34
+2025-11-01,Fayetteville St.,Johnson C. Smith,14,17
+2025-11-01,Morehouse,Allen,17,28
+2025-11-01,Ferris St.,Northern Mich.,70,35
+2025-11-01,Wayne St. (MI),Grand Valley St.,13,59
+2025-11-01,Carson-Newman,Catawba,24,16
+2025-11-01,Ashland,Walsh,23,16
+2025-11-01,Charleston (WV),West Va. Wesleyan,69,15
+2025-11-01,Neb.-Kearney,Central Okla.,35,24
+2025-11-01,Albany St. (GA),Savannah St.,21,18
+2025-11-01,West Virginia St.,Glenville St.,52,28
+2025-11-01,Tiffin,Ky. Wesleyan,24,12
+2025-11-01,MSU Moorhead,Bemidji St.,49,21
+2025-11-01,Michigan Tech,Roosevelt,56,31
+2025-11-01,West Liberty,Fairmont St.,44,45
+2025-11-01,Erskine,Chowan,30,34
+2025-11-01,Livingstone,Shaw,43,13
+2025-11-01,Benedict,Virginia-Lynchburg,42,10
+2025-11-01,South Dakota Mines,Chadron St.,10,35
+2025-11-01,Ouachita Baptist,Northwestern Okla.,55,14
+2025-11-01,Bowie St.,Elizabeth City St.,27,28
+2025-11-01,Augustana (SD),Northern St.,27,14
+2025-11-01,Edward Waters,Central St. (OH),17,21
+2025-11-01,Jamestown,Minn. Duluth,29,45
+2025-11-01,Western N.M.,UT Permian Basin,7,66
+2025-11-01,Sioux Falls,Winona St.,49,24
+2025-11-01,Virginia St.,Lincoln (PA),35,14
+2025-11-01,Tusculum,Mars Hill,7,28
+2025-11-01,Fort Hays St.,Central Mo.,24,28
+2025-11-01,Missouri S&T,William Jewell,24,17
+2025-11-01,Colo. Sch. of Mines,N.M. Highlands,48,21
+2025-11-01,Quincy,UIndy,3,49
+2025-11-01,Indiana (PA),Gannon,26,6
+2025-11-01,Black Hills St.,Colorado Mesa,38,45
+2025-11-01,Wingate,Lenoir-Rhyne,38,37
+2025-11-01,Fort Lewis,Adams St.,44,24
+2025-11-01,Missouri Western,Washburn,27,24
+2025-11-01,Emporia St.,Northwest Mo. St.,14,41
+2025-11-01,Ark.-Monticello,Southwestern Okla.,7,49
+2025-11-01,Pittsburg St.,Mo. Southern St.,30,10
+2025-11-01,UNC Pembroke,Barton,34,17
+2025-11-01,Arkansas Tech,Southern Nazarene,42,17
+2025-11-01,Western Colo.,CSU Pueblo,21,24
+2025-11-01,Mary,Minot St.,36,21
+2025-11-01,Lincoln (MO),Truman St.,26,59
+2025-11-01,Kentucky St.,Clark Atlanta,43,28
+2025-11-01,East Central,Southern Ark.,44,22
+2025-11-01,Tuskegee,Lane,18,13
+2025-11-01,Southeastern Okla.,Henderson St.,20,21
+2025-11-01,Delta St.,West Florida,38,51
+2025-11-01,Anderson (SC),Newberry,21,24
+2025-11-01,Harding,Okla. Baptist,69,0
+2025-11-01,Western Ore.,Midwestern St.,31,3
+2025-11-01,West Tex. A&M,Tex. A&M-Kingsville,53,48
+2025-11-01,Bluefield St.,Virginia Union,14,70
+2025-11-01,Fort Valley St.,Miles,24,14
+2025-11-01,Northeastern St.,Lincoln (CA),68,0
+2025-11-01,Eastern N.M.,Sul Ross St.,40,34
+2025-11-01,Central Wash.,Angelo St.,38,21
+2025-11-08,Lake Erie,Ky. Wesleyan,27,9
+2025-11-08,Davenport,Northern Mich.,45,47
+2025-11-08,Northwood,Tiffin,40,37
+2025-11-08,Gannon,California (PA),21,41
+2025-11-08,Walsh,Hillsdale,20,23
+2025-11-08,Thomas More,Ohio Dominican,29,31
+2025-11-08,Edinboro,Slippery Rock,38,8
+2025-11-08,Clarion,Indiana (PA),42,45
+2025-11-08,Bentley,Assumption,20,17
+2025-11-08,Mars Hill,UVA Wise,60,19
+2025-11-08,MSU Moorhead,Jamestown,44,20
+2025-11-08,Virginia Union,Virginia St.,14,3
+2025-11-08,Chowan,Ferrum,37,40
+2025-11-08,Post,Saint Anselm,41,35
+2025-11-08,Emory & Henry,Shaw,55,7
+2025-11-08,Fayetteville St.,Winston-Salem,31,21
+2025-11-08,Concord,Fairmont St.,17,31
+2025-11-08,American Int'l,Pace,21,9
+2025-11-08,Shippensburg,West Chester,43,14
+2025-11-08,Lock Haven,Shepherd,19,35
+2025-11-08,Franklin Pierce,Southern Conn. St.,38,7
+2025-11-08,Elizabeth City St.,Bluefield St.,70,30
+2025-11-08,Johnson C. Smith,Livingstone,26,21
+2025-11-08,Lincoln (PA),Bowie St.,17,28
+2025-11-08,Saginaw Valley,Ferris St.,45,51
+2025-11-08,Charleston (WV),West Liberty,45,28
+2025-11-08,Lincoln (MO),Missouri S&T,0,59
+2025-11-08,Frostburg St.,West Virginia St.,29,24
+2025-11-08,Newberry,Carson-Newman,28,21
+2025-11-08,Glenville St.,Wheeling,35,38
+2025-11-08,Ashland,Findlay,3,14
+2025-11-08,Henderson St.,East Central,45,35
+2025-11-08,Sioux Falls,Wayne St. (NE),13,42
+2025-11-08,Roosevelt,Wayne St. (MI),48,14
+2025-11-08,Colo. Sch. of Mines,CSU Pueblo,34,41
+2025-11-08,Washburn,Emporia St.,17,45
+2025-11-08,Adams St.,Black Hills St.,0,59
+2025-11-08,Mary,Winona St.,29,36
+2025-11-08,Southwest Minn. St.,Concordia-St. Paul,14,19
+2025-11-08,Midwestern St.,West Tex. A&M,42,56
+2025-11-08,Tusculum,Wingate,10,56
+2025-11-08,Northeastern St.,McKendree,44,10
+2025-11-08,Grand Valley St.,Michigan Tech,18,15
+2025-11-08,Augustana (SD),Minnesota St.,21,45
+2025-11-08,Upper Iowa,Quincy,41,8
+2025-11-08,Albany St. (GA),Fort Valley St.,48,3
+2025-11-08,Allen,Edward Waters,53,30
+2025-11-08,Central Mo.,Pittsburg St.,35,48
+2025-11-08,Central Okla.,Mo. Southern St.,44,17
+2025-11-08,Southwest Baptist,UIndy,21,66
+2025-11-08,Minn. Duluth,Bemidji St.,42,28
+2025-11-08,Bloomsburg,Kutztown,27,35
+2025-11-08,Northwest Mo. St.,Missouri Western,38,7
+2025-11-08,Northwestern Okla.,Ark.-Monticello,40,7
+2025-11-08,Southwestern Okla.,Ouachita Baptist,38,42
+2025-11-08,Chadron St.,Western Colo.,27,24
+2025-11-08,Southern Nazarene,Harding,14,52
+2025-11-08,N.M. Highlands,Fort Lewis,31,14
+2025-11-08,Southern Ark.,Southeastern Okla.,16,14
+2025-11-08,Northern St.,Minot St.,28,49
+2025-11-08,Okla. Baptist,Arkansas Tech,25,38
+2025-11-08,Lane,Kentucky St.,0,55
+2025-11-08,Miles,Tuskegee,23,24
+2025-11-08,Savannah St.,Benedict,13,16
+2025-11-08,Clark Atlanta,Morehouse,48,45
+2025-11-08,Valdosta St.,Delta St.,27,23
+2025-11-08,Colorado Mesa,South Dakota Mines,38,12
+2025-11-08,Truman St.,William Jewell,35,17
+2025-11-08,Barton,Erskine,37,7
+2025-11-08,Shorter,North Greenville,33,35
+2025-11-08,Catawba,Anderson (SC),44,20
+2025-11-08,East Stroudsburg,Millersville,45,21
+2025-11-08,Angelo St.,Western Ore.,7,31
+2025-11-08,Tex. A&M-Kingsville,Western N.M.,64,13
+2025-11-08,UT Permian Basin,Eastern N.M.,47,34
+2025-11-08,Sul Ross St.,Central Wash.,7,73
+2025-11-15,Bentley,American Int'l,21,7
+2025-11-15,West Liberty,Wheeling,68,67
+2025-11-15,Pace,Franklin Pierce,10,24
+2025-11-15,Davenport,Ferris St.,23,44
+2025-11-15,Shepherd,Seton Hill,21,13
+2025-11-15,Findlay,Tiffin,21,23
+2025-11-15,Millersville,Edinboro,10,63
+2025-11-15,Bloomsburg,Slippery Rock,30,24
+2025-11-15,Kutztown,Indiana (PA),28,23
+2025-11-15,West Virginia St.,Charleston (WV),21,38
+2025-11-15,Walsh,Northwood,13,17
+2025-11-15,West Chester,Assumption,24,42
+2025-11-15,Michigan Tech,Saginaw Valley,21,24
+2025-11-15,Shippensburg,California (PA),10,35
+2025-11-15,Neb.-Kearney,Central Mo.,24,38
+2025-11-15,Southern Conn. St.,Post,52,45
+2025-11-15,Winona St.,Southwest Minn. St.,30,6
+2025-11-15,Northern Mich.,Wayne St. (MI),45,11
+2025-11-15,Concordia-St. Paul,Sioux Falls,18,34
+2025-11-15,Southeastern Okla.,East Central,24,19
+2025-11-15,Lock Haven,Gannon,49,28
+2025-11-15,Minnesota St.,MSU Moorhead,23,31
+2025-11-15,Fairmont St.,Frostburg St.,18,35
+2025-11-15,Lenoir-Rhyne,Catawba,48,46
+2025-11-15,Hillsdale,Ohio Dominican,31,14
+2025-11-15,Ky. Wesleyan,Thomas More,11,14
+2025-11-15,East Stroudsburg,Clarion,42,34
+2025-11-15,Carson-Newman,Tusculum,26,0
+2025-11-15,Albany St. (GA),Benedict,22,16
+2025-11-15,Ashland,Lake Erie,34,14
+2025-11-15,West Va. Wesleyan,Glenville St.,16,56
+2025-11-15,North Greenville,UNC Pembroke,34,20
+2025-11-15,Minot St.,Minn. Duluth,7,33
+2025-11-15,Jamestown,Northern St.,40,46
+2025-11-15,William Jewell,Lincoln (MO),43,13
+2025-11-15,Ferrum,Concord,34,56
+2025-11-15,Mo. Southern St.,Washburn,24,29
+2025-11-15,Wayne St. (NE),Augustana (SD),38,31
+2025-11-15,UVA Wise,Emory & Henry,13,70
+2025-11-15,UIndy,Upper Iowa,28,21
+2025-11-15,South Dakota Mines,Adams St.,45,21
+2025-11-15,Grand Valley St.,Roosevelt,69,13
+2025-11-15,Kentucky St.,Shorter,35,7
+2025-11-15,Western N.M.,Midwestern St.,23,70
+2025-11-15,West Ala.,Northeastern St.,20,33
+2025-11-15,Bemidji St.,Mary,34,21
+2025-11-15,Fort Lewis,Colo. Sch. of Mines,21,55
+2025-11-15,Emporia St.,Fort Hays St.,7,13
+2025-11-15,Ouachita Baptist,Henderson St.,14,41
+2025-11-15,Quincy,Southwest Baptist,37,35
+2025-11-15,Northwest Mo. St.,Pittsburg St.,14,27
+2025-11-15,Virginia Union,Johnson C. Smith,21,45
+2025-11-15,Wingate,Mars Hill,37,22
+2025-11-15,Western Colo.,Colorado Mesa,42,28
+2025-11-15,West Florida,Valdosta St.,44,47
+2025-11-15,Missouri Western,Central Okla.,10,54
+2025-11-15,CSU Pueblo,Chadron St.,30,27
+2025-11-15,Arkansas Tech,Harding,13,47
+2025-11-15,Southern Ark.,Ark.-Monticello,49,10
+2025-11-15,Eastern N.M.,Tex. A&M-Kingsville,28,45
+2025-11-15,Southern Nazarene,Okla. Baptist,49,19
+2025-11-15,Black Hills St.,N.M. Highlands,55,28
+2025-11-15,Northwestern Okla.,Southwestern Okla.,3,45
+2025-11-15,McKendree,Truman St.,13,45
+2025-11-15,Allen,Erskine,42,24
+2025-11-15,Western Ore.,Central Wash.,17,19
+2025-11-15,West Tex. A&M,Angelo St.,45,44
+2025-11-15,Barton,Chowan,6,20
+2025-11-15,UT Permian Basin,Sul Ross St.,74,10
+2025-11-22,Kutztown,Bentley,52,0
+2025-11-22,Indiana (PA),Assumption,20,23
+2025-11-22,Johnson C. Smith,Frostburg St.,7,21
+2025-11-22,Virginia Union,California (PA),24,27
+2025-11-22,Albany St. (GA),Valdosta St.,35,30
+2025-11-22,Newberry,Kentucky St.,45,24
+2025-11-22,Ferris St.,Northwood,65,14
+2025-11-22,Ashland,Minn. Duluth,32,7
+2025-11-22,Findlay,Minnesota St.,14,37
+2025-11-22,Wingate,Benedict,24,25
+2025-11-22,West Florida,North Greenville,43,19
+2025-11-22,UIndy,Truman St.,57,14
+2025-11-22,Harding,Northwest Mo. St.,38,16
+2025-11-22,Pittsburg St.,Chadron St.,21,17
+2025-11-22,CSU Pueblo,UT Permian Basin,24,37
+2025-11-22,Central Wash.,Western Colo.,20,27
+2025-11-27,Alabama St.,Tuskegee,58,21
+2025-11-29,Kutztown,Assumption,56,19
+2025-11-29,California (PA),Frostburg St.,21,23
+2025-11-29,Albany St. (GA),Benedict,14,12
+2025-11-29,Ferris St.,Ashland,56,24
+2025-11-29,West Florida,Newberry,17,24
+2025-11-29,UIndy,Minnesota St.,27,35
+2025-11-29,Harding,Pittsburg St.,37,21
+2025-12-06,Kutztown,Frostburg St.,51,29
+2025-12-06,Albany St. (GA),Newberry,24,31
+2025-12-06,Ferris St.,Minnesota St.,52,29
+2025-12-06,Harding,UT Permian Basin,34,28
+2025-12-06,West Tex. A&M,Arkansas Tech,28,27
+2025-12-06,Northeastern St.,East Central,56,21
+2025-12-13,Ferris St.,Newberry,49,17
+2025-12-13,Kutztown,Harding,27,49
+2025-12-20,Ferris St.,Harding,42,21
