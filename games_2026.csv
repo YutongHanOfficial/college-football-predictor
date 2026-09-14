@@ -527,3 +527,349 @@ date,home,away,home_score,away_score,division
 2026-09-05,La Verne,Azusa Pacific,30,3,D3
 2026-09-05,George Fox,Redlands,27,0,D3
 2026-09-10,Miami (FL),Florida A&M,77,7,FBS
+2026-09-11,Kansas,Missouri,21,38,FBS
+2026-09-11,Louisville,Villanova,59,13,FBS
+2026-09-11,Virginia,Norfolk St.,59,3,FBS
+2026-09-11,NC State,Richmond,73,0,FBS
+2026-09-12,Boston College,Rutgers,28,21,FBS
+2026-09-12,Texas,Ohio St.,24,23,FBS
+2026-09-12,Georgia,Western Ky.,70,20,FBS
+2026-09-12,Notre Dame,Rice,52,0,FBS
+2026-09-12,Indiana,Howard,55,0,FBS
+2026-09-12,Oklahoma St.,Oregon,39,31,FBS
+2026-09-12,LSU,Louisiana Tech,45,14,FBS
+2026-09-12,Ole Miss,Charlotte,41,9,FBS
+2026-09-12,Texas A&M,Arizona St.,48,20,FBS
+2026-09-12,Michigan,Oklahoma,17,10,FBS
+2026-09-12,Kentucky,Alabama,17,45,FBS
+2026-09-12,Oregon St.,Texas Tech,24,35,FBS
+2026-09-12,Southern California,Louisiana,49,30,FBS
+2026-09-12,BYU,Arizona,28,17,FBS
+2026-09-12,Temple,Penn St.,9,27,FBS
+2026-09-12,SMU,UC Davis,56,10,FBS
+2026-09-12,Georgia Tech,Tennessee,24,45,FBS
+2026-09-12,Washington,Utah St.,16,14,FBS
+2026-09-12,Utah,Arkansas,43,10,FBS
+2026-09-12,Iowa,Iowa St.,16,13,FBS
+2026-09-12,Houston,Southern U.,77,6,FBS
+2026-09-12,Kent St.,Wofford,36,15,FBS
+2026-09-12,Liberty,Gardner-Webb,24,23,FBS
+2026-09-12,Virginia Tech,Old Dominion,44,21,FBS
+2026-09-12,North Carolina,ETSU,35,3,FBS
+2026-09-12,Purdue,Wake Forest,36,38,FBS
+2026-09-12,Kansas St.,Washington St.,34,7,FBS
+2026-09-12,Army West Point,South Fla.,24,28,FBS
+2026-09-12,East Carolina,App State,24,27,FBS
+2026-09-12,James Madison,Wagner,87,3,FBS
+2026-09-12,West Virginia,UT Martin,52,7,FBS
+2026-09-12,Miami (OH),Holy Cross,45,7,FBS
+2026-09-12,Central Mich.,Colgate,13,10,FBS
+2026-09-12,Ball St.,Stony Brook,41,17,FBS
+2026-09-12,Toledo,Central Conn. St.,63,10,FBS
+2026-09-12,UConn,Maryland,14,38,FBS
+2026-09-12,Texas St.,UTSA,26,31,FBS
+2026-09-12,Akron,Robert Morris,45,10,FBS
+2026-09-12,Illinois,Duke,27,31,FBS
+2026-09-12,Colorado,Weber St.,52,21,FBS
+2026-09-12,Massachusetts,Sacred Heart,37,10,FBS
+2026-09-12,Syracuse,California,18,21,FBS
+2026-09-12,Pittsburgh,UCF,12,7,FBS
+2026-09-12,Minnesota,Mississippi St.,13,38,FBS
+2026-09-12,UAB,ULM,26,20,FBS
+2026-09-12,Michigan St.,Eastern Mich.,35,7,FBS
+2026-09-12,North Texas,UNLV,44,6,FBS
+2026-09-12,Wyoming,Northern Colo.,21,13,FBS
+2026-09-12,Troy,Alabama St.,34,17,FBS
+2026-09-12,New Mexico,Mercyhurst,70,7,FBS
+2026-09-12,Vanderbilt,Delaware,35,26,FBS
+2026-09-12,Florida,Campbell,52,3,FBS
+2026-09-12,Ohio,Jacksonville St.,29,27,FBS
+2026-09-12,Boise St.,Memphis,38,20,FBS
+2026-09-12,FIU,Buffalo,33,20,FBS
+2026-09-12,Western Mich.,Monmouth,49,14,FBS
+2026-09-12,Marshall,Middle Tenn.,28,26,FBS
+2026-09-12,Nebraska,Bowling Green,56,7,FBS
+2026-09-12,Sam Houston,Tulsa,17,23,FBS
+2026-09-12,NIU,Illinois St.,24,28,FBS
+2026-09-12,Tulane,South Alabama,28,24,FBS
+2026-09-12,Arkansas St.,West Ga.,52,7,FBS
+2026-09-12,Missouri St.,Lindenwood,48,14,FBS
+2026-09-12,South Carolina,Towson,45,9,FBS
+2026-09-12,Colorado St.,Southern Utah,58,24,FBS
+2026-09-12,Kennesaw St.,Georgia St.,17,31,FBS
+2026-09-12,Cincinnati,Western Caro.,62,10,FBS
+2026-09-12,UCLA,San Diego St.,28,10,FBS
+2026-09-12,Wisconsin,Western Ill.,36,9,FBS
+2026-09-12,Auburn,Southern Miss.,43,8,FBS
+2026-09-12,Fla. Atlantic,Navy,38,30,FBS
+2026-09-12,Coastal Carolina,Fordham,45,7,FBS
+2026-09-12,Clemson,Ga. Southern,22,7,FBS
+2026-09-12,TCU,Grambling,63,7,FBS
+2026-09-12,Baylor,Prairie View,44,3,FBS
+2026-09-12,UTEP,Texas Southern,51,10,FBS
+2026-09-12,San Jose St.,Cal Poly,30,20,FBS
+2026-09-12,Air Force,North Dakota St.,32,38,FBS
+2026-09-12,Nevada,Montana St.,7,20,FBS
+2026-09-12,Fresno St.,Sacramento St.,49,3,FBS
+2026-09-13,Hawaii,New Mexico St.,29,19,FBS
+2026-09-11,Miami (FL),Florida A&M,77,7,FCS
+2026-09-11,NC State,Richmond,73,0,FCS
+2026-09-11,Louisville,Villanova,59,13,FCS
+2026-09-12,Virginia,Norfolk St.,59,3,FCS
+2026-09-12,LIU,UAlbany,13,35,FCS
+2026-09-12,James Madison,Wagner,87,3,FCS
+2026-09-12,Kent St.,Wofford,36,15,FCS
+2026-09-12,Liberty,Gardner-Webb,24,23,FCS
+2026-09-12,North Carolina,ETSU,35,3,FCS
+2026-09-12,Dayton,Thomas More,30,7,FCS
+2026-09-12,Indiana,Howard,55,0,FCS
+2026-09-12,N.C. Central,N.C. A&T,30,22,FCS
+2026-09-12,Rhode Island,Elon,31,10,FCS
+2026-09-12,Davidson,Dickinson,28,14,FCS
+2026-09-12,Lafayette,Marist,13,9,FCS
+2026-09-12,Miami (OH),Holy Cross,45,7,FCS
+2026-09-12,Central Mich.,Colgate,13,10,FCS
+2026-09-12,West Virginia,UT Martin,52,7,FCS
+2026-09-12,Chicago St.,Ky. Christian,78,7,FCS
+2026-09-12,VMI,Bucknell,3,14,FCS
+2026-09-12,Youngstown St.,Duquesne,70,13,FCS
+2026-09-12,St. Thomas (MN),Northern Mich.,56,14,FCS
+2026-09-12,Lehigh,William & Mary,44,20,FCS
+2026-09-12,South Dakota,Eastern Wash.,41,23,FCS
+2026-09-12,UNI,Drake,56,14,FCS
+2026-09-12,Ball St.,Stony Brook,41,17,FCS
+2026-09-12,Montana,Utah Tech,35,14,FCS
+2026-09-12,Delaware St.,Bowie St.,21,6,FCS
+2026-09-12,Toledo,Central Conn. St.,63,10,FCS
+2026-09-12,Akron,Robert Morris,45,10,FCS
+2026-09-12,Colorado,Weber St.,52,21,FCS
+2026-09-12,Massachusetts,Sacred Heart,37,10,FCS
+2026-09-12,Bethune-Cookman,Stetson,43,18,FCS
+2026-09-12,SMU,UC Davis,56,10,FCS
+2026-09-12,Troy,Alabama St.,34,17,FCS
+2026-09-12,Mississippi Val.,Lincoln (PA),31,20,FCS
+2026-09-12,Wyoming,Northern Colo.,21,13,FCS
+2026-09-12,New Mexico,Mercyhurst,70,7,FCS
+2026-09-12,Maine,Merrimack,14,23,FCS
+2026-09-12,Austin Peay,Morehead St.,63,7,FCS
+2026-09-12,Northern Ariz.,UIW,38,28,FCS
+2026-09-12,Florida,Campbell,52,3,FCS
+2026-09-12,Eastern Ky.,Chattanooga,22,17,FCS
+2026-09-12,Idaho St.,San Diego,59,17,FCS
+2026-09-12,Morgan St.,Virginia-Lynchburg,55,0,FCS
+2026-09-12,New Hampshire,Stonehill,42,35,FCS
+2026-09-12,South Carolina St.,Virginia St.,66,0,FCS
+2026-09-12,Hampton,Bryant,3,31,FCS
+2026-09-12,Mercer,Furman,13,20,FCS
+2026-09-12,The Citadel,Charleston So.,20,26,FCS
+2026-09-12,Butler,Franklin,52,0,FCS
+2026-09-12,Western Mich.,Monmouth,49,14,FCS
+2026-09-12,East Texas A&M,Northwestern St.,38,14,FCS
+2026-09-12,Arkansas St.,West Ga.,52,7,FCS
+2026-09-12,McNeese,Tarleton St.,24,27,FCS
+2026-09-12,Murray St.,Valparaiso,27,18,FCS
+2026-09-12,Central Ark.,Central Okla.,59,20,FCS
+2026-09-12,Nicholls,UTRGV,31,28,FCS
+2026-09-12,Southern Ill.,Southeast Mo. St.,34,20,FCS
+2026-09-12,Houston Christian,Ark. Baptist,88,0,FCS
+2026-09-12,South Dakota St.,New Haven,57,14,FCS
+2026-09-12,Colorado St.,Southern Utah,58,24,FCS
+2026-09-12,Eastern Ill.,Indiana St.,35,42,FCS
+2026-09-12,Alabama A&M,Tennessee St.,30,3,FCS
+2026-09-12,Idaho,Lamar University,17,23,FCS
+2026-09-12,South Carolina,Towson,45,9,FCS
+2026-09-12,Tennessee Tech,Samford,45,19,FCS
+2026-09-12,Houston,Southern U.,77,6,FCS
+2026-09-12,Cincinnati,Western Caro.,62,10,FCS
+2026-09-12,Southeastern La.,North Ala.,30,25,FCS
+2026-09-12,Missouri St.,Lindenwood,48,14,FCS
+2026-09-12,NIU,Illinois St.,24,28,FCS
+2026-09-12,Alcorn,Ark.-Pine Bluff,53,51,FCS
+2026-09-12,Wisconsin,Western Ill.,36,9,FCS
+2026-09-12,Coastal Carolina,Fordham,45,7,FCS
+2026-09-12,Baylor,Prairie View,44,3,FCS
+2026-09-12,TCU,Grambling,63,7,FCS
+2026-09-12,Abilene Christian,SFA,7,26,FCS
+2026-09-12,UTEP,Texas Southern,51,10,FCS
+2026-09-12,San Jose St.,Cal Poly,30,20,FCS
+2026-09-12,Portland St.,North Dakota,23,47,FCS
+2026-09-12,Nevada,Montana St.,7,20,FCS
+2026-09-10,West Va. Wesleyan,Shippensburg,14,24,D2
+2026-09-10,Northwestern Okla.,Arkansas Tech,29,34,D2
+2026-09-10,East Central,Ark.-Monticello,42,37,D2
+2026-09-11,Southwestern Okla.,Harding,14,37,D2
+2026-09-12,North Greenville,Charleston (WV),42,31,D2
+2026-09-12,Fayetteville St.,Valdosta St.,9,38,D2
+2026-09-12,Emporia St.,Michigan Tech,34,20,D2
+2026-09-12,Findlay,Fairmont St.,37,17,D2
+2026-09-12,Kutztown,Clarion,45,14,D2
+2026-09-12,Northwood,Saginaw Valley,35,28,D2
+2026-09-12,Davenport,UIndy,19,12,D2
+2026-09-12,Frostburg St.,Assumption,24,19,D2
+2026-09-12,Shepherd,Gannon,45,28,D2
+2026-09-12,Pace,Monroe,59,3,D2
+2026-09-12,Hillsdale,Wayne St. (MI),49,0,D2
+2026-09-12,Dayton,Thomas More,30,7,D2
+2026-09-12,Millersville,California (PA),17,40,D2
+2026-09-12,Truman St.,Northeastern St.,24,31,D2
+2026-09-12,Concordia-St. Paul,Mary,10,13,D2
+2026-09-12,Chowan,Virginia Union,19,34,D2
+2026-09-12,West Ala.,Pittsburg St.,24,23,D2
+2026-09-12,Carson-Newman,Wingate,24,23,D2
+2026-09-12,Post,West Liberty,14,35,D2
+2026-09-12,Morehouse,Central St. (OH),21,49,D2
+2026-09-12,Mars Hill,Catawba,22,16,D2
+2026-09-12,Emory & Henry,Tusculum,26,28,D2
+2026-09-12,Lackawanna,Seton Hill,10,20,D2
+2026-09-12,Shorter,UNC Pembroke,24,31,D2
+2026-09-12,Shaw,Ferrum,34,28,D2
+2026-09-12,UVA Wise,Anderson (SC),21,39,D2
+2026-09-12,Southwest Baptist,Roosevelt,56,59,D2
+2026-09-12,Barton,Bluefield Univ.,36,21,D2
+2026-09-12,Wayne St. (NE),Minn. Duluth,13,20,D2
+2026-09-12,St. Thomas (MN),Northern Mich.,56,14,D2
+2026-09-12,Bloomsburg,Edinboro,6,9,D2
+2026-09-12,Winona St.,Jamestown,28,0,D2
+2026-09-12,Augustana (SD),Minot St.,38,33,D2
+2026-09-12,Sioux Falls,MSU Moorhead,29,28,D2
+2026-09-12,Northwest Mo. St.,Washburn,31,24,D2
+2026-09-12,Delaware St.,Bowie St.,21,6,D2
+2026-09-12,Black Hills St.,Adams St.,44,8,D2
+2026-09-12,Miles,Edward Waters,20,36,D2
+2026-09-12,South Dakota Mines,Colorado Mesa,24,30,D2
+2026-09-12,Wheeling,Lake Erie,7,23,D2
+2026-09-12,CSU Pueblo,Colo. Sch. of Mines,45,17,D2
+2026-09-12,Saint Anselm,Bentley,14,48,D2
+2026-09-12,Mississippi Val.,Lincoln (PA),31,20,D2
+2026-09-12,Thomas (GA),Erskine,3,62,D2
+2026-09-12,Lane,Allen,7,43,D2
+2026-09-12,Southwest Minn. St.,Northern St.,3,30,D2
+2026-09-12,Bluefield St.,Livingstone,30,44,D2
+2026-09-12,Winston-Salem,Johnson C. Smith,6,31,D2
+2026-09-12,Savannah St.,Albany St. (GA),17,49,D2
+2026-09-12,Clark Atlanta,Kentucky St.,3,30,D2
+2026-09-12,West Chester,Indiana (PA),21,27,D2
+2026-09-12,South Carolina St.,Virginia St.,66,0,D2
+2026-09-12,East Stroudsburg,Slippery Rock,35,59,D2
+2026-09-12,Southeastern Okla.,Ouachita Baptist,17,23,D2
+2026-09-12,Southern Ark.,Southern Nazarene,27,21,D2
+2026-09-12,Minnesota St.,Bemidji St.,30,13,D2
+2026-09-12,Ashland,Grand Valley St.,10,20,D2
+2026-09-12,Newberry,Lenoir-Rhyne,14,21,D2
+2026-09-12,Lincoln (MO),Langston,14,19,D2
+2026-09-12,Missouri S&T,Missouri Western,30,42,D2
+2026-09-12,Ky. Wesleyan,William Jewell,14,35,D2
+2026-09-12,Henderson St.,Okla. Baptist,66,9,D2
+2026-09-12,UT Permian Basin,Western N.M.,69,14,D2
+2026-09-12,Central Ark.,Central Okla.,59,20,D2
+2026-09-12,Central Mo.,Delta St.,59,10,D2
+2026-09-12,Fort Lewis,N.M. Highlands,31,28,D2
+2026-09-12,Western Colo.,Chadron St.,30,9,D2
+2026-09-12,Central Wash.,Ferris St.,14,28,D2
+2026-09-11,Denison,Oberlin,50,0,D2
+2026-09-11,St. Lawrence,St. John Fisher,10,30,D2
+2026-09-12,King's (PA),Stevenson,21,26,D2
+2026-09-12,Davidson,Dickinson,28,14,D2
+2026-09-12,Alma,Wis.-Oshkosh,21,23,D2
+2026-09-12,Merchant Marine,Nichols,63,14,D2
+2026-09-12,Rochester (NY),SUNY Morrisville,21,10,D2
+2026-09-12,Albion,Wheaton (IL),3,45,D2
+2026-09-12,Catholic,Carnegie Mellon,35,38,D2
+2026-09-12,Muhlenberg,Endicott,21,49,D2
+2026-09-12,Norwich,VTSU Castleton,17,10,D2
+2026-09-12,Fitchburg St.,UMass Dartmouth,22,56,D2
+2026-09-12,Husson,Springfield,0,48,D2
+2026-09-12,Randolph-Macon,Johns Hopkins,28,21,D2
+2026-09-12,Moravian,Rowan,0,34,D2
+2026-09-12,MIT,New England Col.,70,0,D2
+2026-09-12,WPI,U New England,22,21,D2
+2026-09-12,Union (NY),Cortland,0,26,D2
+2026-09-12,Bridgewater (VA),Susquehanna,14,41,D2
+2026-09-12,Hampden-Sydney,Monmouth (IL),31,19,D2
+2026-09-12,Anderson (IN),Gallaudet,49,28,D2
+2026-09-12,Mass. Maritime,Dean,70,0,D2
+2026-09-12,Rensselaer,Utica,14,38,D2
+2026-09-12,Westfield St.,Bridgewater St.,28,34,D2
+2026-09-12,Curry,Coast Guard,41,35,D2
+2026-09-12,N.C. Wesleyan,Apprentice,42,0,D2
+2026-09-12,Hartwick,Buffalo St.,47,13,D2
+2026-09-12,FDU-Florham,Albright,17,30,D2
+2026-09-12,Wash. & Jeff.,Keystone,42,0,D2
+2026-09-12,Kean,SUNY Maritime,51,17,D2
+2026-09-12,Widener,Alvernia,14,10,D2
+2026-09-12,Allegheny,Juniata,27,0,D2
+2026-09-12,Calvin,St. Norbert,49,7,D2
+2026-09-12,Lycoming,Montclair St.,28,30,D2
+2026-09-12,Wilkes,TCNJ,28,8,D2
+2026-09-12,Wabash,Wittenberg,31,0,D2
+2026-09-12,Maryville (TN),Hanover,26,43,D2
+2026-09-12,Thiel,Adrian,7,48,D2
+2026-09-12,Kenyon,Wooster,19,26,D2
+2026-09-12,Westminster (PA),Franklin & Marshall,8,45,D2
+2026-09-12,Hiram,Manchester,20,11,D2
+2026-09-12,Eastern,Misericordia,27,21,D2
+2026-09-12,Brevard,Sewanee,39,14,D2
+2026-09-12,Hope,Wis.-Stevens Point,38,10,D2
+2026-09-12,Hobart,SUNY Brockport,27,14,D2
+2026-09-12,WestConn,Chris. Newport,7,37,D2
+2026-09-12,Waynesburg,Ursinus,10,46,D2
+2026-09-12,Lebanon Valley,Delaware Valley,17,18,D2
+2026-09-12,Kalamazoo,Rose-Hulman,7,27,D2
+2026-09-12,Olivet,North Park,43,41,D2
+2026-09-12,Salisbury,McDaniel,31,0,D2
+2026-09-12,Western New Eng.,Salve Regina,21,24,D2
+2026-09-12,Ohio Wesleyan,John Carroll,7,44,D2
+2026-09-12,Baldwin Wallace,Bethany (WV),84,26,D2
+2026-09-12,Capital,Wilmington (OH),44,19,D2
+2026-09-12,Mount Union,Grove City,21,17,D3
+2026-09-12,Roanoke,Greensboro,28,14,D2
+2026-09-12,Hendrix,Huntingdon,20,26,D2
+2026-09-12,Wartburg,North Central (IL),20,26,D2
+2026-09-12,Knox,Lake Forest,12,68,D2
+2026-09-12,Rockford,Elmhurst,14,28,D2
+2026-09-12,Coe,UW-River Falls,6,38,D2
+2026-09-12,Austin,Rhodes,23,17,D2
+2026-09-12,Wis.-Stout,Augustana (IL),37,34,D2
+2026-09-12,Concordia Chicago,Grinnell,42,7,D2
+2026-09-12,WashU,DePauw,37,27,D2
+2026-09-12,Wis.-Platteville,Dubuque,59,0,D2
+2026-09-12,Ill. Wesleyan,Trine,45,35,D2
+2026-09-12,Carroll (WI),Wis.-Eau Claire,17,34,D2
+2026-09-12,Aurora,Mt. St. Joseph,21,49,D2
+2026-09-12,Mayville St.,Minn.-Morris,37,13,D2
+2026-09-12,Millikin,Luther,37,14,D2
+2026-09-12,Wis.-La Crosse,Hardin-Simmons,20,28,D2
+2026-09-12,Cornell College,Beloit,10,0,D2
+2026-09-12,Marietta,Ohio Northern,13,20,D2
+2026-09-12,Lawrence,Buena Vista,14,26,D2
+2026-09-12,Greenville,Lakeland,20,41,D2
+2026-09-12,Wis.-Whitewater,St. Xavier,49,14,D3
+2026-09-12,Worcester St.,Plymouth St.,28,6,D2
+2026-09-12,Concordia Wisconsin,Martin Luther,48,13,D2
+2026-09-12,Pacific Lutheran,Mary Hardin-Baylor,6,29,D2
+2026-09-12,Whitworth,Eastern Ore.,17,51,D2
+2026-09-12,Gettysburg,Wash. & Lee,23,27,D2
+2026-09-12,Alfred St.,Hilbert,57,12,D2
+2026-09-12,Butler,Franklin,52,0,D2
+2026-09-12,Ithaca,Alfred,27,3,D2
+2026-09-12,Bluffton,Madonna,18,27,D2
+2026-09-12,Berry,LaGrange,20,17,D2
+2026-09-12,Eureka,Westminster (MO),0,41,D2
+2026-09-12,Southern Va.,Averett,34,41,D2
+2026-09-12,Texas Lutheran,Southwestern (TX),19,10,D2
+2026-09-12,Trinity (TX),McMurry,31,17,D2
+2026-09-12,Okla. Panhandle,Schreiner,47,29,D2
+2026-09-12,Otterbein,Heidelberg,0,38,D2
+2026-09-12,Guilford,Methodist,20,17,D2
+2026-09-12,Centenary (LA),Millsaps,0,57,D2
+2026-09-12,Shenandoah,Geneva,48,14,D2
+2026-09-12,Dakota St.,Neb. Wesleyan,52,0,D2
+2026-09-12,Wis. Lutheran,Ripon,25,24,D2
+2026-09-12,Illinois Col.,Lyon,14,21,D2
+2026-09-12,Benedictine (IL),Loras,28,25,D2
+2026-09-12,Simpson,Crown (MN),52,0,D2
+2026-09-12,Northwestern-St. Paul,Central (IA),27,51,D2
+2026-09-12,Belhaven,East Tex. Baptist,45,44,D2
+2026-09-12,Concordia-M'head,St. Olaf,51,0,D2
+2026-09-12,Pacific (OR),Willamette,3,6,D2
+2026-09-12,George Fox,Lewis & Clark,28,20,D2
